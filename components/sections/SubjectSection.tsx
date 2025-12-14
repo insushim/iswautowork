@@ -10,7 +10,7 @@ import { RecordList } from '@/components/RecordList';
 import { AchievementLevelGrid } from '@/components/AchievementLevelGrid';
 import { useGenerate } from '@/hooks/useGenerate';
 import { useExport } from '@/hooks/useExport';
-import { BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
+import { BookOpen, ChevronDown, ChevronUp, Info } from 'lucide-react';
 
 export function SubjectSection() {
   const {
@@ -31,6 +31,7 @@ export function SubjectSection() {
   const [isExpanded, setIsExpanded] = useState(true);
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [regeneratingStudent, setRegeneratingStudent] = useState<number | null>(null);
+  const [showStandards, setShowStandards] = useState(false);
 
   const { generate, regenerateSingle } = useGenerate({
     onError: (error) => alert(error),
@@ -128,6 +129,11 @@ export function SubjectSection() {
   const currentLevels = selectedSubject ? subjectAchievementLevels[selectedSubject.code] || [] : [];
   const currentSemester = selectedSubject ? subjectSemesters[selectedSubject.code] || 1 : 1;
 
+  // 현재 선택된 교과/학기의 성취기준 가져오기
+  const currentStandards = selectedSubject && classroom
+    ? getAchievementStandardsBySubject(classroom.grade, getSubjectNameFromCode(selectedSubject.code), currentSemester)
+    : [];
+
   return (
     <div className="space-y-4">
       <Card>
@@ -178,6 +184,36 @@ export function SubjectSection() {
 
             {selectedSubject && classroom && (
               <>
+                {/* 성취기준 미리보기 */}
+                <div className="border border-blue-200 dark:border-blue-800 rounded-lg overflow-hidden">
+                  <button
+                    onClick={() => setShowStandards(!showStandards)}
+                    className="w-full flex items-center justify-between p-3 bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-2 text-sm font-medium text-blue-700 dark:text-blue-300">
+                      <Info className="w-4 h-4" />
+                      <span>적용되는 성취기준 ({currentStandards.length}개)</span>
+                    </div>
+                    {showStandards ? <ChevronUp className="w-4 h-4 text-blue-600" /> : <ChevronDown className="w-4 h-4 text-blue-600" />}
+                  </button>
+                  {showStandards && (
+                    <div className="p-3 bg-white dark:bg-gray-800 max-h-64 overflow-y-auto">
+                      {currentStandards.length > 0 ? (
+                        <ul className="space-y-2">
+                          {currentStandards.map((std, idx) => (
+                            <li key={idx} className="text-sm text-gray-700 dark:text-gray-300 flex gap-2">
+                              <span className="text-blue-600 dark:text-blue-400 font-mono text-xs whitespace-nowrap">{std.code}</span>
+                              <span>{std.content}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-sm text-gray-500">해당 학년/학기의 성취기준이 없습니다.</p>
+                      )}
+                    </div>
+                  )}
+                </div>
+
                 <div>
                   <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                     학생별 성취 수준 설정 (5단계)

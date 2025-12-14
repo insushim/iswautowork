@@ -217,33 +217,69 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[4사04-03]', content: '주민 자치와 지방 자치의 의미를 이해한다.', grade: 4, semester: 2, subject: '사회', domain: '일반사회' },
   { code: '[4사04-04]', content: '경제활동과 현명한 선택의 중요성을 이해한다.', grade: 4, semester: 2, subject: '사회', domain: '일반사회' },
 
-  // ========== 사회 5학년 1학기 ==========
-  { code: '[6사01-01]', content: '우리나라의 위치와 영역이 지니는 특성을 설명하고, 이를 바탕으로 국토 사랑의 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
-  { code: '[6사01-02]', content: '우리 국토를 구분하는 기준들을 살펴보고, 행정 구역 및 전통적 지역 구분 방식을 이해한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  // ========== 사회 5학년 1학기 (2015 개정) ==========
+  // 1단원: 국토와 우리 생활
+  { code: '[6사01-01]', content: '우리나라의 위치와 영역이 지니는 특성을 설명하고, 이를 바탕으로 하여 국토 사랑의 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-02]', content: '우리 국토를 구분하는 기준들을 살펴보고, 시·도 단위 행정구역 및 주요 도시들의 위치 특성을 파악한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
   { code: '[6사01-03]', content: '우리나라의 기후 환경 및 지형 환경에서 나타나는 특성을 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
-  { code: '[6사01-05]', content: '우리나라의 인구 분포 및 구조를 파악하고, 인구 문제에 대한 대응 방안을 제시한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-04]', content: '우리나라 자연재해의 종류 및 대책을 탐색하고, 그와 관련된 생활 안전 수칙을 실천하는 태도를 지닌다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-05]', content: '우리나라의 인구 분포 및 구조에 대해 파악하고, 인구 문제 해결에 참여하려는 태도를 가진다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-06]', content: '우리나라와 세계 여러 나라의 산업 구조와 산업의 발달 과정을 살펴보고, 지역별 산업의 특색을 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  // 2단원: 인권 존중과 정의로운 사회
+  { code: '[6사02-01]', content: '인권의 의미와 인권 신장의 역사를 통해 인권이 확대되어 온 과정을 살펴보고, 인권 보장의 중요성을 파악한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-02]', content: '생활 속에서 인권 보장이 필요한 사례를 탐구하여 인권 의식을 기르고, 인권 보호를 실천하는 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-03]', content: '헌법에서 규정하는 기본권과 의무가 일상생활에 적용된 사례를 조사하고, 권리와 의무의 조화를 추구하는 자세를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-04]', content: '일상생활에서 경험하는 여러 가지 법의 의미를 파악하고, 법을 지키는 생활을 실천하는 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-05]', content: '우리 생활 속에서 법이 적용되는 다양한 사례를 살펴보고, 법의 역할을 설명한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-06]', content: '국회, 행정부, 법원의 기능을 이해하고, 그것이 국민 생활에 미치는 영향을 다양한 사례를 통해 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
 
-  // ========== 사회 5학년 2학기 ==========
-  { code: '[6사01-04]', content: '자원의 분포와 이용 모습을 파악하고, 자원 관리 및 보존 노력의 필요성을 설명한다.', grade: 5, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사01-06]', content: '촌락과 도시의 특성을 이해하고, 촌락과 도시의 변화 과정을 탐구한다.', grade: 5, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사02-01]', content: '인권의 의미와 인권 신장의 역사를 통해 인권이 보장받기 어려운 사례를 조사하고 그 해결 방법을 제시한다.', grade: 5, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-02]', content: '생활 속에서 인권 보장이 필요한 사례를 탐구하여 인권 의식을 기른다.', grade: 5, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-03]', content: '헌법에서 규정하는 기본권과 의무가 일상생활에 적용된 사례를 조사하고, 이를 통하여 권리와 의무를 존중하는 태도를 기른다.', grade: 5, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-04]', content: '우리나라의 입법, 사법, 행정부의 역할을 이해하고, 각각의 의미와 상호 관계를 설명한다.', grade: 5, semester: 2, subject: '사회', domain: '일반사회' },
+  // ========== 사회 5학년 2학기 (2015 개정) ==========
+  // 1단원: 옛사람들의 삶과 문화
+  { code: '[6사03-01]', content: '고조선의 등장과 발전 과정을 통하여 우리 역사가 형성되었음을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-02]', content: '여러 나라의 건국 이야기와 문화유산을 통해 고대 국가의 특징을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-03]', content: '삼국 통일과 발해의 건국 과정을 이해하고, 남북국 시대의 문화유산을 탐색한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-04]', content: '고려를 세우고 발전시킨 인물(왕건, 서희, 강감찬 등)의 업적을 통하여 고려의 정치적 특징을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-05]', content: '고려 시대 문화유산을 통하여 고려 문화의 우수성을 탐색한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-06]', content: '조선 시대 주요 인물(이성계, 세종대왕, 이순신 등)의 업적을 통하여 조선의 정치와 문화를 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  // 2단원: 사회의 새로운 변화와 오늘날의 우리
+  { code: '[6사04-01]', content: '영조와 정조 시기의 사회 변화와 문화의 발달을 살펴본다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-02]', content: '조선 후기 외세의 침략에 대항한 나라를 지키기 위한 노력을 살펴본다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-03]', content: '일제의 침략에 맞서 나라를 지키고자 노력한 인물의 활동에 대해 조사한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-04]', content: '광복과 대한민국 정부 수립 과정을 파악하고, 대한민국 임시 정부가 수립된 의의를 설명한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-05]', content: '6·25 전쟁의 원인과 과정을 이해하고, 전쟁의 결과와 영향을 살펴본다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-06]', content: '4·19 혁명, 5·18 민주화 운동, 6월 민주 항쟁 등을 통해 민주주의가 발전해 온 과정을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
 
-  // ========== 사회 6학년 1학기 ==========
-  { code: '[6사03-01]', content: '고조선의 등장과 발전, 삼국의 건국과 발전 과정을 이해한다.', grade: 6, semester: 1, subject: '사회', domain: '역사' },
-  { code: '[6사03-02]', content: '삼국 통일과 발해의 건국, 통일 신라와 발해의 발전 과정을 이해한다.', grade: 6, semester: 1, subject: '사회', domain: '역사' },
-  { code: '[6사03-03]', content: '고려의 건국과 발전, 고려의 대외 관계를 이해한다.', grade: 6, semester: 1, subject: '사회', domain: '역사' },
-  { code: '[6사03-04]', content: '조선의 건국과 발전, 조선의 대외 관계와 문화 발전을 이해한다.', grade: 6, semester: 1, subject: '사회', domain: '역사' },
+  // ========== 사회 6학년 1학기 (2015 개정) ==========
+  // 1단원: 우리나라의 정치 발전
+  { code: '[6사05-01]', content: '4·19 혁명, 5·18 민주화 운동, 6월 민주 항쟁 등을 통해 자유민주주의가 발전해 온 과정을 파악한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-02]', content: '광복 이후 시민의 정치 참여 활동이 확대되는 과정을 중심으로 오늘날 우리 사회의 발전상을 살펴본다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-03]', content: '일상생활에서 경험하는 민주주의 실천 사례를 탐구하여 민주주의의 의미와 중요성을 파악하고, 생활 속에서 민주주의를 실천하는 태도를 기른다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-04]', content: '민주적 의사 결정 원리(다수결, 대화와 타협, 소수 의견 존중 등)의 의미와 필요성을 이해하고, 이를 실제 생활 속에서 실천하는 자세를 지닌다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-05]', content: '민주정치의 기본 원리(국민 주권, 권력 분립 등)를 이해하고, 그것이 적용된 다양한 사례를 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-06]', content: '국회, 행정부, 법원의 기능을 이해하고, 그것이 국민 생활에 미치는 영향을 다양한 사례를 통해 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  // 2단원: 우리나라의 경제 발전
+  { code: '[6사06-01]', content: '다양한 경제활동 사례를 통해 가계와 기업의 경제적 역할을 파악하고, 가계와 기업의 합리적 선택 방법을 탐색한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-02]', content: '여러 경제활동의 사례를 통하여 자유경쟁과 경제 정의의 조화를 추구하는 우리나라 경제체제의 특징을 설명한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-03]', content: '농업 중심 경제에서 공업·서비스업 중심 경제로 변화하는 모습을 중심으로 우리나라 경제성장 과정을 파악한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-04]', content: '광복 이후 경제성장 과정에서 우리 사회가 겪은 사회 변동의 특징과 다양한 문제를 살펴보고, 더 나은 사회를 만들기 위하여 해결해야 할 과제를 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-05]', content: '세계 여러 나라와의 경제 교류 활동으로 나타난 우리 경제생활의 변화 모습을 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-06]', content: '다양한 경제 교류 사례를 통해 우리나라 경제가 다른 나라와 상호 의존 및 경쟁 관계에 있음을 파악한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
 
-  // ========== 사회 6학년 2학기 ==========
-  { code: '[6사04-01]', content: '조선 후기 사회의 변동과 개화기의 사회 변화를 파악한다.', grade: 6, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사04-02]', content: '일제의 침략과 대한민국 임시 정부의 수립, 광복을 위한 노력을 이해한다.', grade: 6, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사04-03]', content: '대한민국 정부의 수립과 6·25 전쟁, 대한민국의 민주화 과정을 이해한다.', grade: 6, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사05-01]', content: '우리나라의 경제 성장 과정과 그에 따른 사회 변화를 이해한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사05-02]', content: '가계와 기업의 합리적 선택 방법과 경제적 역할을 이해한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사06-01]', content: '세계 여러 나라의 자연환경과 인문환경의 다양성을 탐구한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  // ========== 사회 6학년 2학기 (2015 개정) ==========
+  // 1단원: 세계의 여러 나라들
+  { code: '[6사07-01]', content: '세계지도, 지구본을 비롯한 다양한 형태의 공간 자료에 대한 기초적인 내용과 활용 방법을 알고, 이를 실제 생활에 활용한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-02]', content: '여러 시각 및 공간 자료를 활용하여 세계 주요 대륙과 대양의 위치 및 범위, 대륙별 주요 나라의 위치와 영토의 특징을 탐색한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-03]', content: '세계 주요 기후의 분포와 특성을 파악하고, 이를 바탕으로 하여 기후 환경과 인간 생활 간의 관계를 탐색한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-04]', content: '의식주 생활에 특색이 있는 나라나 지역의 사례를 조사하고, 이를 바탕으로 하여 인간 생활에 영향을 미치는 여러 자연적, 인문적 요인을 탐구한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-05]', content: '우리나라와 관계 깊은 나라들의 기초적인 지리 정보를 조사하고, 정치·경제·문화면에서 맺고 있는 상호 의존 관계를 탐구한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-06]', content: '이웃 나라들(중국, 일본, 러시아)의 자연적, 인문적 특성과 교류 현황을 조사하고, 이를 바탕으로 하여 상호 이해와 협력의 태도를 기른다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  // 2단원: 통일 한국의 미래와 지구촌의 평화
+  { code: '[6사08-01]', content: '독도를 지키려는 조상들의 노력을 역사적 자료를 통하여 살펴보고, 독도의 위치 등 지리적 특성에 대한 이해를 바탕으로 하여 영토주권 의식을 기른다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사08-02]', content: '남북통일을 위한 노력을 살펴보고, 지구촌 평화에 기여하는 통일 한국의 미래상을 그려 본다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-03]', content: '지구촌의 평화와 발전을 위협하는 다양한 갈등 사례를 조사하고 그 해결 방안을 탐색한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-04]', content: '지구촌의 평화와 발전을 위해 노력하는 다양한 행위 주체(개인, 국가, 국제기구, 비정부 기구 등)의 활동 사례를 조사한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-05]', content: '지구촌의 주요 환경문제를 조사하여 해결 방안을 탐색하고, 환경문제 해결에 협력하는 세계시민의 자세를 기른다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-06]', content: '지속가능한 미래를 건설하기 위한 과제(친환경적 생산과 소비 방식 확산, 빈곤과 기아 퇴치, 문화적 편견과 차별 해소 등)를 조사하고, 세계시민으로서 이에 적극 참여하는 방안을 모색한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
 
   // ========== 과학 3학년 1학기 ==========
   { code: '[4과01-01]', content: '과학자처럼 관찰하고 탐구하는 방법을 익힌다.', grade: 3, semester: 1, subject: '과학', domain: '과학탐구' },
