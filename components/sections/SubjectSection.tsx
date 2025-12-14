@@ -10,7 +10,7 @@ import { RecordList } from '@/components/RecordList';
 import { AchievementLevelGrid } from '@/components/AchievementLevelGrid';
 import { useGenerate } from '@/hooks/useGenerate';
 import { useExport } from '@/hooks/useExport';
-import { BookOpen, ChevronDown, ChevronUp, Info, Check, X, RotateCcw } from 'lucide-react';
+import { BookOpen, ChevronDown, ChevronUp, Info, Check, X, RotateCcw, Plus } from 'lucide-react';
 
 export function SubjectSection() {
   const {
@@ -36,6 +36,7 @@ export function SubjectSection() {
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [regeneratingStudent, setRegeneratingStudent] = useState<number | null>(null);
   const [showStandards, setShowStandards] = useState(false);
+  const [showAddStandards, setShowAddStandards] = useState(false);
 
   const { generate, regenerateSingle } = useGenerate({
     onError: (error) => alert(error),
@@ -83,11 +84,11 @@ export function SubjectSection() {
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
 
-    // 사용자가 선택한 성취기준에서만 랜덤 선택
+    // 사용자가 선택한 성취기준에서만 랜덤 선택 (다른 학기 추가 성취기준 포함)
     const key = `${selectedSubject.code}_${semester}`;
     const selectedCodes = selectedStandardCodes[key] || [];
-    const allStandards = getAchievementStandardsBySubject(classroom.grade, subjectName, semester as 1 | 2);
-    const filteredStandards = allStandards.filter(s => selectedCodes.includes(s.code));
+    const allGradeStds = getAchievementStandardsBySubject(classroom.grade, subjectName);
+    const filteredStandards = allGradeStds.filter(s => selectedCodes.includes(s.code));
     const standards = getRandomFromSelected(filteredStandards, subjectName);
 
     if (standards.length === 0) {
@@ -121,11 +122,11 @@ export function SubjectSection() {
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
 
-    // 사용자가 선택한 성취기준에서만 랜덤 선택
+    // 사용자가 선택한 성취기준에서만 랜덤 선택 (다른 학기 추가 성취기준 포함)
     const key = `${selectedSubject.code}_${semester}`;
     const selectedCodes = selectedStandardCodes[key] || [];
-    const allStandards = getAchievementStandardsBySubject(classroom.grade, subjectName, semester as 1 | 2);
-    const filteredStandards = allStandards.filter(s => selectedCodes.includes(s.code));
+    const allGradeStds = getAchievementStandardsBySubject(classroom.grade, subjectName);
+    const filteredStandards = allGradeStds.filter(s => selectedCodes.includes(s.code));
     const standards = getRandomFromSelected(filteredStandards, subjectName);
 
     setRegeneratingStudent(studentNumber);
@@ -169,12 +170,27 @@ export function SubjectSection() {
     ? getAchievementStandardsBySubject(classroom.grade, getSubjectNameFromCode(selectedSubject.code), currentSemester as 1 | 2)
     : [];
 
+  // 해당 학년의 모든 성취기준 가져오기 (1학기 + 2학기)
+  const allGradeStandards = selectedSubject && classroom
+    ? getAchievementStandardsBySubject(classroom.grade, getSubjectNameFromCode(selectedSubject.code))
+    : [];
+
+  // 다른 학기 성취기준 (현재 학기에 없는 것들)
+  const otherSemesterStandards = allGradeStandards.filter(
+    std => std.semester !== currentSemester
+  );
+
   // 현재 선택된 성취기준 코드 가져오기
   const standardKey = selectedSubject ? `${selectedSubject.code}_${currentSemester}` : '';
   const currentSelectedCodes = selectedStandardCodes[standardKey] || [];
 
   // 선택된 성취기준만 필터링
   const activeStandards = currentStandards.filter(std => currentSelectedCodes.includes(std.code));
+
+  // 추가된 다른 학기 성취기준 (currentSelectedCodes에 있지만 currentStandards에 없는 것)
+  const addedOtherStandards = allGradeStandards.filter(
+    std => currentSelectedCodes.includes(std.code) && !currentStandards.find(cs => cs.code === std.code)
+  );
 
   // 성취기준 초기화 (처음 로드 시 전체 선택)
   useEffect(() => {
@@ -265,7 +281,12 @@ export function SubjectSection() {
                     <div className="flex items-center gap-2 text-sm font-medium text-blue-700 dark:text-blue-300">
                       <Info className="w-4 h-4" />
                       <span>
-                        적용되는 성취기준 ({currentSelectedCodes.length}/{currentStandards.length}개 선택됨)
+                        적용되는 성취기준 ({currentSelectedCodes.length}개 선택됨)
+                        {addedOtherStandards.length > 0 && (
+                          <span className="text-green-600 dark:text-green-400 ml-1">
+                            (+{addedOtherStandards.length} 다른학기)
+                          </span>
+                        )}
                       </span>
                     </div>
                     {showStandards ? <ChevronUp className="w-4 h-4 text-blue-600" /> : <ChevronDown className="w-4 h-4 text-blue-600" />}
@@ -330,6 +351,76 @@ export function SubjectSection() {
                           <p className="text-sm text-gray-500">해당 학년/학기의 성취기준이 없습니다.</p>
                         )}
                       </div>
+
+                      {/* 추가된 다른 학기 성취기준 */}
+                      {addedOtherStandards.length > 0 && (
+                        <div className="mt-3 pt-3 border-t border-green-200 dark:border-green-800">
+                          <p className="text-xs text-green-600 dark:text-green-400 mb-2 font-medium">
+                            📌 추가된 다른 학기 성취기준 ({addedOtherStandards.length}개)
+                          </p>
+                          <ul className="space-y-1">
+                            {addedOtherStandards.map((std) => (
+                              <li
+                                key={std.code}
+                                onClick={() => handleToggleStandard(std.code)}
+                                className="text-sm flex gap-2 p-2 rounded cursor-pointer transition-all bg-green-50 dark:bg-green-900/30 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/50"
+                              >
+                                <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                                  <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
+                                </span>
+                                <span className="font-mono text-xs whitespace-nowrap text-green-600 dark:text-green-400">
+                                  {std.code}
+                                </span>
+                                <span className="flex-1">{std.content}</span>
+                                <span className="text-xs text-green-500 dark:text-green-400">
+                                  ({std.semester}학기)
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* 다른 학기 성취기준 추가 버튼 */}
+                      {otherSemesterStandards.length > 0 && (
+                        <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                          <button
+                            onClick={() => setShowAddStandards(!showAddStandards)}
+                            className="flex items-center gap-1 text-xs text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300"
+                          >
+                            <Plus className="w-3 h-3" />
+                            다른 학기 성취기준 추가하기 ({otherSemesterStandards.filter(s => !currentSelectedCodes.includes(s.code)).length}개 추가 가능)
+                            {showAddStandards ? <ChevronUp className="w-3 h-3 ml-1" /> : <ChevronDown className="w-3 h-3 ml-1" />}
+                          </button>
+
+                          {showAddStandards && (
+                            <div className="mt-2 max-h-48 overflow-y-auto">
+                              <ul className="space-y-1">
+                                {otherSemesterStandards
+                                  .filter(std => !currentSelectedCodes.includes(std.code))
+                                  .map((std) => (
+                                    <li
+                                      key={std.code}
+                                      onClick={() => handleToggleStandard(std.code)}
+                                      className="text-sm flex gap-2 p-2 rounded cursor-pointer transition-all bg-purple-50 dark:bg-purple-900/20 text-gray-600 dark:text-gray-400 hover:bg-purple-100 dark:hover:bg-purple-900/40"
+                                    >
+                                      <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                                        <Plus className="w-4 h-4 text-purple-500 dark:text-purple-400" />
+                                      </span>
+                                      <span className="font-mono text-xs whitespace-nowrap text-purple-600 dark:text-purple-400">
+                                        {std.code}
+                                      </span>
+                                      <span className="flex-1">{std.content}</span>
+                                      <span className="text-xs text-purple-500 dark:text-purple-400">
+                                        ({std.semester}학기)
+                                      </span>
+                                    </li>
+                                  ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
 
                       {/* 안내 메시지 */}
                       {currentSelectedCodes.length === 0 && currentStandards.length > 0 && (

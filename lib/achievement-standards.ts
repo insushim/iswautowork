@@ -308,23 +308,40 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6수05-01]', content: '평균의 의미를 알고, 주어진 자료의 평균을 구할 수 있으며, 이를 활용할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '자료와 가능성' },
 
   // ========== 수학 6학년 1학기 ==========
-  { code: '[6수01-07]', content: '(분수)×(자연수), (자연수)×(분수), (분수)×(분수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-08]', content: '(소수)×(자연수), (자연수)×(소수), (소수)×(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
-  { code: '[6수02-04]', content: '선대칭도형과 점대칭도형을 이해한다.', grade: 6, semester: 1, subject: '수학', domain: '도형' },
+  // 1단원: 분수의 나눗셈
+  { code: '[6수01-09]', content: '(자연수)÷(자연수)의 몫을 분수로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
+  { code: '[6수01-10]', content: '(분수)÷(자연수), (분수)÷(분수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
+  // 2단원: 각기둥과 각뿔
+  { code: '[6수02-05]', content: '각기둥과 각뿔을 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 1, subject: '수학', domain: '도형' },
+  { code: '[6수02-06]', content: '각기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '도형' },
+  // 3단원: 소수의 나눗셈
+  { code: '[6수01-11]', content: '(소수)÷(자연수), (소수)÷(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
+  // 4단원: 비와 비율
   { code: '[6수04-01]', content: '두 양의 크기를 비교하는 상황을 통해 비의 개념을 이해하고, 그 관계를 비로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '규칙성' },
   { code: '[6수04-02]', content: '비율을 이해하고, 비율을 분수, 소수, 백분율로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '규칙성' },
+  // 5단원: 여러 가지 그래프
   { code: '[6수05-02]', content: '자료를 수집, 분류, 정리하여 목적에 맞는 그래프로 나타내고, 그래프를 해석할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '자료와 가능성' },
+  { code: '[6수05-04]', content: '비율그래프(띠그래프, 원그래프)를 알고, 이를 해석할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '자료와 가능성' },
+  // 6단원: 직육면체의 부피와 겉넓이
+  { code: '[6수03-05]', content: '직육면체와 정육면체의 부피를 구하는 방법을 이해하고, 이를 통하여 부피의 단위 1㎤, 1㎥의 관계를 이해한다.', grade: 6, semester: 1, subject: '수학', domain: '측정' },
+  { code: '[6수03-04]', content: '직육면체와 정육면체의 겉넓이를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '측정' },
 
   // ========== 수학 6학년 2학기 ==========
-  { code: '[6수01-09]', content: '(자연수)÷(자연수)의 몫을 분수로 나타낼 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-10]', content: '(분수)÷(자연수), (분수)÷(분수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-11]', content: '(소수)÷(자연수), (소수)÷(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수02-05]', content: '각기둥과 각뿔을 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
-  { code: '[6수02-07]', content: '원기둥, 원뿔, 구를 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
-  { code: '[6수03-03]', content: '원주율의 의미를 이해하고, 원의 넓이를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
-  { code: '[6수03-05]', content: '직육면체와 정육면체의 부피를 구하는 방법을 이해하고, 이를 통하여 부피의 단위 1㎤, 1㎥의 관계를 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
+  // 1단원: 분수의 나눗셈 (심화)
+  { code: '[6수01-12]', content: '분수의 나눗셈을 실생활에 적용하여 문제를 해결할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
+  // 2단원: 소수의 나눗셈 (심화)
+  { code: '[6수01-13]', content: '소수의 나눗셈을 실생활에 적용하여 문제를 해결할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
+  // 3단원: 공간과 입체
+  { code: '[6수02-04]', content: '선대칭도형과 점대칭도형을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
+  { code: '[6수02-08]', content: '쌓기나무로 쌓은 모양과 쌓기나무의 개수를 추측하고 확인할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
+  // 4단원: 비례식과 비례배분
   { code: '[6수04-03]', content: '비례식을 알고, 그 성질을 이해하며, 이를 활용하여 간단한 비례식을 풀 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
-  { code: '[6수05-04]', content: '비율그래프(띠그래프, 원그래프)를 알고, 이를 해석할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '자료와 가능성' },
+  { code: '[6수04-04]', content: '비례배분을 알고, 이를 실생활에 적용하여 문제를 해결할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
+  // 5단원: 원의 넓이
+  { code: '[6수03-03]', content: '원주율의 의미를 이해하고, 원의 넓이를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
+  // 6단원: 원기둥, 원뿔, 구
+  { code: '[6수02-07]', content: '원기둥, 원뿔, 구를 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
+  { code: '[6수02-09]', content: '원기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
 
   // ========== 사회 3학년 1학기 ==========
   { code: '[4사01-01]', content: '우리 고장의 위치를 다양한 방법으로 표현한다.', grade: 3, semester: 1, subject: '사회', domain: '지리 인식' },
