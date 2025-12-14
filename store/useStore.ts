@@ -4,7 +4,7 @@ import {
   Classroom, Student, GeneratedRecord,
   AutonomousActivity, ClubActivity, VolunteerActivity, CareerActivity,
   SubjectAchievementLevel, BehaviorLevel, Theme, Semester,
-  StudentTalents, TalentLevel, TalentType
+  StudentTalents, TalentLevel, TalentType, AchievementStandard
 } from '@/types';
 
 interface AppStore {
@@ -39,6 +39,10 @@ interface AppStore {
 
   // 교과별 학기 선택
   subjectSemesters: Record<string, Semester>;
+
+  // 교과별 선택된 성취기준 (사용자가 넣기/빼기 가능)
+  // key: `${subjectCode}_${semester}`, value: 선택된 성취기준 코드 배열
+  selectedStandardCodes: Record<string, string[]>;
 
   // 행동수준 (5단계)
   behaviorLevels: BehaviorLevel[];
@@ -83,6 +87,11 @@ interface AppStore {
 
   setSubjectSemester: (subjectCode: string, semester: Semester) => void;
 
+  // 성취기준 선택/해제
+  toggleStandardCode: (subjectCode: string, semester: Semester, code: string) => void;
+  setSelectedStandardCodes: (subjectCode: string, semester: Semester, codes: string[]) => void;
+  initSelectedStandardCodes: (subjectCode: string, semester: Semester, allCodes: string[]) => void;
+
   setBehaviorLevel: (studentNumber: number, level: BehaviorLevel) => void;
   initBehaviorLevels: (count: number) => void;
   setAllBehaviorLevels: (level: BehaviorLevel) => void;
@@ -113,6 +122,7 @@ export const useStore = create<AppStore>()(
       currentCareerActivity: null,
       subjectAchievementLevels: {},
       subjectSemesters: {},
+      selectedStandardCodes: {},
       behaviorLevels: [],
       studentTalents: [],
       macroSettings: {
@@ -139,8 +149,8 @@ export const useStore = create<AppStore>()(
         classroom: null, students: [],
         autonomousRecords: [], clubRecords: [], volunteerRecords: [], careerRecords: [],
         subjectDevelopments: {}, behaviorRecords: [],
-        subjectAchievementLevels: {}, subjectSemesters: {}, behaviorLevels: [],
-        studentTalents: []
+        subjectAchievementLevels: {}, subjectSemesters: {}, selectedStandardCodes: {},
+        behaviorLevels: [], studentTalents: []
       }),
 
       setAutonomousRecords: (records) => set({ autonomousRecords: records }),
@@ -203,6 +213,34 @@ export const useStore = create<AppStore>()(
         subjectSemesters: { ...state.subjectSemesters, [subjectCode]: semester }
       })),
 
+      toggleStandardCode: (subjectCode, semester, code) => set((state) => {
+        const key = `${subjectCode}_${semester}`;
+        const current = state.selectedStandardCodes[key] || [];
+        const isSelected = current.includes(code);
+        const newCodes = isSelected
+          ? current.filter(c => c !== code)
+          : [...current, code];
+        return {
+          selectedStandardCodes: { ...state.selectedStandardCodes, [key]: newCodes }
+        };
+      }),
+
+      setSelectedStandardCodes: (subjectCode, semester, codes) => set((state) => {
+        const key = `${subjectCode}_${semester}`;
+        return {
+          selectedStandardCodes: { ...state.selectedStandardCodes, [key]: codes }
+        };
+      }),
+
+      initSelectedStandardCodes: (subjectCode, semester, allCodes) => set((state) => {
+        const key = `${subjectCode}_${semester}`;
+        // 이미 초기화된 경우 덮어쓰지 않음
+        if (state.selectedStandardCodes[key]) return state;
+        return {
+          selectedStandardCodes: { ...state.selectedStandardCodes, [key]: allCodes }
+        };
+      }),
+
       setBehaviorLevel: (studentNumber, level) => set((state) => {
         const levels = [...state.behaviorLevels];
         levels[studentNumber - 1] = level;
@@ -257,6 +295,7 @@ export const useStore = create<AppStore>()(
         behaviorRecords: state.behaviorRecords,
         subjectAchievementLevels: state.subjectAchievementLevels,
         subjectSemesters: state.subjectSemesters,
+        selectedStandardCodes: state.selectedStandardCodes,
         behaviorLevels: state.behaviorLevels,
         studentTalents: state.studentTalents,
       })
