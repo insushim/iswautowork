@@ -28,16 +28,38 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[4국05-01]', content: '시를 읽고 느낌과 생각을 다양하게 표현한다.', grade: 3, subject: '국어', domain: '문학' },
   { code: '[4국05-02]', content: '인물, 사건, 배경에 주목하며 작품을 이해한다.', grade: 4, subject: '국어', domain: '문학' },
 
-  // ========== 국어 5-6학년군 ==========
+  // ========== 국어 5-6학년군 (1학기) ==========
   { code: '[6국01-01]', content: '의견을 제시하고 함께 조정하며 토의한다.', grade: 5, subject: '국어', domain: '듣기·말하기' },
   { code: '[6국01-02]', content: '절차와 규칙을 지키며 토론한다.', grade: 5, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국01-03]', content: '목적과 상황에 맞게 내용을 구성하여 발표한다.', grade: 6, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국01-03]', content: '목적과 상황에 맞게 내용을 구성하여 발표한다.', grade: 5, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국01-04]', content: '적절한 표정, 몸짓, 말투로 말한다.', grade: 5, subject: '국어', domain: '듣기·말하기' },
   { code: '[6국02-01]', content: '글의 구조를 고려하여 글 전체의 내용을 요약한다.', grade: 5, subject: '국어', domain: '읽기' },
-  { code: '[6국02-02]', content: '글에 담긴 다양한 관점과 표현 방법을 평가한다.', grade: 6, subject: '국어', domain: '읽기' },
+  { code: '[6국02-02]', content: '읽기 경험과 느낌을 다른 사람과 나누는 활동에 참여한다.', grade: 5, subject: '국어', domain: '읽기' },
+  { code: '[6국02-03]', content: '글을 읽고 내용의 타당성과 표현의 적절성을 판단한다.', grade: 5, subject: '국어', domain: '읽기' },
   { code: '[6국03-01]', content: '목적이나 주제에 따라 알맞은 내용과 매체를 선정한다.', grade: 5, subject: '국어', domain: '쓰기' },
-  { code: '[6국03-02]', content: '독자를 존중하고 배려하며 글을 쓴다.', grade: 6, subject: '국어', domain: '쓰기' },
+  { code: '[6국03-02]', content: '적절한 근거와 알맞은 표현을 사용하여 주장하는 글을 쓴다.', grade: 5, subject: '국어', domain: '쓰기' },
+  { code: '[6국03-03]', content: '체험한 일에 대한 감상을 글로 표현한다.', grade: 5, subject: '국어', domain: '쓰기' },
   { code: '[6국04-01]', content: '언어는 생각을 표현하며 사고력을 발달시킴을 이해한다.', grade: 5, subject: '국어', domain: '문법' },
+  { code: '[6국04-02]', content: '낱말이 상황에 따라 다양하게 해석됨을 이해한다.', grade: 5, subject: '국어', domain: '문법' },
   { code: '[6국05-01]', content: '문학은 가치 있는 내용을 언어로 표현한 예술임을 이해한다.', grade: 5, subject: '국어', domain: '문학' },
+  { code: '[6국05-02]', content: '작품 속 세계와 현실 세계를 비교하며 작품을 감상한다.', grade: 5, subject: '국어', domain: '문학' },
+  { code: '[6국05-03]', content: '비유적 표현의 특성과 효과를 살려 작품을 쓴다.', grade: 5, subject: '국어', domain: '문학' },
+
+  // ========== 국어 5-6학년군 (2학기) ==========
+  { code: '[6국01-05]', content: '매체 자료를 활용하여 내용을 효과적으로 발표한다.', grade: 6, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국01-06]', content: '드라마의 일부를 바꾸어 표현한다.', grade: 6, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국01-07]', content: '상대를 배려하며 조언하는 대화를 나눈다.', grade: 6, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국02-04]', content: '글에 담긴 다양한 관점과 표현 방법을 평가한다.', grade: 6, subject: '국어', domain: '읽기' },
+  { code: '[6국02-05]', content: '자신의 읽기 습관을 점검하고 스스로 글을 찾아 읽는다.', grade: 6, subject: '국어', domain: '읽기' },
+  { code: '[6국02-06]', content: '다양한 관점에서 글의 내용을 비판적으로 읽는다.', grade: 6, subject: '국어', domain: '읽기' },
+  { code: '[6국03-04]', content: '독자를 존중하고 배려하며 글을 쓴다.', grade: 6, subject: '국어', domain: '쓰기' },
+  { code: '[6국03-05]', content: '글을 읽고 자신의 의견을 논리적으로 쓴다.', grade: 6, subject: '국어', domain: '쓰기' },
+  { code: '[6국03-06]', content: '쓰기 과정을 점검하고 고쳐 쓴다.', grade: 6, subject: '국어', domain: '쓰기' },
+  { code: '[6국04-03]', content: '높임법과 높임 표현을 상황에 맞게 사용한다.', grade: 6, subject: '국어', domain: '문법' },
+  { code: '[6국04-04]', content: '한글의 창제 원리와 우수성을 탐구한다.', grade: 6, subject: '국어', domain: '문법' },
+  { code: '[6국05-04]', content: '일상생활의 경험을 시나 이야기로 표현한다.', grade: 6, subject: '국어', domain: '문학' },
+  { code: '[6국05-05]', content: '작품에 대한 이해와 감상을 바탕으로 다른 사람과 소통한다.', grade: 6, subject: '국어', domain: '문학' },
+  { code: '[6국05-06]', content: '관용 표현과 속담을 이해하고 적절하게 활용한다.', grade: 6, subject: '국어', domain: '문학' },
 
   // ========== 수학 1-2학년군 ==========
   { code: '[2수01-01]', content: '0과 100까지의 수의 개념을 이해하고 수를 세고 쓸 수 있다.', grade: 1, subject: '수학', domain: '수와 연산' },
