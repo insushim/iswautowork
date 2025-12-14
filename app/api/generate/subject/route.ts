@@ -57,8 +57,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ records });
   } catch (error) {
     console.error('Subject generation error:', error);
+    const errorMessage = error instanceof Error ? error.message : '알 수 없는 오류';
     return NextResponse.json(
-      { error: '기록 생성에 실패했습니다.' },
+      { error: `기록 생성에 실패했습니다: ${errorMessage}` },
       { status: 500 }
     );
   }
