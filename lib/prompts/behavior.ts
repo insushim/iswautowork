@@ -1,17 +1,61 @@
 import { GRADE_CHARACTERISTICS, BEHAVIOR_LEVEL_INFO } from '../curriculum-data';
-import { BehaviorLevel } from '@/types';
+import { BehaviorLevel, StudentTalents, TalentLevel } from '@/types';
+
+const TALENT_LEVEL_TEXT: Record<TalentLevel, string> = {
+  none: '',
+  high: '뛰어남',
+  medium: '양호함',
+  low: '관심있음',
+};
+
+function getTalentDescription(talents: StudentTalents): string {
+  const parts: string[] = [];
+
+  if (talents.sports !== 'none') {
+    parts.push(`운동(${TALENT_LEVEL_TEXT[talents.sports]})`);
+  }
+  if (talents.music !== 'none') {
+    parts.push(`음악(${TALENT_LEVEL_TEXT[talents.music]})`);
+  }
+  if (talents.art !== 'none') {
+    parts.push(`미술(${TALENT_LEVEL_TEXT[talents.art]})`);
+  }
+
+  return parts.length > 0 ? ` [예체능 특기: ${parts.join(', ')}]` : '';
+}
 
 export function buildBehaviorPrompt(
   studentCount: number,
   grade: number,
-  behaviorLevels: BehaviorLevel[]
+  behaviorLevels: BehaviorLevel[],
+  studentTalents?: StudentTalents[]
 ): string {
   const gradeChar = GRADE_CHARACTERISTICS[grade];
 
   const levelList = behaviorLevels.map((level, idx) => {
     const levelInfo = BEHAVIOR_LEVEL_INFO[level];
-    return `${idx + 1}번: ${levelInfo.label} - ${levelInfo.description}`;
+    const talentDesc = studentTalents?.[idx] ? getTalentDescription(studentTalents[idx]) : '';
+    return `${idx + 1}번: ${levelInfo.label} - ${levelInfo.description}${talentDesc}`;
   }).join('\n');
+
+  // 예체능 특기가 있는 학생 수 계산
+  const sportsCount = studentTalents?.filter(t => t?.sports !== 'none').length || 0;
+  const musicCount = studentTalents?.filter(t => t?.music !== 'none').length || 0;
+  const artCount = studentTalents?.filter(t => t?.art !== 'none').length || 0;
+  const hasTalents = sportsCount > 0 || musicCount > 0 || artCount > 0;
+
+  const talentGuidelines = hasTalents ? `
+## 예체능 특기 작성 규칙 (중요!)
+- [예체능 특기: ...]가 표시된 학생만 해당 내용을 추가로 작성합니다.
+- 예체능 특기가 없는 학생은 예체능 관련 내용을 절대 포함하지 마세요!
+- 예체능 수준별 표현:
+  * 뛰어남(상): "~에 탁월한 재능을 보임", "~분야에서 두각을 나타냄", "~에 남다른 소질이 있음"
+  * 양호함(중): "~에 흥미와 소질을 보임", "~활동에 꾸준히 참여함", "~분야에서 성장하는 모습을 보임"
+  * 관심있음(하): "~에 관심을 가지고 노력함", "~활동에 즐겁게 참여함", "~분야에 대한 흥미가 있음"
+- 운동 특기: 체육활동, 스포츠, 신체활동, 운동능력 관련 내용
+- 음악 특기: 노래, 악기, 음악 감상, 리듬감, 음악 활동 관련 내용
+- 미술 특기: 그림, 만들기, 색채 감각, 창의적 표현, 미술 활동 관련 내용
+` : '';
 
   return `당신은 초등학교 ${grade}학년 담임교사입니다. NEIS 시스템에 입력할 '행동특성 및 종합의견'을 작성해야 합니다.
 

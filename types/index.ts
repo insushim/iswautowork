@@ -70,6 +70,21 @@ export type SubjectAchievementLevel = 'excellent' | 'good' | 'average' | 'fair' 
 export type BehaviorLevel = 'excellent' | 'good' | 'average' | 'fair' | 'needs_improvement';
 // 상 / 중상 / 중 / 중하 / 하
 
+// 예체능 특기 레벨 (3단계) - 선택하지 않으면 none
+export type TalentLevel = 'none' | 'high' | 'medium' | 'low';
+// 없음 / 상 / 중 / 하
+
+// 예체능 특기 타입
+export type TalentType = 'sports' | 'music' | 'art';
+// 운동 / 음악 / 미술
+
+// 학생별 예체능 특기 설정
+export interface StudentTalents {
+  sports: TalentLevel;
+  music: TalentLevel;
+  art: TalentLevel;
+}
+
 // 출판사 정보
 export type Publisher =
   | 'national' // 국정 (국어, 수학 - 1,2학년)
@@ -96,6 +111,7 @@ export interface AchievementStandard {
   code: string; // 예: [4국01-01]
   content: string;
   grade: number;
+  semester: 1 | 2; // 학기
   subject: string;
   domain: string; // 영역 (듣기·말하기, 읽기, 쓰기 등)
 }

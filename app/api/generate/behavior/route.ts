@@ -1,15 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateWithGemini, regenerateSingleRecord } from '@/lib/gemini';
 import { buildBehaviorPrompt } from '@/lib/prompts/behavior';
-import { BehaviorLevel } from '@/types';
+import { BehaviorLevel, StudentTalents } from '@/types';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { studentCount, grade, behaviorLevels, studentNumber, regenerateSingle } = body as {
+    const { studentCount, grade, behaviorLevels, studentTalents, studentNumber, regenerateSingle } = body as {
       studentCount: number;
       grade: number;
       behaviorLevels: BehaviorLevel[];
+      studentTalents?: StudentTalents[];
       studentNumber?: number;
       regenerateSingle?: boolean;
     };
@@ -21,7 +22,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const prompt = buildBehaviorPrompt(studentCount, grade, behaviorLevels);
+    const prompt = buildBehaviorPrompt(studentCount, grade, behaviorLevels, studentTalents);
 
     if (regenerateSingle && studentNumber) {
       const content = await regenerateSingleRecord(prompt, studentNumber);

@@ -63,7 +63,7 @@ export function SubjectSection() {
     const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
-    const standards = getAchievementStandardsBySubject(classroom.grade, subjectName);
+    const standards = getAchievementStandardsBySubject(classroom.grade, subjectName, semester);
 
     setIsGenerating(true, 'subject');
 
@@ -90,7 +90,7 @@ export function SubjectSection() {
     const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
-    const standards = getAchievementStandardsBySubject(classroom.grade, subjectName);
+    const standards = getAchievementStandardsBySubject(classroom.grade, subjectName, semester);
 
     setRegeneratingStudent(studentNumber);
 

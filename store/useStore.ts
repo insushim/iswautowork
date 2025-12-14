@@ -3,7 +3,8 @@ import { persist } from 'zustand/middleware';
 import {
   Classroom, Student, GeneratedRecord,
   AutonomousActivity, ClubActivity, VolunteerActivity, CareerActivity,
-  SubjectAchievementLevel, BehaviorLevel, Theme, Semester
+  SubjectAchievementLevel, BehaviorLevel, Theme, Semester,
+  StudentTalents, TalentLevel, TalentType
 } from '@/types';
 
 interface AppStore {
@@ -41,6 +42,9 @@ interface AppStore {
 
   // 행동수준 (5단계)
   behaviorLevels: BehaviorLevel[];
+
+  // 예체능 특기 (학생별)
+  studentTalents: StudentTalents[];
 
   // 매크로 설정
   macroSettings: {
@@ -83,6 +87,10 @@ interface AppStore {
   initBehaviorLevels: (count: number) => void;
   setAllBehaviorLevels: (level: BehaviorLevel) => void;
 
+  setStudentTalent: (studentNumber: number, talentType: TalentType, level: TalentLevel) => void;
+  initStudentTalents: (count: number) => void;
+  clearAllTalents: (talentType: TalentType) => void;
+
   setMacroSettings: (settings: Partial<AppStore['macroSettings']>) => void;
   setIsGenerating: (isGenerating: boolean, section?: string | null) => void;
 }
@@ -106,6 +114,7 @@ export const useStore = create<AppStore>()(
       subjectAchievementLevels: {},
       subjectSemesters: {},
       behaviorLevels: [],
+      studentTalents: [],
       macroSettings: {
         isActive: false,
         currentStudentIndex: 0,
@@ -130,7 +139,8 @@ export const useStore = create<AppStore>()(
         classroom: null, students: [],
         autonomousRecords: [], clubRecords: [], volunteerRecords: [], careerRecords: [],
         subjectDevelopments: {}, behaviorRecords: [],
-        subjectAchievementLevels: {}, subjectSemesters: {}, behaviorLevels: []
+        subjectAchievementLevels: {}, subjectSemesters: {}, behaviorLevels: [],
+        studentTalents: []
       }),
 
       setAutonomousRecords: (records) => set({ autonomousRecords: records }),
@@ -207,6 +217,23 @@ export const useStore = create<AppStore>()(
         behaviorLevels: Array(state.classroom?.studentCount || 0).fill(level)
       })),
 
+      setStudentTalent: (studentNumber, talentType, level) => set((state) => {
+        const talents = [...state.studentTalents];
+        if (!talents[studentNumber - 1]) {
+          talents[studentNumber - 1] = { sports: 'none', music: 'none', art: 'none' };
+        }
+        talents[studentNumber - 1] = { ...talents[studentNumber - 1], [talentType]: level };
+        return { studentTalents: talents };
+      }),
+
+      initStudentTalents: (count) => set({
+        studentTalents: Array(count).fill(null).map(() => ({ sports: 'none' as TalentLevel, music: 'none' as TalentLevel, art: 'none' as TalentLevel }))
+      }),
+
+      clearAllTalents: (talentType) => set((state) => ({
+        studentTalents: state.studentTalents.map(t => ({ ...t, [talentType]: 'none' as TalentLevel }))
+      })),
+
       setMacroSettings: (settings) => set((state) => ({
         macroSettings: { ...state.macroSettings, ...settings }
       })),
@@ -231,6 +258,7 @@ export const useStore = create<AppStore>()(
         subjectAchievementLevels: state.subjectAchievementLevels,
         subjectSemesters: state.subjectSemesters,
         behaviorLevels: state.behaviorLevels,
+        studentTalents: state.studentTalents,
       })
     }
   )
