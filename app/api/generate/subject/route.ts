@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateWithGemini, regenerateSingleRecord } from '@/lib/gemini';
 import { buildSubjectPrompt } from '@/lib/prompts/subject';
-import { SubjectAchievementLevel, Publisher, AchievementStandard } from '@/types';
+import { SubjectAchievementLevel, Publisher, AchievementStandard, Semester } from '@/types';
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,6 +13,7 @@ export async function POST(request: NextRequest) {
       subjectName,
       achievementLevels,
       publisher,
+      semester,
       achievementStandards,
       studentNumber,
       regenerateSingle,
@@ -23,6 +24,7 @@ export async function POST(request: NextRequest) {
       subjectName: string;
       achievementLevels: SubjectAchievementLevel[];
       publisher: Publisher;
+      semester: Semester;
       achievementStandards: AchievementStandard[];
       studentNumber?: number;
       regenerateSingle?: boolean;
@@ -42,6 +44,7 @@ export async function POST(request: NextRequest) {
       subjectName,
       achievementLevels,
       publisher || 'national',
+      semester || 1,
       achievementStandards || []
     );
 

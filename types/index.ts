@@ -119,3 +119,6 @@ export interface GenerateResponse {
 
 // 테마
 export type Theme = 'light' | 'dark';
+
+// 학기
+export type Semester = 1 | 2;

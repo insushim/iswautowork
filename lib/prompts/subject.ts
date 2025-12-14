@@ -1,6 +1,6 @@
 import { GRADE_CHARACTERISTICS, SUBJECT_LEVEL_INFO } from '../curriculum-data';
 import { PUBLISHERS } from '../publishers';
-import { SubjectAchievementLevel, Publisher, AchievementStandard } from '@/types';
+import { SubjectAchievementLevel, Publisher, AchievementStandard, Semester } from '@/types';
 
 export function buildSubjectPrompt(
   studentCount: number,
@@ -9,10 +9,12 @@ export function buildSubjectPrompt(
   subjectName: string,
   achievementLevels: SubjectAchievementLevel[],
   publisher: Publisher,
+  semester: Semester,
   achievementStandards: AchievementStandard[]
 ): string {
   const gradeChar = GRADE_CHARACTERISTICS[grade];
   const publisherInfo = PUBLISHERS[publisher];
+  const semesterText = semester === 1 ? '1학기' : '2학기';
 
   // 성취기준 문자열 생성
   const standardsText = achievementStandards.map(std =>
@@ -25,7 +27,7 @@ export function buildSubjectPrompt(
     return `${idx + 1}번: ${levelInfo.label} - ${levelInfo.description}`;
   }).join('\n');
 
-  return `당신은 초등학교 ${grade}학년 담임교사입니다. NEIS 시스템에 입력할 '${subjectName}' 교과의 '세부능력 및 특기사항'을 작성해야 합니다.
+  return `당신은 초등학교 ${grade}학년 담임교사입니다. NEIS 시스템에 입력할 '${subjectName}' 교과의 ${semesterText} '세부능력 및 특기사항'을 작성해야 합니다.
 
 ## 학년 특성
 ${gradeChar}
@@ -33,6 +35,7 @@ ${gradeChar}
 ## 교과 정보
 - 교과명: ${subjectName}
 - 학년: ${grade}학년
+- 학기: ${semesterText}
 - 교과서: ${publisherInfo.name}
 
 ## 2022 개정 교육과정 성취기준
@@ -45,7 +48,7 @@ ${levelList}
 1. 총 ${studentCount}명의 학생에 대해 각각의 성취 수준에 맞게 작성하세요.
 2. 모든 문장은 반드시 '~임.', '~함.', '~음.' 등 공문서체로 끝나야 합니다.
 3. 각 학생의 기록은 3-5문장, 150-250자 내외로 구성합니다.
-4. 위의 성취기준을 참고하여 해당 교과의 1년간 발달사항을 종합적으로 서술합니다.
+4. 위의 성취기준을 참고하여 해당 교과의 ${semesterText} 발달사항을 종합적으로 서술합니다.
 5. 성취 수준에 따라 차별화된 내용을 작성합니다:
    - '상': 성취기준을 완벽히 달성하고 심화 학습에 뛰어남, 창의적 활동 강조
    - '중상': 성취기준을 잘 달성하고 꾸준한 발전, 적극적 참여 강조
@@ -54,7 +57,7 @@ ${levelList}
    - '하': 기초 학습 의지와 앞으로의 성장 가능성을 긍정적으로 서술
 6. 모든 수준에서 학생의 긍정적인 면과 발전 가능성을 포함합니다.
 7. 같은 수준이라도 서로 다른 표현과 구체적인 성취기준 내용으로 작성합니다.
-8. ${grade}학년 ${subjectName} 교과의 실제 학습 내용(성취기준)을 반영합니다.
+8. ${grade}학년 ${subjectName} 교과의 ${semesterText} 실제 학습 내용(성취기준)을 반영합니다.
 
 ## 출력 형식
 각 학생별로 아래 형식으로 출력하세요. 번호 외에 다른 텍스트는 포함하지 마세요.

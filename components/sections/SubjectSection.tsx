@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useStore } from '@/store/useStore';
-import { Subject, SubjectAchievementLevel, Publisher } from '@/types';
+import { Subject, SubjectAchievementLevel, Publisher, Semester } from '@/types';
 import { getSubjectsByGrade } from '@/lib/curriculum-data';
 import { getPublishersForSubject, isNationalSubject, PUBLISHERS } from '@/lib/publishers';
 import { getAchievementStandardsBySubject, getSubjectNameFromCode } from '@/lib/achievement-standards';
@@ -25,6 +25,8 @@ export function SubjectSection() {
     setAllSubjectAchievementLevels,
     subjectPublishers,
     setSubjectPublisher,
+    subjectSemesters,
+    setSubjectSemester,
     isGenerating,
     setIsGenerating,
   } = useStore();
@@ -56,13 +58,17 @@ export function SubjectSection() {
         const publishers = getPublishersForSubject(selectedSubject.code);
         setSubjectPublisher(selectedSubject.code, publishers[0]);
       }
+      if (!subjectSemesters[selectedSubject.code]) {
+        setSubjectSemester(selectedSubject.code, 1);
+      }
     }
-  }, [selectedSubject, classroom, subjectAchievementLevels, subjectPublishers, initSubjectAchievementLevels, setSubjectPublisher]);
+  }, [selectedSubject, classroom, subjectAchievementLevels, subjectPublishers, subjectSemesters, initSubjectAchievementLevels, setSubjectPublisher, setSubjectSemester]);
 
   const handleGenerate = async () => {
     if (!classroom || !selectedSubject) return;
 
     const publisher = subjectPublishers[selectedSubject.code] || 'national';
+    const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
     const standards = getAchievementStandardsBySubject(classroom.grade, subjectName);
@@ -76,6 +82,7 @@ export function SubjectSection() {
       subjectName,
       achievementLevels: levels,
       publisher,
+      semester,
       achievementStandards: standards,
     });
 
@@ -90,6 +97,7 @@ export function SubjectSection() {
     if (!classroom || !selectedSubject) return;
 
     const publisher = subjectPublishers[selectedSubject.code] || 'national';
+    const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
     const standards = getAchievementStandardsBySubject(classroom.grade, subjectName);
@@ -103,6 +111,7 @@ export function SubjectSection() {
       subjectName,
       achievementLevels: levels,
       publisher,
+      semester,
       achievementStandards: standards,
     }, studentNumber);
 
@@ -129,6 +138,7 @@ export function SubjectSection() {
   const currentRecords = selectedSubject ? subjectDevelopments[selectedSubject.code] || [] : [];
   const currentLevels = selectedSubject ? subjectAchievementLevels[selectedSubject.code] || [] : [];
   const currentPublisher = selectedSubject ? subjectPublishers[selectedSubject.code] : undefined;
+  const currentSemester = selectedSubject ? subjectSemesters[selectedSubject.code] || 1 : 1;
   const availablePublishers = selectedSubject ? getPublishersForSubject(selectedSubject.code) : [];
   const isNational = selectedSubject ? isNationalSubject(selectedSubject.code) : true;
 
@@ -150,7 +160,7 @@ export function SubjectSection() {
 
         {isExpanded && (
           <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Select
                 label="교과 선택"
                 value={selectedSubject?.code || ''}
@@ -166,7 +176,20 @@ export function SubjectSection() {
                 ))}
               </Select>
 
-              {!isNational && (
+              <Select
+                label="학기 선택"
+                value={currentSemester.toString()}
+                onChange={(e) => {
+                  if (selectedSubject) {
+                    setSubjectSemester(selectedSubject.code, parseInt(e.target.value) as Semester);
+                  }
+                }}
+              >
+                <option value="1">1학기</option>
+                <option value="2">2학기</option>
+              </Select>
+
+              {!isNational ? (
                 <Select
                   label="출판사 선택"
                   value={currentPublisher || ''}
@@ -182,9 +205,7 @@ export function SubjectSection() {
                     </option>
                   ))}
                 </Select>
-              )}
-
-              {isNational && (
+              ) : (
                 <div className="flex items-end">
                   <p className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800 p-3 rounded-lg w-full">
                     국정교과서 사용 교과입니다.
