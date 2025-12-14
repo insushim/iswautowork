@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useStore } from '@/store/useStore';
 import { Subject, SubjectAchievementLevel, Semester } from '@/types';
 import { getSubjectsByGrade } from '@/lib/curriculum-data';
-import { getAchievementStandardsBySubject, getSubjectNameFromCode } from '@/lib/achievement-standards';
+import { getAchievementStandardsBySubject, getRandomAchievementStandards, getSubjectNameFromCode } from '@/lib/achievement-standards';
 import { Card, CardHeader, CardTitle, CardContent, Button, Select } from '@/components/ui';
 import { RecordList } from '@/components/RecordList';
 import { AchievementLevelGrid } from '@/components/AchievementLevelGrid';
@@ -64,7 +64,8 @@ export function SubjectSection() {
     const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
-    const standards = getAchievementStandardsBySubject(classroom.grade, subjectName, semester);
+    // AI 생성용: 국수사과영은 6개, 기타 과목은 3개 랜덤 선택
+    const standards = getRandomAchievementStandards(classroom.grade, subjectName, semester);
 
     setIsGenerating(true, 'subject');
 
@@ -91,7 +92,8 @@ export function SubjectSection() {
     const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
-    const standards = getAchievementStandardsBySubject(classroom.grade, subjectName, semester);
+    // AI 생성용: 국수사과영은 6개, 기타 과목은 3개 랜덤 선택
+    const standards = getRandomAchievementStandards(classroom.grade, subjectName, semester);
 
     setRegeneratingStudent(studentNumber);
 
