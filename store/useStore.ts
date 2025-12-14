@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 import {
   Classroom, Student, GeneratedRecord,
   AutonomousActivity, ClubActivity, VolunteerActivity, CareerActivity,
-  SubjectAchievementLevel, BehaviorLevel, Publisher, Theme, Semester
+  SubjectAchievementLevel, BehaviorLevel, Theme, Semester
 } from '@/types';
 
 interface AppStore {
@@ -35,9 +35,6 @@ interface AppStore {
 
   // 교과별 성취수준 (5단계)
   subjectAchievementLevels: Record<string, SubjectAchievementLevel[]>;
-
-  // 교과별 출판사 선택
-  subjectPublishers: Record<string, Publisher>;
 
   // 교과별 학기 선택
   subjectSemesters: Record<string, Semester>;
@@ -80,8 +77,6 @@ interface AppStore {
   initSubjectAchievementLevels: (subjectCode: string, count: number) => void;
   setAllSubjectAchievementLevels: (subjectCode: string, level: SubjectAchievementLevel) => void;
 
-  setSubjectPublisher: (subjectCode: string, publisher: Publisher) => void;
-
   setSubjectSemester: (subjectCode: string, semester: Semester) => void;
 
   setBehaviorLevel: (studentNumber: number, level: BehaviorLevel) => void;
@@ -109,7 +104,6 @@ export const useStore = create<AppStore>()(
       currentVolunteerActivity: null,
       currentCareerActivity: null,
       subjectAchievementLevels: {},
-      subjectPublishers: {},
       subjectSemesters: {},
       behaviorLevels: [],
       macroSettings: {
@@ -136,7 +130,7 @@ export const useStore = create<AppStore>()(
         classroom: null, students: [],
         autonomousRecords: [], clubRecords: [], volunteerRecords: [], careerRecords: [],
         subjectDevelopments: {}, behaviorRecords: [],
-        subjectAchievementLevels: {}, subjectPublishers: {}, subjectSemesters: {}, behaviorLevels: []
+        subjectAchievementLevels: {}, subjectSemesters: {}, behaviorLevels: []
       }),
 
       setAutonomousRecords: (records) => set({ autonomousRecords: records }),
@@ -195,10 +189,6 @@ export const useStore = create<AppStore>()(
         };
       }),
 
-      setSubjectPublisher: (subjectCode, publisher) => set((state) => ({
-        subjectPublishers: { ...state.subjectPublishers, [subjectCode]: publisher }
-      })),
-
       setSubjectSemester: (subjectCode, semester) => set((state) => ({
         subjectSemesters: { ...state.subjectSemesters, [subjectCode]: semester }
       })),
@@ -239,7 +229,6 @@ export const useStore = create<AppStore>()(
         subjectDevelopments: state.subjectDevelopments,
         behaviorRecords: state.behaviorRecords,
         subjectAchievementLevels: state.subjectAchievementLevels,
-        subjectPublishers: state.subjectPublishers,
         subjectSemesters: state.subjectSemesters,
         behaviorLevels: state.behaviorLevels,
       })

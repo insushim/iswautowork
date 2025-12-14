@@ -1,6 +1,5 @@
 import { GRADE_CHARACTERISTICS, SUBJECT_LEVEL_INFO } from '../curriculum-data';
-import { PUBLISHERS } from '../publishers';
-import { SubjectAchievementLevel, Publisher, AchievementStandard, Semester } from '@/types';
+import { SubjectAchievementLevel, AchievementStandard, Semester } from '@/types';
 
 // 과목별 성취기준 선택 개수 결정
 function getStandardCount(subjectName: string, grade: number): number {
@@ -45,12 +44,10 @@ export function buildSubjectPrompt(
   subjectCode: string,
   subjectName: string,
   achievementLevels: SubjectAchievementLevel[],
-  publisher: Publisher,
   semester: Semester,
   achievementStandards: AchievementStandard[]
 ): string {
   const gradeChar = GRADE_CHARACTERISTICS[grade];
-  const publisherInfo = PUBLISHERS[publisher];
   const semesterText = semester === 1 ? '1학기' : '2학기';
 
   // 성취기준 문자열 생성 (번호 붙여서)
@@ -77,7 +74,6 @@ ${gradeChar}
 - 교과명: ${subjectName}
 - 학년: ${grade}학년
 - 학기: ${semesterText}
-- 교과서: ${publisherInfo.name}
 
 ## 2022 개정 교육과정 성취기준 (총 ${totalStandards}개) - 참고용
 ${standardsText}

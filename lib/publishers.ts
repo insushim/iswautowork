@@ -13,31 +13,33 @@ export const PUBLISHERS: Record<Publisher, { name: string; shortName: string }> 
   ybm: { name: 'YBM', shortName: 'YBM' },
 };
 
-// 학년/교과별 출판사 매핑
+// 학년/교과별 출판사 매핑 (2025년 기준)
+// 국정: 국어, 도덕만 국정
+// 검정: 수학, 사회, 과학, 영어, 체육, 음악, 미술, 실과 등
 export const SUBJECT_PUBLISHERS: Record<string, Publisher[]> = {
-  // 1-2학년 (국정)
+  // 1-2학년 (국어, 바슬즐은 국정 / 수학은 검정)
   'korean_12': ['national'],
-  'math_12': ['national'],
+  'math_12': ['chunjae', 'donga', 'mirae', 'visang', 'kumsung', 'kyohak'],
   'righteous_life': ['national'],
   'wise_life': ['national'],
   'pleasant_life': ['national'],
 
-  // 3-4학년
-  'korean_34': ['national'], // 국어는 국정
-  'math_34': ['national'], // 수학은 국정
+  // 3-4학년 (국어, 도덕만 국정)
+  'korean_34': ['national'],
+  'math_34': ['chunjae', 'donga', 'mirae', 'visang', 'kumsung', 'kyohak'],
   'social_34': ['chunjae', 'donga', 'mirae', 'visang', 'jihak', 'kumsung'],
-  'moral_34': ['chunjae', 'donga', 'mirae', 'visang'],
+  'moral_34': ['national'],
   'science_34': ['chunjae', 'donga', 'mirae', 'visang', 'jihak', 'kumsung'],
   'pe_34': ['chunjae', 'donga', 'mirae', 'visang', 'kumsung', 'kyohak'],
   'music_34': ['chunjae', 'donga', 'mirae', 'visang', 'jihak', 'kumsung'],
   'art_34': ['chunjae', 'donga', 'mirae', 'visang', 'jihak', 'kumsung'],
   'english_34': ['chunjae', 'donga', 'ybm', 'visang'],
 
-  // 5-6학년
+  // 5-6학년 (국어, 도덕만 국정)
   'korean_56': ['national'],
-  'math_56': ['national'],
+  'math_56': ['chunjae', 'donga', 'mirae', 'visang', 'kumsung', 'kyohak'],
   'social_56': ['chunjae', 'donga', 'mirae', 'visang', 'jihak', 'kumsung'],
-  'moral_56': ['chunjae', 'donga', 'mirae', 'visang'],
+  'moral_56': ['national'],
   'science_56': ['chunjae', 'donga', 'mirae', 'visang', 'jihak', 'kumsung'],
   'practical_arts': ['chunjae', 'donga', 'mirae', 'visang', 'kumsung', 'kyohak'],
   'pe_56': ['chunjae', 'donga', 'mirae', 'visang', 'kumsung', 'kyohak'],
