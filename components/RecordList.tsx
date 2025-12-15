@@ -92,7 +92,7 @@ export function RecordList({
                   >
                     다음 복사
                   </Button>
-                  <Button variant="destructive" size="sm" onClick={stopMacro}>
+                  <Button variant="danger" size="sm" onClick={stopMacro}>
                     <Square className="w-4 h-4 mr-1" />
                     중지
                   </Button>
