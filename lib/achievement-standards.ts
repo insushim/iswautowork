@@ -720,16 +720,28 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6실03-02]', content: '절차적 사고에 의한 문제 분석과 해결 과정을 통해 알고리즘을 설계할 수 있다.', grade: 5, semester: 2, subject: '실과', domain: '기술 시스템' },
 
   // ========== 실과 6학년 1학기 - 2015 개정 교육과정 ==========
-  { code: '[6실04-01]', content: '프로그래밍 도구를 사용하여 기초적인 프로그래밍 과정을 체험할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '기술 시스템' },
-  { code: '[6실04-02]', content: '소프트웨어가 사용되는 다양한 사례를 알고 소프트웨어의 중요성을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '기술 시스템' },
-  { code: '[6실04-03]', content: '다양한 재료의 특성과 가공 방법을 알고 제품 만들기에 적용할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '기술 시스템' },
-  { code: '[6실04-04]', content: '발명의 의미와 중요성을 이해하고 간단한 발명 작품을 만들 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '기술 시스템' },
+  // 1단원: 나와 가족
+  { code: '[6실01-01]', content: '나와 가족의 관계를 알고 서로 돕고 의지하는 가족의 소중함을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '나와 가족' },
+  { code: '[6실01-02]', content: '가정생활에서 요구되는 기본 예절을 익히고, 올바른 언어와 행동으로 생활할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '나와 가족' },
+  // 2단원: 지속 가능한 미래 농업
+  { code: '[6실05-01]', content: '식물과 동물 자원의 중요성을 이해하고 식물과 동물을 기르는 방법을 익힐 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
+  { code: '[6실05-02]', content: '생활 속 전기, 전자 기술의 기초를 이해하고, 간단한 전기 회로를 구성할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
+  // 3단원: 소프트웨어와 생활
+  { code: '[6실04-01]', content: '프로그래밍 도구를 사용하여 기초적인 프로그래밍 과정을 체험할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '소프트웨어와 생활' },
+  { code: '[6실04-02]', content: '소프트웨어가 사용되는 다양한 사례를 알고 소프트웨어의 중요성을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '소프트웨어와 생활' },
 
   // ========== 실과 6학년 2학기 - 2015 개정 교육과정 ==========
-  { code: '[6실05-01]', content: '식물과 동물 자원의 중요성을 이해하고 식물과 동물을 기르는 방법을 익힐 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '기술 활용' },
-  { code: '[6실05-02]', content: '생활 속 전기, 전자 기술의 기초를 이해하고, 간단한 전기 회로를 구성할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '기술 활용' },
-  { code: '[6실05-03]', content: '로봇의 기초적인 개념과 작동 원리를 이해하고, 간단한 로봇을 구상하고 만들 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '기술 활용' },
-  { code: '[6실05-04]', content: '일과 직업의 의미와 중요성을 이해하고 자신의 흥미, 적성에 맞는 진로를 탐색할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '기술 활용' },
+  // 4단원: 발명과 로봇
+  { code: '[6실04-03]', content: '다양한 재료의 특성과 가공 방법을 알고 제품 만들기에 적용할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '발명과 로봇' },
+  { code: '[6실04-04]', content: '발명의 의미와 중요성을 이해하고 간단한 발명 작품을 만들 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '발명과 로봇' },
+  { code: '[6실05-03]', content: '로봇의 기초적인 개념과 작동 원리를 이해하고, 간단한 로봇을 구상하고 만들 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '발명과 로봇' },
+  // 5단원: 가정생활과 식품 안전
+  { code: '[6실02-01]', content: '자신과 가족의 영양 필요량을 이해하고 균형 잡힌 식사를 계획하여 실천할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정생활과 식품 안전' },
+  { code: '[6실02-02]', content: '조리의 기초를 이해하고 간단한 조리 도구를 이용하여 음식을 만들 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정생활과 식품 안전' },
+  // 6단원: 가정일과 자립
+  { code: '[6실02-03]', content: '간단한 수선 방법을 알고 옷 정리와 보관을 할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
+  { code: '[6실02-04]', content: '생활 자원의 종류와 특성을 알고, 효율적인 사용과 관리 방법을 탐색하여 실천할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
+  { code: '[6실05-04]', content: '일과 직업의 의미와 중요성을 이해하고 자신의 흥미, 적성에 맞는 진로를 탐색할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
 
   // ========== 바른 생활 1-2학년군 (1학기) ==========
   { code: '[2바01-01]', content: '학교생활에 필요한 규칙과 약속을 정하여 지킨다.', grade: 1, semester: 1, subject: '바른 생활', domain: '학교생활' },
