@@ -101,7 +101,7 @@ export function RecordList({
                 <>
                   {/* AutoHotkey 매크로용 복사 버튼 */}
                   <Button
-                    variant="default"
+                    variant="primary"
                     size="sm"
                     onClick={handleCopyForAutoHotkey}
                     className={ahkCopied ? "bg-green-600 hover:bg-green-700" : "bg-purple-600 hover:bg-purple-700"}
