@@ -85,6 +85,12 @@ export function useMacro({ records, delay = 2000 }: UseMacroOptions) {
     return copyToClipboard(allContent);
   }, [records, copyToClipboard]);
 
+  // AutoHotkey 매크로용 복사 (@@STUDENT@@ 구분자 사용)
+  const copyForAutoHotkey = useCallback(async () => {
+    const allContent = records.map(r => r.content).join('@@STUDENT@@');
+    return copyToClipboard(allContent);
+  }, [records, copyToClipboard]);
+
   // 매크로 시작 - 바로 1번 학생 복사
   const startMacro = useCallback(async () => {
     setIsActive(true);
@@ -131,6 +137,7 @@ export function useMacro({ records, delay = 2000 }: UseMacroOptions) {
     totalCount: records.length,
     copyNext,
     copyAll,
+    copyForAutoHotkey,
     copyToClipboard,
     startMacro,
     stopMacro,
