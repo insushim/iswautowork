@@ -724,8 +724,8 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6실01-01]', content: '나와 가족의 관계를 알고 서로 돕고 의지하는 가족의 소중함을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '나와 가족' },
   { code: '[6실01-02]', content: '가정생활에서 요구되는 기본 예절을 익히고, 올바른 언어와 행동으로 생활할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '나와 가족' },
   // 2단원: 지속 가능한 미래 농업
-  { code: '[6실05-01]', content: '식물과 동물 자원의 중요성을 이해하고 식물과 동물을 기르는 방법을 익힐 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
-  { code: '[6실05-02]', content: '생활 속 전기, 전자 기술의 기초를 이해하고, 간단한 전기 회로를 구성할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
+  { code: '[6실05-01]', content: '지속 가능한 미래 사회의 의미를 알고 친환경 농업의 중요성을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
+  { code: '[6실05-02]', content: '농업 활동이 우리 생활에 미치는 영향을 알고 다양한 농업 활동을 체험할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
   // 3단원: 소프트웨어와 생활
   { code: '[6실04-01]', content: '프로그래밍 도구를 사용하여 기초적인 프로그래밍 과정을 체험할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '소프트웨어와 생활' },
   { code: '[6실04-02]', content: '소프트웨어가 사용되는 다양한 사례를 알고 소프트웨어의 중요성을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '소프트웨어와 생활' },
