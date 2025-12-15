@@ -339,20 +339,20 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6수03-04]', content: '직육면체와 정육면체의 겉넓이를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '측정' },
 
   // ========== 수학 6학년 2학기 ==========
-  // 1단원: 분수의 나눗셈 (6학년 1학기에서 배운 내용 심화)
+  // 1단원: 분수의 나눗셈
   { code: '[6수01-09]', content: '(자연수)÷(자연수)의 몫을 분수로 나타낼 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
   { code: '[6수01-10]', content: '(분수)÷(자연수), (분수)÷(분수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  // 2단원: 소수의 나눗셈
-  { code: '[6수01-11]', content: '(소수)÷(자연수), (소수)÷(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  // 3단원: 공간과 입체
+  // 2단원: 공간과 입체
   { code: '[6수02-08]', content: '쌓기나무로 쌓은 모양과 쌓기나무의 개수를 추측하고 확인할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
   { code: '[6수02-10]', content: '공간에서 위치와 방향을 이용하여 물체의 위치를 나타낼 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
-  // 4단원: 비례식과 비례배분
-  { code: '[6수04-03]', content: '비례식을 알고, 그 성질을 이해하며, 이를 활용하여 간단한 비례식을 풀 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
-  { code: '[6수04-04]', content: '비례배분을 알고, 이를 실생활에 적용하여 문제를 해결할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
-  // 5단원: 원의 넓이
+  // 3단원: 소수의 나눗셈
+  { code: '[6수01-11]', content: '(소수)÷(자연수), (소수)÷(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
+  // 4단원: 원주율과 원의 넓이
   { code: '[6수03-06]', content: '원주와 원주율의 의미를 이해하고, 원주를 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
   { code: '[6수03-03]', content: '원주율의 의미를 이해하고, 원의 넓이를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
+  // 5단원: 비례식과 비례배분
+  { code: '[6수04-03]', content: '비례식을 알고, 그 성질을 이해하며, 이를 활용하여 간단한 비례식을 풀 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
+  { code: '[6수04-04]', content: '비례배분을 알고, 이를 실생활에 적용하여 문제를 해결할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
   // 6단원: 원기둥, 원뿔, 구
   { code: '[6수02-07]', content: '원기둥, 원뿔, 구를 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
   { code: '[6수02-09]', content: '원기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
