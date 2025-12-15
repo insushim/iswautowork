@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { GeneratedRecord } from '@/types';
 
 interface UseMacroOptions {
@@ -8,10 +8,12 @@ interface UseMacroOptions {
   delay?: number;
 }
 
-export function useMacro({ records, delay = 500 }: UseMacroOptions) {
+export function useMacro({ records, delay = 2000 }: UseMacroOptions) {
   const [isActive, setIsActive] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [copiedCount, setCopiedCount] = useState(0);
+  const [macroDelay, setMacroDelay] = useState(delay);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const copyToClipboard = useCallback(async (text: string) => {
     try {
@@ -23,39 +25,103 @@ export function useMacro({ records, delay = 500 }: UseMacroOptions) {
     }
   }, []);
 
-  const copyNext = useCallback(async () => {
-    if (currentIndex >= records.length) {
+  // 특정 인덱스의 학생 복사
+  const copyAtIndex = useCallback(async (index: number) => {
+    if (index >= records.length) {
       setIsActive(false);
       return false;
     }
 
-    const success = await copyToClipboard(records[currentIndex].content);
+    const success = await copyToClipboard(records[index].content);
     if (success) {
-      setCopiedCount(prev => prev + 1);
-      setCurrentIndex(prev => prev + 1);
+      setCopiedCount(index + 1);
+      setCurrentIndex(index);
     }
     return success;
-  }, [currentIndex, records, copyToClipboard]);
+  }, [records, copyToClipboard]);
+
+  // 다음 학생 복사
+  const copyNext = useCallback(async () => {
+    const nextIndex = currentIndex + 1;
+    if (nextIndex >= records.length) {
+      setIsActive(false);
+      return false;
+    }
+    return copyAtIndex(nextIndex);
+  }, [currentIndex, records.length, copyAtIndex]);
+
+  // 자동 매크로 실행
+  useEffect(() => {
+    if (!isActive) {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+      return;
+    }
+
+    // 마지막 학생까지 복사 완료
+    if (copiedCount >= records.length) {
+      setIsActive(false);
+      return;
+    }
+
+    // 첫 번째가 아니면 타이머로 다음 복사
+    if (copiedCount > 0 && copiedCount < records.length) {
+      timerRef.current = setTimeout(async () => {
+        await copyAtIndex(copiedCount);
+      }, macroDelay);
+    }
+
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [isActive, copiedCount, records.length, macroDelay, copyAtIndex]);
 
   const copyAll = useCallback(async () => {
     const allContent = records.map(r => `${r.studentNumber}번: ${r.content}`).join('\n\n');
     return copyToClipboard(allContent);
   }, [records, copyToClipboard]);
 
-  const startMacro = useCallback(() => {
+  // 매크로 시작 - 바로 1번 학생 복사
+  const startMacro = useCallback(async () => {
     setIsActive(true);
     setCurrentIndex(0);
     setCopiedCount(0);
-  }, []);
+
+    // 바로 1번 학생 복사
+    if (records.length > 0) {
+      const success = await copyToClipboard(records[0].content);
+      if (success) {
+        setCopiedCount(1);
+        setCurrentIndex(0);
+      }
+    }
+  }, [records, copyToClipboard]);
 
   const stopMacro = useCallback(() => {
     setIsActive(false);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
   }, []);
 
   const reset = useCallback(() => {
     setIsActive(false);
     setCurrentIndex(0);
     setCopiedCount(0);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+
+  // 딜레이 변경
+  const updateDelay = useCallback((newDelay: number) => {
+    setMacroDelay(newDelay);
   }, []);
 
   return {
@@ -69,6 +135,7 @@ export function useMacro({ records, delay = 500 }: UseMacroOptions) {
     startMacro,
     stopMacro,
     reset,
-    delay,
+    delay: macroDelay,
+    updateDelay,
   };
 }

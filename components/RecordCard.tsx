@@ -10,9 +10,10 @@ interface RecordCardProps {
   onUpdate: (content: string) => void;
   onRegenerate: () => Promise<void>;
   isRegenerating?: boolean;
+  isCurrentMacro?: boolean;
 }
 
-export function RecordCard({ record, onUpdate, onRegenerate, isRegenerating }: RecordCardProps) {
+export function RecordCard({ record, onUpdate, onRegenerate, isRegenerating, isCurrentMacro }: RecordCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editContent, setEditContent] = useState(record.content);
   const [copied, setCopied] = useState(false);
@@ -34,9 +35,19 @@ export function RecordCard({ record, onUpdate, onRegenerate, isRegenerating }: R
   };
 
   return (
-    <Card variant="bordered" className="p-4">
+    <Card
+      variant="bordered"
+      className={`p-4 transition-all ${
+        isCurrentMacro
+          ? 'ring-2 ring-green-500 bg-green-50 dark:bg-green-900/20'
+          : ''
+      }`}
+    >
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
+          {isCurrentMacro && (
+            <Badge variant="success" size="sm">복사됨</Badge>
+          )}
           <Badge variant="info">{record.studentNumber}번</Badge>
           {record.isEdited && (
             <Badge variant="warning" size="sm">수정됨</Badge>
