@@ -356,7 +356,6 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   // 6단원: 원기둥, 원뿔, 구
   { code: '[6수02-07]', content: '원기둥, 원뿔, 구를 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
   { code: '[6수02-09]', content: '원기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
-  { code: '[6수03-07]', content: '원기둥의 겉넓이와 부피를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
 
   // ========== 사회 3학년 1학기 ==========
   { code: '[4사01-01]', content: '우리 고장의 위치를 다양한 방법으로 표현한다.', grade: 3, semester: 1, subject: '사회', domain: '지리 인식' },
