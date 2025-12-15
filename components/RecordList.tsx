@@ -214,7 +214,7 @@ export function RecordList({
                 {delayOptions.map((option) => (
                   <Button
                     key={option.value}
-                    variant={delay === option.value ? 'default' : 'outline'}
+                    variant={delay === option.value ? 'primary' : 'outline'}
                     size="sm"
                     onClick={() => updateDelay(option.value)}
                   >
