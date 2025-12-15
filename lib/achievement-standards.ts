@@ -500,24 +500,28 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6과11-02]', content: '전기를 절약하고 안전하게 사용하는 방법을 알고 실천할 수 있다.', grade: 6, semester: 2, subject: '과학', domain: '운동과 에너지' },
   { code: '[6과12-02]', content: '계절에 따른 태양 고도, 기온, 낮의 길이 변화를 조사하고, 계절 변화의 원인을 설명할 수 있다.', grade: 6, semester: 2, subject: '과학', domain: '지구와 우주' },
 
-  // ========== 영어 3-4학년군 (1학기) ==========
+  // ========== 영어 3학년 1학기 ==========
   { code: '[4영01-01]', content: '알파벳 대소문자를 식별한다.', grade: 3, semester: 1, subject: '영어', domain: '듣기' },
   { code: '[4영01-02]', content: '쉽고 간단한 낱말이나 어구의 의미를 이해한다.', grade: 3, semester: 1, subject: '영어', domain: '듣기' },
-  { code: '[4영01-03]', content: '쉽고 간단한 문장을 듣고 이해한다.', grade: 3, semester: 1, subject: '영어', domain: '듣기' },
   { code: '[4영02-01]', content: '실물이나 그림을 보고 쉽고 간단한 낱말로 말한다.', grade: 3, semester: 1, subject: '영어', domain: '말하기' },
-  { code: '[4영02-02]', content: '한두 문장으로 자신을 소개한다.', grade: 3, semester: 1, subject: '영어', domain: '말하기' },
-  { code: '[4영02-03]', content: '일상생활에서 간단한 인사를 나눈다.', grade: 3, semester: 1, subject: '영어', domain: '말하기' },
-  { code: '[4영03-01]', content: '소리와 철자의 관계를 이해하며 낱말을 읽는다.', grade: 3, semester: 1, subject: '영어', domain: '읽기' },
   { code: '[4영04-01]', content: '알파벳 대소문자를 구별하여 쓴다.', grade: 3, semester: 1, subject: '영어', domain: '쓰기' },
 
-  // ========== 영어 3-4학년군 (2학기) ==========
-  { code: '[4영01-04]', content: '쉽고 간단한 대화를 듣고 이해한다.', grade: 4, semester: 2, subject: '영어', domain: '듣기' },
+  // ========== 영어 3학년 2학기 ==========
+  { code: '[4영01-03]', content: '쉽고 간단한 문장을 듣고 이해한다.', grade: 3, semester: 2, subject: '영어', domain: '듣기' },
+  { code: '[4영02-02]', content: '한두 문장으로 자신을 소개한다.', grade: 3, semester: 2, subject: '영어', domain: '말하기' },
+  { code: '[4영02-03]', content: '일상생활에서 간단한 인사를 나눈다.', grade: 3, semester: 2, subject: '영어', domain: '말하기' },
+  { code: '[4영03-01]', content: '소리와 철자의 관계를 이해하며 낱말을 읽는다.', grade: 3, semester: 2, subject: '영어', domain: '읽기' },
+
+  // ========== 영어 4학년 1학기 ==========
+  { code: '[4영01-04]', content: '쉽고 간단한 대화를 듣고 이해한다.', grade: 4, semester: 1, subject: '영어', domain: '듣기' },
+  { code: '[4영02-04]', content: '간단한 질문에 답한다.', grade: 4, semester: 1, subject: '영어', domain: '말하기' },
+  { code: '[4영03-02]', content: '쉽고 간단한 문장을 읽고 이해한다.', grade: 4, semester: 1, subject: '영어', domain: '읽기' },
+  { code: '[4영04-02]', content: '쉽고 간단한 낱말을 따라 쓴다.', grade: 4, semester: 1, subject: '영어', domain: '쓰기' },
+
+  // ========== 영어 4학년 2학기 ==========
   { code: '[4영01-05]', content: '간단한 지시나 설명을 듣고 이해한다.', grade: 4, semester: 2, subject: '영어', domain: '듣기' },
-  { code: '[4영02-04]', content: '간단한 질문에 답한다.', grade: 4, semester: 2, subject: '영어', domain: '말하기' },
   { code: '[4영02-05]', content: '일상생활에서 사용하는 간단한 표현을 말한다.', grade: 4, semester: 2, subject: '영어', domain: '말하기' },
-  { code: '[4영03-02]', content: '쉽고 간단한 문장을 읽고 이해한다.', grade: 4, semester: 2, subject: '영어', domain: '읽기' },
   { code: '[4영03-03]', content: '그림이나 실물과 관련된 문장을 읽고 이해한다.', grade: 4, semester: 2, subject: '영어', domain: '읽기' },
-  { code: '[4영04-02]', content: '쉽고 간단한 낱말을 따라 쓴다.', grade: 4, semester: 2, subject: '영어', domain: '쓰기' },
   { code: '[4영04-03]', content: '쉽고 간단한 낱말이나 어구를 보고 쓴다.', grade: 4, semester: 2, subject: '영어', domain: '쓰기' },
 
   // ========== 영어 5학년 1학기 - 2015 개정 교육과정 ==========
@@ -553,21 +557,29 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6영04-04]', content: '자신에 대한 한두 문장을 쓸 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '쓰기' },
   { code: '[6영04-05]', content: '예시문을 참고하여 간단한 초대, 감사, 축하, 안부 등의 글을 쓸 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '쓰기' },
 
-  // ========== 도덕 3-4학년군 (1학기) ==========
+  // ========== 도덕 3학년 1학기 ==========
   { code: '[4도01-01]', content: '정직의 의미와 중요성을 알고 생활 속에서 정직하게 행동한다.', grade: 3, semester: 1, subject: '도덕', domain: '자신과의 관계' },
   { code: '[4도01-02]', content: '자신의 장점을 발견하고 소중히 여기며 긍정적인 자아상을 형성한다.', grade: 3, semester: 1, subject: '도덕', domain: '자신과의 관계' },
   { code: '[4도01-03]', content: '자신의 감정을 적절하게 표현하고 조절하는 방법을 익힌다.', grade: 3, semester: 1, subject: '도덕', domain: '자신과의 관계' },
   { code: '[4도02-01]', content: '가정에서 예절을 지키며 가족을 존중하고 사랑한다.', grade: 3, semester: 1, subject: '도덕', domain: '타인과의 관계' },
-  { code: '[4도02-02]', content: '친구와 사이좋게 지내며 서로 돕는다.', grade: 3, semester: 1, subject: '도덕', domain: '타인과의 관계' },
-  { code: '[4도02-03]', content: '다른 사람의 처지를 이해하고 배려하는 마음을 가진다.', grade: 3, semester: 1, subject: '도덕', domain: '타인과의 관계' },
 
-  // ========== 도덕 3-4학년군 (2학기) ==========
-  { code: '[4도03-01]', content: '공익과 공정의 의미를 알고 생활 속에서 실천한다.', grade: 4, semester: 2, subject: '도덕', domain: '사회·공동체와의 관계' },
-  { code: '[4도03-02]', content: '규칙과 법의 중요성을 이해하고 준수한다.', grade: 4, semester: 2, subject: '도덕', domain: '사회·공동체와의 관계' },
-  { code: '[4도03-03]', content: '나라를 사랑하는 마음을 가진다.', grade: 4, semester: 2, subject: '도덕', domain: '사회·공동체와의 관계' },
-  { code: '[4도04-01]', content: '생명의 소중함을 알고 생명을 존중한다.', grade: 4, semester: 2, subject: '도덕', domain: '자연·초월과의 관계' },
-  { code: '[4도04-02]', content: '환경의 소중함을 알고 환경 보전에 참여한다.', grade: 4, semester: 2, subject: '도덕', domain: '자연·초월과의 관계' },
+  // ========== 도덕 3학년 2학기 ==========
+  { code: '[4도02-02]', content: '친구와 사이좋게 지내며 서로 돕는다.', grade: 3, semester: 2, subject: '도덕', domain: '타인과의 관계' },
+  { code: '[4도02-03]', content: '다른 사람의 처지를 이해하고 배려하는 마음을 가진다.', grade: 3, semester: 2, subject: '도덕', domain: '타인과의 관계' },
+  { code: '[4도02-04]', content: '예절의 의미와 중요성을 알고 예절 바른 생활을 한다.', grade: 3, semester: 2, subject: '도덕', domain: '타인과의 관계' },
+  { code: '[4도03-01]', content: '공익과 공정의 의미를 알고 생활 속에서 실천한다.', grade: 3, semester: 2, subject: '도덕', domain: '사회·공동체와의 관계' },
+
+  // ========== 도덕 4학년 1학기 ==========
+  { code: '[4도03-02]', content: '규칙과 법의 중요성을 이해하고 준수한다.', grade: 4, semester: 1, subject: '도덕', domain: '사회·공동체와의 관계' },
+  { code: '[4도03-03]', content: '나라를 사랑하는 마음을 가진다.', grade: 4, semester: 1, subject: '도덕', domain: '사회·공동체와의 관계' },
+  { code: '[4도04-01]', content: '생명의 소중함을 알고 생명을 존중한다.', grade: 4, semester: 1, subject: '도덕', domain: '자연·초월과의 관계' },
+  { code: '[4도04-02]', content: '환경의 소중함을 알고 환경 보전에 참여한다.', grade: 4, semester: 1, subject: '도덕', domain: '자연·초월과의 관계' },
+
+  // ========== 도덕 4학년 2학기 ==========
   { code: '[4도04-03]', content: '아름다운 마음의 중요성을 알고 가꾼다.', grade: 4, semester: 2, subject: '도덕', domain: '자연·초월과의 관계' },
+  { code: '[4도01-04]', content: '성실하게 생활하는 태도를 기르고 꾸준히 노력한다.', grade: 4, semester: 2, subject: '도덕', domain: '자신과의 관계' },
+  { code: '[4도02-05]', content: '협동의 의미와 중요성을 알고 협동하는 자세를 기른다.', grade: 4, semester: 2, subject: '도덕', domain: '타인과의 관계' },
+  { code: '[4도03-04]', content: '통일의 의미와 중요성을 알고 통일을 위해 노력하는 마음을 가진다.', grade: 4, semester: 2, subject: '도덕', domain: '사회·공동체와의 관계' },
 
   // ========== 도덕 5학년 1학기 - 2015 개정 교육과정 ==========
   { code: '[6도01-01]', content: '긍정적 생활을 하는 것이 자신과 다른 사람에게 주는 의미와 영향을 탐구하고, 자주적인 삶의 의미와 중요성을 설명할 수 있다.', grade: 5, semester: 1, subject: '도덕', domain: '자신과의 관계' },
@@ -596,21 +608,29 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   // 6단원: 함께 살아가는 지구촌
   { code: '[6도03-04]', content: '세계화 시대에 인류가 겪고 있는 문제와 그 원인을 토론을 통해 알아보고, 세계 시민으로서 이를 해결하고자 하는 의지를 가지고 실천한다.', grade: 6, semester: 2, subject: '도덕', domain: '사회·공동체와의 관계' },
 
-  // ========== 체육 3-4학년군 (1학기) ==========
+  // ========== 체육 3학년 1학기 ==========
   { code: '[4체01-01]', content: '건강의 의미와 중요성을 이해하고 건강한 생활 습관을 실천한다.', grade: 3, semester: 1, subject: '체육', domain: '건강' },
   { code: '[4체01-02]', content: '건강과 운동의 관계를 이해하고 규칙적으로 운동한다.', grade: 3, semester: 1, subject: '체육', domain: '건강' },
   { code: '[4체01-03]', content: '안전한 생활 습관의 중요성을 이해하고 실천한다.', grade: 3, semester: 1, subject: '체육', domain: '건강' },
   { code: '[4체02-01]', content: '여러 가지 도전 활동에 참여하며 도전 정신을 기른다.', grade: 3, semester: 1, subject: '체육', domain: '도전' },
-  { code: '[4체02-02]', content: '기록 도전 활동에 참여하고 자신의 기록을 향상시킨다.', grade: 3, semester: 1, subject: '체육', domain: '도전' },
-  { code: '[4체02-03]', content: '동작 도전 활동에 참여하며 꾸준히 연습한다.', grade: 3, semester: 1, subject: '체육', domain: '도전' },
 
-  // ========== 체육 3-4학년군 (2학기) ==========
-  { code: '[4체03-01]', content: '경쟁 활동에 참여하며 경쟁의 의미와 스포츠맨십을 이해한다.', grade: 4, semester: 2, subject: '체육', domain: '경쟁' },
-  { code: '[4체03-02]', content: '영역형 경쟁 활동에 참여하며 기본 기능을 익힌다.', grade: 4, semester: 2, subject: '체육', domain: '경쟁' },
-  { code: '[4체03-03]', content: '필드형 경쟁 활동에 참여하며 협동심을 기른다.', grade: 4, semester: 2, subject: '체육', domain: '경쟁' },
-  { code: '[4체04-01]', content: '표현 활동의 특성을 이해하고 다양하게 표현한다.', grade: 4, semester: 2, subject: '체육', domain: '표현' },
-  { code: '[4체04-02]', content: '리듬에 맞추어 움직이며 표현력을 기른다.', grade: 4, semester: 2, subject: '체육', domain: '표현' },
+  // ========== 체육 3학년 2학기 ==========
+  { code: '[4체02-02]', content: '기록 도전 활동에 참여하고 자신의 기록을 향상시킨다.', grade: 3, semester: 2, subject: '체육', domain: '도전' },
+  { code: '[4체02-03]', content: '동작 도전 활동에 참여하며 꾸준히 연습한다.', grade: 3, semester: 2, subject: '체육', domain: '도전' },
+  { code: '[4체03-01]', content: '경쟁 활동에 참여하며 경쟁의 의미와 스포츠맨십을 이해한다.', grade: 3, semester: 2, subject: '체육', domain: '경쟁' },
+  { code: '[4체03-02]', content: '영역형 경쟁 활동에 참여하며 기본 기능을 익힌다.', grade: 3, semester: 2, subject: '체육', domain: '경쟁' },
+
+  // ========== 체육 4학년 1학기 ==========
+  { code: '[4체03-03]', content: '필드형 경쟁 활동에 참여하며 협동심을 기른다.', grade: 4, semester: 1, subject: '체육', domain: '경쟁' },
+  { code: '[4체04-01]', content: '표현 활동의 특성을 이해하고 다양하게 표현한다.', grade: 4, semester: 1, subject: '체육', domain: '표현' },
+  { code: '[4체04-02]', content: '리듬에 맞추어 움직이며 표현력을 기른다.', grade: 4, semester: 1, subject: '체육', domain: '표현' },
+  { code: '[4체01-04]', content: '여러 가지 신체 활동을 통해 체력을 기른다.', grade: 4, semester: 1, subject: '체육', domain: '건강' },
+
+  // ========== 체육 4학년 2학기 ==========
   { code: '[4체04-03]', content: '다양한 움직임을 창의적으로 표현한다.', grade: 4, semester: 2, subject: '체육', domain: '표현' },
+  { code: '[4체02-04]', content: '표적 도전 활동에 참여하며 집중력을 기른다.', grade: 4, semester: 2, subject: '체육', domain: '도전' },
+  { code: '[4체03-04]', content: '네트형 경쟁 활동에 참여하며 규칙을 지킨다.', grade: 4, semester: 2, subject: '체육', domain: '경쟁' },
+  { code: '[4체01-05]', content: '위생과 청결의 중요성을 알고 생활 속에서 실천한다.', grade: 4, semester: 2, subject: '체육', domain: '건강' },
 
   // ========== 체육 5학년 1학기 - 2015 개정 교육과정 ==========
   { code: '[6체01-01]', content: '건강이 가지는 개인적, 사회적 의미와 건강 수준에 영향을 미치는 요인을 이해하고 적절한 운동을 실천할 수 있다.', grade: 5, semester: 1, subject: '체육', domain: '건강' },
@@ -634,21 +654,29 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6체04-02]', content: '리듬 표현의 개념과 특성을 탐색하고 다양한 리듬에 맞추어 신체 움직임으로 표현할 수 있다.', grade: 6, semester: 2, subject: '체육', domain: '표현' },
   { code: '[6체04-03]', content: '민속 표현의 개념과 특성을 탐색하고 전통 문화를 바르게 이해하며 표현할 수 있다.', grade: 6, semester: 2, subject: '체육', domain: '표현' },
 
-  // ========== 음악 3-4학년군 (1학기) ==========
+  // ========== 음악 3학년 1학기 ==========
   { code: '[4음01-01]', content: '악곡의 특징을 이해하며 노래 부르거나 악기로 연주한다.', grade: 3, semester: 1, subject: '음악', domain: '표현' },
   { code: '[4음01-02]', content: '바른 자세와 호흡으로 노래 부른다.', grade: 3, semester: 1, subject: '음악', domain: '표현' },
   { code: '[4음01-03]', content: '악기 연주법을 익혀 간단한 악곡을 연주한다.', grade: 3, semester: 1, subject: '음악', domain: '표현' },
-  { code: '[4음01-04]', content: '제재곡의 리듬과 가락을 표현한다.', grade: 3, semester: 1, subject: '음악', domain: '표현' },
   { code: '[4음02-01]', content: '음악의 구성 요소를 파악하며 음악을 감상한다.', grade: 3, semester: 1, subject: '음악', domain: '감상' },
-  { code: '[4음02-02]', content: '음악을 듣고 느낌을 다양하게 표현한다.', grade: 3, semester: 1, subject: '음악', domain: '감상' },
 
-  // ========== 음악 3-4학년군 (2학기) ==========
-  { code: '[4음01-05]', content: '간단한 가락을 만들어 표현한다.', grade: 4, semester: 2, subject: '음악', domain: '표현' },
-  { code: '[4음01-06]', content: '부분 2부 합창에 참여한다.', grade: 4, semester: 2, subject: '음악', domain: '표현' },
-  { code: '[4음01-07]', content: '간단한 합주에 참여한다.', grade: 4, semester: 2, subject: '음악', domain: '표현' },
-  { code: '[4음02-03]', content: '우리나라 음악의 특징을 이해하며 감상한다.', grade: 4, semester: 2, subject: '음악', domain: '감상' },
-  { code: '[4음02-04]', content: '다양한 나라의 음악을 감상한다.', grade: 4, semester: 2, subject: '음악', domain: '감상' },
-  { code: '[4음03-01]', content: '음악과 생활의 관계를 이해한다.', grade: 4, semester: 2, subject: '음악', domain: '생활화' },
+  // ========== 음악 3학년 2학기 ==========
+  { code: '[4음01-04]', content: '제재곡의 리듬과 가락을 표현한다.', grade: 3, semester: 2, subject: '음악', domain: '표현' },
+  { code: '[4음01-05]', content: '간단한 가락을 만들어 표현한다.', grade: 3, semester: 2, subject: '음악', domain: '표현' },
+  { code: '[4음02-02]', content: '음악을 듣고 느낌을 다양하게 표현한다.', grade: 3, semester: 2, subject: '음악', domain: '감상' },
+  { code: '[4음02-03]', content: '우리나라 음악의 특징을 이해하며 감상한다.', grade: 3, semester: 2, subject: '음악', domain: '감상' },
+
+  // ========== 음악 4학년 1학기 ==========
+  { code: '[4음01-06]', content: '부분 2부 합창에 참여한다.', grade: 4, semester: 1, subject: '음악', domain: '표현' },
+  { code: '[4음01-07]', content: '간단한 합주에 참여한다.', grade: 4, semester: 1, subject: '음악', domain: '표현' },
+  { code: '[4음02-04]', content: '다양한 나라의 음악을 감상한다.', grade: 4, semester: 1, subject: '음악', domain: '감상' },
+  { code: '[4음03-01]', content: '음악과 생활의 관계를 이해한다.', grade: 4, semester: 1, subject: '음악', domain: '생활화' },
+
+  // ========== 음악 4학년 2학기 ==========
+  { code: '[4음01-08]', content: '장단에 맞추어 노래 부르거나 악기로 연주한다.', grade: 4, semester: 2, subject: '음악', domain: '표현' },
+  { code: '[4음02-05]', content: '악기의 음색을 구별하며 음악을 감상한다.', grade: 4, semester: 2, subject: '음악', domain: '감상' },
+  { code: '[4음03-02]', content: '학교 행사에 적극적으로 참여하며 음악의 즐거움을 느낀다.', grade: 4, semester: 2, subject: '음악', domain: '생활화' },
+  { code: '[4음03-03]', content: '생활 속에서 다양한 음악을 즐기는 태도를 기른다.', grade: 4, semester: 2, subject: '음악', domain: '생활화' },
 
   // ========== 음악 5학년 1학기 - 2015 개정 교육과정 ==========
   { code: '[6음01-01]', content: '악곡의 특징을 이해하며 노래 부르거나 악기로 연주할 수 있다.', grade: 5, semester: 1, subject: '음악', domain: '표현' },
@@ -670,21 +698,29 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6음03-03]', content: '우리 음악을 연주하고 관련 행사에 참여함으로써 우리 음악에 대해 자부심을 갖는다.', grade: 6, semester: 2, subject: '음악', domain: '생활화' },
   { code: '[6음03-04]', content: '세계 여러 나라의 음악을 비교하고 문화적 특징을 이해할 수 있다.', grade: 6, semester: 2, subject: '음악', domain: '생활화' },
 
-  // ========== 미술 3-4학년군 (1학기) ==========
+  // ========== 미술 3학년 1학기 ==========
   { code: '[4미01-01]', content: '주변 대상을 관찰하여 자신의 느낌과 생각을 표현한다.', grade: 3, semester: 1, subject: '미술', domain: '체험' },
   { code: '[4미01-02]', content: '주변 환경에서 색, 형, 질감을 탐색한다.', grade: 3, semester: 1, subject: '미술', domain: '체험' },
-  { code: '[4미01-03]', content: '생활 속에서 미술의 역할을 탐색한다.', grade: 3, semester: 1, subject: '미술', domain: '체험' },
   { code: '[4미02-01]', content: '평면이나 입체에 다양한 표현 방법을 탐색한다.', grade: 3, semester: 1, subject: '미술', domain: '표현' },
   { code: '[4미02-02]', content: '다양한 재료와 용구를 활용하여 표현한다.', grade: 3, semester: 1, subject: '미술', domain: '표현' },
-  { code: '[4미02-03]', content: '관찰 대상의 특징을 살려 표현한다.', grade: 3, semester: 1, subject: '미술', domain: '표현' },
 
-  // ========== 미술 3-4학년군 (2학기) ==========
-  { code: '[4미02-04]', content: '상상의 세계를 다양하게 표현한다.', grade: 4, semester: 2, subject: '미술', domain: '표현' },
-  { code: '[4미02-05]', content: '주제를 탐색하여 자유롭게 표현한다.', grade: 4, semester: 2, subject: '미술', domain: '표현' },
-  { code: '[4미02-06]', content: '판화, 콜라주 등 다양한 표현 기법을 활용한다.', grade: 4, semester: 2, subject: '미술', domain: '표현' },
-  { code: '[4미03-01]', content: '미술 작품을 감상하고 느낌을 발표한다.', grade: 4, semester: 2, subject: '미술', domain: '감상' },
-  { code: '[4미03-02]', content: '다양한 시대와 문화의 미술 작품을 감상한다.', grade: 4, semester: 2, subject: '미술', domain: '감상' },
+  // ========== 미술 3학년 2학기 ==========
+  { code: '[4미01-03]', content: '생활 속에서 미술의 역할을 탐색한다.', grade: 3, semester: 2, subject: '미술', domain: '체험' },
+  { code: '[4미02-03]', content: '관찰 대상의 특징을 살려 표현한다.', grade: 3, semester: 2, subject: '미술', domain: '표현' },
+  { code: '[4미02-04]', content: '상상의 세계를 다양하게 표현한다.', grade: 3, semester: 2, subject: '미술', domain: '표현' },
+  { code: '[4미03-01]', content: '미술 작품을 감상하고 느낌을 발표한다.', grade: 3, semester: 2, subject: '미술', domain: '감상' },
+
+  // ========== 미술 4학년 1학기 ==========
+  { code: '[4미02-05]', content: '주제를 탐색하여 자유롭게 표현한다.', grade: 4, semester: 1, subject: '미술', domain: '표현' },
+  { code: '[4미02-06]', content: '판화, 콜라주 등 다양한 표현 기법을 활용한다.', grade: 4, semester: 1, subject: '미술', domain: '표현' },
+  { code: '[4미03-02]', content: '다양한 시대와 문화의 미술 작품을 감상한다.', grade: 4, semester: 1, subject: '미술', domain: '감상' },
+  { code: '[4미01-04]', content: '미술과 다른 교과의 관계를 탐색한다.', grade: 4, semester: 1, subject: '미술', domain: '체험' },
+
+  // ========== 미술 4학년 2학기 ==========
   { code: '[4미03-03]', content: '미술 작품을 비교하며 특징을 탐색한다.', grade: 4, semester: 2, subject: '미술', domain: '감상' },
+  { code: '[4미02-07]', content: '표현 방법과 과정을 계획하여 작품을 만든다.', grade: 4, semester: 2, subject: '미술', domain: '표현' },
+  { code: '[4미01-05]', content: '미술 작품 속 이야기를 상상하고 표현한다.', grade: 4, semester: 2, subject: '미술', domain: '체험' },
+  { code: '[4미03-04]', content: '우리 지역의 미술 작품과 미술가를 알아본다.', grade: 4, semester: 2, subject: '미술', domain: '감상' },
 
   // ========== 미술 5학년 1학기 - 2015 개정 교육과정 ==========
   { code: '[6미01-01]', content: '자신의 특징을 다양한 방법으로 탐색하여 나타낼 수 있다.', grade: 5, semester: 1, subject: '미술', domain: '체험' },
@@ -743,47 +779,83 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6실02-04]', content: '생활 자원의 종류와 특성을 알고, 효율적인 사용과 관리 방법을 탐색하여 실천할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
   { code: '[6실05-04]', content: '일과 직업의 의미와 중요성을 이해하고 자신의 흥미, 적성에 맞는 진로를 탐색할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
 
-  // ========== 바른 생활 1-2학년군 (1학기) ==========
+  // ========== 바른 생활 1학년 1학기 ==========
   { code: '[2바01-01]', content: '학교생활에 필요한 규칙과 약속을 정하여 지킨다.', grade: 1, semester: 1, subject: '바른 생활', domain: '학교생활' },
   { code: '[2바01-02]', content: '학교에서 다른 사람을 배려하며 생활한다.', grade: 1, semester: 1, subject: '바른 생활', domain: '학교생활' },
   { code: '[2바01-03]', content: '학교생활을 즐겁게 하는 방법을 익힌다.', grade: 1, semester: 1, subject: '바른 생활', domain: '학교생활' },
   { code: '[2바02-01]', content: '가족의 소중함을 알고 서로 존중하며 생활한다.', grade: 1, semester: 1, subject: '바른 생활', domain: '가정생활' },
   { code: '[2바02-02]', content: '가정에서 자신의 역할을 알고 실천한다.', grade: 1, semester: 1, subject: '바른 생활', domain: '가정생활' },
 
-  // ========== 바른 생활 1-2학년군 (2학기) ==========
-  { code: '[2바03-01]', content: '공공장소에서 지켜야 할 예절을 알고 지킨다.', grade: 2, semester: 2, subject: '바른 생활', domain: '사회생활' },
-  { code: '[2바03-02]', content: '이웃과 더불어 살아가는 방법을 익힌다.', grade: 2, semester: 2, subject: '바른 생활', domain: '사회생활' },
-  { code: '[2바04-01]', content: '자연과 생명의 소중함을 알고 존중한다.', grade: 2, semester: 2, subject: '바른 생활', domain: '자연생활' },
-  { code: '[2바04-02]', content: '환경을 보호하는 습관을 기른다.', grade: 2, semester: 2, subject: '바른 생활', domain: '자연생활' },
-  { code: '[2바05-01]', content: '우리나라를 상징하는 것을 알고 사랑하는 마음을 가진다.', grade: 2, semester: 2, subject: '바른 생활', domain: '나라사랑' },
+  // ========== 바른 생활 1학년 2학기 ==========
+  { code: '[2바02-03]', content: '가정에서 예절 바르게 생활한다.', grade: 1, semester: 2, subject: '바른 생활', domain: '가정생활' },
+  { code: '[2바02-04]', content: '물건을 아껴 쓰고 소중히 다룬다.', grade: 1, semester: 2, subject: '바른 생활', domain: '가정생활' },
+  { code: '[2바03-01]', content: '공공장소에서 지켜야 할 예절을 알고 지킨다.', grade: 1, semester: 2, subject: '바른 생활', domain: '사회생활' },
+  { code: '[2바03-02]', content: '이웃과 더불어 살아가는 방법을 익힌다.', grade: 1, semester: 2, subject: '바른 생활', domain: '사회생활' },
+  { code: '[2바04-01]', content: '자연과 생명의 소중함을 알고 존중한다.', grade: 1, semester: 2, subject: '바른 생활', domain: '자연생활' },
 
-  // ========== 슬기로운 생활 1-2학년군 (1학기) ==========
+  // ========== 바른 생활 2학년 1학기 ==========
+  { code: '[2바04-02]', content: '환경을 보호하는 습관을 기른다.', grade: 2, semester: 1, subject: '바른 생활', domain: '자연생활' },
+  { code: '[2바04-03]', content: '동식물을 사랑하는 마음을 가진다.', grade: 2, semester: 1, subject: '바른 생활', domain: '자연생활' },
+  { code: '[2바05-01]', content: '우리나라를 상징하는 것을 알고 사랑하는 마음을 가진다.', grade: 2, semester: 1, subject: '바른 생활', domain: '나라사랑' },
+  { code: '[2바05-02]', content: '우리나라의 전통문화에 관심을 가진다.', grade: 2, semester: 1, subject: '바른 생활', domain: '나라사랑' },
+  { code: '[2바05-03]', content: '다른 나라의 문화를 존중하는 태도를 가진다.', grade: 2, semester: 1, subject: '바른 생활', domain: '나라사랑' },
+
+  // ========== 바른 생활 2학년 2학기 ==========
+  { code: '[2바01-04]', content: '바른 자세로 생활한다.', grade: 2, semester: 2, subject: '바른 생활', domain: '학교생활' },
+  { code: '[2바01-05]', content: '정리정돈하는 습관을 기른다.', grade: 2, semester: 2, subject: '바른 생활', domain: '학교생활' },
+  { code: '[2바03-03]', content: '공공시설물을 바르게 사용한다.', grade: 2, semester: 2, subject: '바른 생활', domain: '사회생활' },
+  { code: '[2바03-04]', content: '안전하게 생활하는 습관을 기른다.', grade: 2, semester: 2, subject: '바른 생활', domain: '사회생활' },
+  { code: '[2바05-04]', content: '통일의 의미를 알고 평화를 소중히 여긴다.', grade: 2, semester: 2, subject: '바른 생활', domain: '나라사랑' },
+
+  // ========== 슬기로운 생활 1학년 1학기 ==========
   { code: '[2슬01-01]', content: '학교의 여러 장소의 위치와 역할을 알아본다.', grade: 1, semester: 1, subject: '슬기로운 생활', domain: '학교와 나' },
   { code: '[2슬01-02]', content: '학교에서 만나는 사람들의 역할을 탐색한다.', grade: 1, semester: 1, subject: '슬기로운 생활', domain: '학교와 나' },
   { code: '[2슬01-03]', content: '학교생활에 필요한 것을 조사한다.', grade: 1, semester: 1, subject: '슬기로운 생활', domain: '학교와 나' },
   { code: '[2슬02-01]', content: '가족 구성원을 알고 가정에서 하는 일을 알아본다.', grade: 1, semester: 1, subject: '슬기로운 생활', domain: '가정과 나' },
   { code: '[2슬02-02]', content: '가족의 사랑과 행복을 느낄 수 있는 활동을 한다.', grade: 1, semester: 1, subject: '슬기로운 생활', domain: '가정과 나' },
 
-  // ========== 슬기로운 생활 1-2학년군 (2학기) ==========
-  { code: '[2슬03-01]', content: '계절에 따른 자연의 변화를 관찰한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '자연과 나' },
-  { code: '[2슬03-02]', content: '주변 동식물의 특징을 탐색한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '자연과 나' },
-  { code: '[2슬03-03]', content: '자연 현상을 관찰하고 특징을 표현한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '자연과 나' },
-  { code: '[2슬04-01]', content: '이웃의 역할과 이웃 간의 관계를 탐색한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '이웃과 나' },
-  { code: '[2슬04-02]', content: '마을에서 볼 수 있는 것들을 조사한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '이웃과 나' },
+  // ========== 슬기로운 생활 1학년 2학기 ==========
+  { code: '[2슬02-03]', content: '가정의 물건을 탐색하고 그 쓰임새를 안다.', grade: 1, semester: 2, subject: '슬기로운 생활', domain: '가정과 나' },
+  { code: '[2슬03-01]', content: '계절에 따른 자연의 변화를 관찰한다.', grade: 1, semester: 2, subject: '슬기로운 생활', domain: '자연과 나' },
+  { code: '[2슬03-02]', content: '주변 동식물의 특징을 탐색한다.', grade: 1, semester: 2, subject: '슬기로운 생활', domain: '자연과 나' },
+  { code: '[2슬03-03]', content: '자연 현상을 관찰하고 특징을 표현한다.', grade: 1, semester: 2, subject: '슬기로운 생활', domain: '자연과 나' },
 
-  // ========== 즐거운 생활 1-2학년군 (1학기) ==========
+  // ========== 슬기로운 생활 2학년 1학기 ==========
+  { code: '[2슬04-01]', content: '이웃의 역할과 이웃 간의 관계를 탐색한다.', grade: 2, semester: 1, subject: '슬기로운 생활', domain: '이웃과 나' },
+  { code: '[2슬04-02]', content: '마을에서 볼 수 있는 것들을 조사한다.', grade: 2, semester: 1, subject: '슬기로운 생활', domain: '이웃과 나' },
+  { code: '[2슬04-03]', content: '우리 마을의 모습과 특징을 탐색한다.', grade: 2, semester: 1, subject: '슬기로운 생활', domain: '이웃과 나' },
+  { code: '[2슬05-01]', content: '우리나라를 상징하는 것을 찾아본다.', grade: 2, semester: 1, subject: '슬기로운 생활', domain: '나라와 나' },
+
+  // ========== 슬기로운 생활 2학년 2학기 ==========
+  { code: '[2슬05-02]', content: '우리나라의 전통문화를 탐색한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '나라와 나' },
+  { code: '[2슬05-03]', content: '다른 나라의 문화를 탐색하고 비교한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '나라와 나' },
+  { code: '[2슬06-01]', content: '나의 성장 과정을 탐색한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '나의 성장' },
+  { code: '[2슬06-02]', content: '미래의 나의 모습을 상상하고 표현한다.', grade: 2, semester: 2, subject: '슬기로운 생활', domain: '나의 성장' },
+
+  // ========== 즐거운 생활 1학년 1학기 ==========
   { code: '[2즐01-01]', content: '학교생활을 소재로 다양한 놀이와 표현을 한다.', grade: 1, semester: 1, subject: '즐거운 생활', domain: '표현활동' },
   { code: '[2즐01-02]', content: '간단한 노래를 부르며 율동한다.', grade: 1, semester: 1, subject: '즐거운 생활', domain: '표현활동' },
   { code: '[2즐01-03]', content: '다양한 재료를 활용하여 만들기를 한다.', grade: 1, semester: 1, subject: '즐거운 생활', domain: '표현활동' },
   { code: '[2즐02-01]', content: '주변의 자연과 생활에서 아름다움을 느끼고 표현한다.', grade: 1, semester: 1, subject: '즐거운 생활', domain: '감상활동' },
   { code: '[2즐02-02]', content: '음악과 미술 작품을 감상하고 느낌을 나눈다.', grade: 1, semester: 1, subject: '즐거운 생활', domain: '감상활동' },
 
-  // ========== 즐거운 생활 1-2학년군 (2학기) ==========
-  { code: '[2즐03-01]', content: '친구와 함께 하는 다양한 놀이를 경험한다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '놀이활동' },
-  { code: '[2즐03-02]', content: '계절과 관련된 놀이에 참여한다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '놀이활동' },
-  { code: '[2즐04-01]', content: '상상력을 발휘하여 이야기를 꾸민다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '표현활동' },
-  { code: '[2즐04-02]', content: '역할 놀이나 인형극에 참여한다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '표현활동' },
-  { code: '[2즐04-03]', content: '우리나라 전통 놀이와 문화를 경험한다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '문화체험' },
+  // ========== 즐거운 생활 1학년 2학기 ==========
+  { code: '[2즐02-03]', content: '계절의 변화를 느끼고 다양하게 표현한다.', grade: 1, semester: 2, subject: '즐거운 생활', domain: '감상활동' },
+  { code: '[2즐03-01]', content: '친구와 함께 하는 다양한 놀이를 경험한다.', grade: 1, semester: 2, subject: '즐거운 생활', domain: '놀이활동' },
+  { code: '[2즐03-02]', content: '계절과 관련된 놀이에 참여한다.', grade: 1, semester: 2, subject: '즐거운 생활', domain: '놀이활동' },
+  { code: '[2즐03-03]', content: '가족과 함께 할 수 있는 놀이를 경험한다.', grade: 1, semester: 2, subject: '즐거운 생활', domain: '놀이활동' },
+
+  // ========== 즐거운 생활 2학년 1학기 ==========
+  { code: '[2즐04-01]', content: '상상력을 발휘하여 이야기를 꾸민다.', grade: 2, semester: 1, subject: '즐거운 생활', domain: '표현활동' },
+  { code: '[2즐04-02]', content: '역할 놀이나 인형극에 참여한다.', grade: 2, semester: 1, subject: '즐거운 생활', domain: '표현활동' },
+  { code: '[2즐04-03]', content: '우리 동네의 모습을 다양하게 표현한다.', grade: 2, semester: 1, subject: '즐거운 생활', domain: '표현활동' },
+  { code: '[2즐05-01]', content: '다양한 재료로 창의적인 작품을 만든다.', grade: 2, semester: 1, subject: '즐거운 생활', domain: '창작활동' },
+
+  // ========== 즐거운 생활 2학년 2학기 ==========
+  { code: '[2즐05-02]', content: '우리나라 전통 놀이와 문화를 경험한다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '문화체험' },
+  { code: '[2즐05-03]', content: '다른 나라의 놀이와 문화를 체험한다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '문화체험' },
+  { code: '[2즐06-01]', content: '나의 꿈을 다양한 방법으로 표현한다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '표현활동' },
+  { code: '[2즐06-02]', content: '성장한 나의 모습을 친구들과 나눈다.', grade: 2, semester: 2, subject: '즐거운 생활', domain: '표현활동' },
 ];
 
 // 학년, 학기, 교과로 성취기준 필터링 (정확한 학년+학기 매칭)
