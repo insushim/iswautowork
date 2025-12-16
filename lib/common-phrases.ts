@@ -7,10 +7,10 @@ type GradeGroup = '1-2' | '3-4' | '5-6';
 
 interface CommonPhrases {
   excellent: string[];      // 상
-  above_average: string[];  // 중상
+  good: string[];           // 중상
   average: string[];        // 중
-  below_average: string[];  // 중하
-  needs_improvement: string[]; // 하
+  fair: string[];           // 중하
+  needs_effort: string[];   // 하
 }
 
 // 학년군 판별
@@ -29,7 +29,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '자신의 생각을 또박또박 말로 잘 표현함.',
         '받아쓰기와 글씨 쓰기에서 정확성이 돋보임.',
       ],
-      above_average: [
+      good: [
         '책 읽기에 흥미를 보이며 꾸준히 읽기 활동에 참여함.',
         '말하기와 듣기 활동에 적극적으로 참여함.',
         '바른 글씨체로 문장을 성실하게 씀.',
@@ -39,12 +39,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '발표 활동에 참여하며 자신의 생각을 표현함.',
         '문장 쓰기를 꾸준히 연습함.',
       ],
-      below_average: [
+      fair: [
         '글자와 낱말 읽기에 노력하는 모습을 보임.',
         '친구들 앞에서 말하기를 시도하며 발전함.',
         '글씨 쓰기 연습을 통해 향상되고 있음.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '글자 읽기에 관심을 보이며 배우고 있음.',
         '선생님 도움을 받아 말하기 활동에 참여함.',
         '글씨 쓰기를 조금씩 익혀가고 있음.',
@@ -56,7 +56,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '자신의 생각을 조리 있게 말하고 글로 표현하는 능력이 뛰어남.',
         '어휘력이 풍부하고 맞춤법에 맞게 글을 정확하게 씀.',
       ],
-      above_average: [
+      good: [
         '책 읽기를 즐기며 다양한 글감에 관심을 보임.',
         '토의와 발표 활동에 적극적으로 참여하며 의견을 잘 전달함.',
         '글쓰기에 성실하게 임하며 꾸준히 발전함.',
@@ -66,12 +66,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '발표 활동에 참여하며 자신의 의견을 표현함.',
         '문장을 만들어 글로 표현할 수 있음.',
       ],
-      below_average: [
+      fair: [
         '글 읽기에 노력하며 내용 이해력이 향상되고 있음.',
         '발표 활동에 참여하려는 의지를 보임.',
         '글쓰기 연습을 통해 문장력이 발전함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '글 읽기에 흥미를 갖기 시작함.',
         '친구들의 발표를 듣고 따라서 말해보려고 시도함.',
         '짧은 문장 쓰기를 연습하며 익히고 있음.',
@@ -83,7 +83,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '자신의 생각을 논리적으로 구성하여 설득력 있게 표현함.',
         '맞춤법과 문법에 맞는 정확한 글쓰기 능력이 뛰어남.',
       ],
-      above_average: [
+      good: [
         '다양한 장르의 글을 즐겨 읽으며 독서 습관이 잘 형성되어 있음.',
         '토론과 발표에서 적극적으로 자신의 의견을 개진함.',
         '글의 구조를 고려하여 체계적으로 글을 씀.',
@@ -93,12 +93,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '발표 활동에 참여하여 자신의 의견을 표현함.',
         '주제에 맞게 글을 작성할 수 있음.',
       ],
-      below_average: [
+      fair: [
         '글 읽기에 노력하며 이해력이 향상되고 있음.',
         '발표에 참여하려는 모습을 보이며 발전함.',
         '글쓰기 활동에 꾸준히 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '글 읽기에 관심을 갖고 시도함.',
         '친구들의 발표를 경청하며 배우려는 자세를 보임.',
         '글쓰기를 조금씩 연습하며 익히고 있음.',
@@ -112,7 +112,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수학 문제를 이해하고 해결하는 능력이 뛰어남.',
         '수학적 사고력이 뛰어나 문제 상황을 잘 파악함.',
       ],
-      above_average: [
+      good: [
         '수 개념을 잘 이해하고 계산에 흥미를 보임.',
         '수학 문제 풀이에 적극적으로 참여함.',
         '규칙 찾기와 수 비교를 잘함.',
@@ -122,12 +122,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수학 문제를 풀려고 노력함.',
         '수학 활동에 참여함.',
       ],
-      below_average: [
+      fair: [
         '수 세기와 계산 연습에 노력함.',
         '수학 문제 이해를 위해 노력하며 발전함.',
         '수학 활동에 참여하려는 모습을 보임.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '수에 관심을 갖고 세어보려고 시도함.',
         '도움을 받아 수학 활동에 참여함.',
         '수 개념을 익히기 위해 노력함.',
@@ -139,7 +139,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수학 문제를 논리적으로 분석하고 해결하는 능력이 탁월함.',
         '수학적 개념을 정확하게 이해하고 다양한 문제에 적용함.',
       ],
-      above_average: [
+      good: [
         '연산 능력이 좋고 계산에 자신감을 보임.',
         '수학 문제 풀이에 적극적이며 다양한 방법을 시도함.',
         '수학 개념을 잘 이해하고 활용함.',
@@ -149,12 +149,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수학 문제를 이해하고 풀이를 시도함.',
         '수학 개념을 알고 문제에 적용함.',
       ],
-      below_average: [
+      fair: [
         '연산 연습에 노력하며 계산력이 향상됨.',
         '수학 문제 이해에 노력하며 발전함.',
         '수학 개념 익히기에 꾸준히 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '연산에 관심을 갖고 연습함.',
         '도움을 받아 수학 문제를 풀어봄.',
         '수학 개념을 배우려는 자세를 보임.',
@@ -166,7 +166,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수학적 사고력과 논리력이 탁월하여 심화 문제도 잘 해결함.',
         '수학 개념을 정확히 이해하고 실생활에 창의적으로 적용함.',
       ],
-      above_average: [
+      good: [
         '연산 능력이 좋고 다양한 유형의 문제를 잘 해결함.',
         '수학적 추론을 통해 문제를 분석하고 해결함.',
         '수학 개념을 잘 이해하고 적용하는 능력이 우수함.',
@@ -176,12 +176,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수학 문제를 이해하고 풀이 과정을 따라감.',
         '수학 개념을 알고 활용함.',
       ],
-      below_average: [
+      fair: [
         '연산 연습에 노력하며 계산력이 발전함.',
         '문제 풀이에 노력하며 향상됨.',
         '수학 개념 익히기에 꾸준히 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '연산 연습에 참여하며 익히고 있음.',
         '도움을 받아 문제를 풀어보려고 시도함.',
         '수학에 관심을 갖기 시작함.',
@@ -195,7 +195,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '가족과 이웃의 역할을 잘 이해하고 설명함.',
         '우리 동네와 학교에 대해 잘 알고 있음.',
       ],
-      above_average: [
+      good: [
         '주변 사회 현상에 관심을 갖고 탐구함.',
         '사회 수업에 적극적으로 참여함.',
         '지역 사회에 대한 이해가 좋음.',
@@ -205,12 +205,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수업 활동에 참여함.',
         '지역 사회의 기본 개념을 이해함.',
       ],
-      below_average: [
+      fair: [
         '사회 수업에 참여하려고 노력함.',
         '주변 환경에 관심을 갖기 시작함.',
         '사회 개념 이해에 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '사회 현상에 관심을 보임.',
         '수업에 참여하려는 모습을 보임.',
         '도움을 받아 사회 개념을 익히고 있음.',
@@ -222,7 +222,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '사회 현상을 분석하고 원인과 결과를 잘 파악함.',
         '지리와 역사 개념을 정확하게 이해하고 설명함.',
       ],
-      above_average: [
+      good: [
         '사회 현상에 관심이 많고 탐구 활동에 적극적임.',
         '지역 사회와 역사에 대한 이해가 좋음.',
         '사회 수업에 성실하게 참여함.',
@@ -232,12 +232,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '수업 활동에 참여하며 과제를 수행함.',
         '기본적인 사회 개념을 알고 있음.',
       ],
-      below_average: [
+      fair: [
         '사회 개념 이해에 노력하며 향상됨.',
         '수업에 참여하려는 모습을 보임.',
         '역사와 지리에 관심을 갖기 시작함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '사회 현상에 관심을 갖기 시작함.',
         '도움을 받아 사회 개념을 배움.',
         '수업에 참여하려고 시도함.',
@@ -249,7 +249,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '다양한 사회 문제를 분석하고 해결 방안을 제시함.',
         '한국사와 세계사에 대한 이해가 깊고 정확함.',
       ],
-      above_average: [
+      good: [
         '역사와 사회 현상 탐구에 적극적으로 참여함.',
         '사회 문제에 관심을 갖고 다양한 관점에서 분석함.',
         '사회 개념을 잘 이해하고 적용함.',
@@ -259,12 +259,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '사회 수업에 참여하며 과제를 수행함.',
         '사회 개념을 알고 활용함.',
       ],
-      below_average: [
+      fair: [
         '사회 개념 이해에 노력하며 발전함.',
         '역사 학습에 관심을 갖고 노력함.',
         '수업 참여도가 향상되고 있음.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '사회 현상에 관심을 보이기 시작함.',
         '역사 이야기에 흥미를 느끼기 시작함.',
         '도움을 받아 사회 개념을 익히고 있음.',
@@ -278,7 +278,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '관찰 활동에서 세밀하고 정확하게 관찰함.',
         '자연 현상의 원리를 이해하고 설명하는 능력이 뛰어남.',
       ],
-      above_average: [
+      good: [
         '자연 현상에 관심이 많고 탐구 활동에 적극적임.',
         '관찰 활동을 성실하게 수행함.',
         '과학 수업에 흥미를 갖고 참여함.',
@@ -288,12 +288,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '과학 활동에 참여함.',
         '기본적인 과학 개념을 알고 있음.',
       ],
-      below_average: [
+      fair: [
         '관찰 활동에 참여하며 노력함.',
         '자연 현상에 관심을 갖기 시작함.',
         '과학 개념 이해에 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '자연 현상에 관심을 보임.',
         '도움을 받아 관찰 활동에 참여함.',
         '과학에 흥미를 갖기 시작함.',
@@ -305,7 +305,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '과학 현상의 원리를 논리적으로 이해하고 설명함.',
         '실험 결과를 정확하게 분석하고 결론을 도출함.',
       ],
-      above_average: [
+      good: [
         '과학 탐구 활동에 적극적이고 실험에 흥미를 보임.',
         '과학 개념을 잘 이해하고 적용함.',
         '관찰과 실험을 성실하게 수행함.',
@@ -315,12 +315,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '과학 개념을 알고 활용함.',
         '탐구 활동에 참여함.',
       ],
-      below_average: [
+      fair: [
         '과학 개념 이해에 노력하며 발전함.',
         '실험 활동에 참여하려는 모습을 보임.',
         '탐구 활동에 관심을 갖기 시작함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '과학에 관심을 갖기 시작함.',
         '도움을 받아 실험에 참여함.',
         '과학 개념을 익히려고 노력함.',
@@ -332,7 +332,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '실험 결과를 분석하고 과학적 결론을 논리적으로 도출함.',
         '과학 원리를 정확히 이해하고 심화 학습에도 뛰어남.',
       ],
-      above_average: [
+      good: [
         '과학 탐구와 실험에 적극적이고 호기심이 많음.',
         '과학 개념을 잘 이해하고 다양한 상황에 적용함.',
         '실험 보고서 작성과 결과 분석 능력이 좋음.',
@@ -342,12 +342,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '과학 개념을 알고 문제에 적용함.',
         '탐구 활동을 수행함.',
       ],
-      below_average: [
+      fair: [
         '과학 개념 이해에 노력하며 향상됨.',
         '실험 활동에 참여하며 발전함.',
         '탐구 활동에 관심을 보임.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '과학에 관심을 갖기 시작함.',
         '도움을 받아 실험에 참여함.',
         '과학 원리를 배우려는 자세를 보임.',
@@ -361,7 +361,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '영어 단어와 표현을 빠르게 습득함.',
         '영어 수업에 자신감 있게 참여함.',
       ],
-      above_average: [
+      good: [
         '영어 듣기와 말하기에 흥미를 보임.',
         '영어 단어를 잘 기억하고 활용함.',
         '영어 활동에 적극적으로 참여함.',
@@ -371,12 +371,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '영어 수업에 참여함.',
         '영어 단어를 익히고 있음.',
       ],
-      below_average: [
+      fair: [
         '영어에 관심을 갖기 시작함.',
         '영어 활동에 참여하려고 노력함.',
         '영어 단어 익히기에 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '영어에 흥미를 보이기 시작함.',
         '도움을 받아 영어 활동에 참여함.',
         '영어 표현을 조금씩 익히고 있음.',
@@ -388,7 +388,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '영어 문장을 정확하게 이해하고 표현함.',
         '영어 의사소통에 자신감을 보이며 적극적으로 참여함.',
       ],
-      above_average: [
+      good: [
         '영어 학습에 적극적이고 발음이 좋음.',
         '영어 표현을 잘 활용하여 대화함.',
         '영어 읽기와 쓰기에 흥미를 보임.',
@@ -398,12 +398,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '영어 수업에 참여하며 학습함.',
         '영어 단어와 문장을 익히고 있음.',
       ],
-      below_average: [
+      fair: [
         '영어 학습에 노력하며 발전함.',
         '영어 표현 익히기에 꾸준히 노력함.',
         '영어 수업 참여도가 향상됨.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '영어에 관심을 갖기 시작함.',
         '도움을 받아 영어 표현을 배움.',
         '영어 활동에 참여하려고 시도함.',
@@ -415,7 +415,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '영어로 자신의 생각을 자연스럽게 표현함.',
         '영어 의사소통 능력이 뛰어나고 자신감이 넘침.',
       ],
-      above_average: [
+      good: [
         '영어 학습에 적극적이고 실력이 꾸준히 향상됨.',
         '영어 대화와 읽기에 자신감을 보임.',
         '영어 표현력이 좋고 어휘력이 풍부함.',
@@ -425,12 +425,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '영어 수업에 참여하며 학습함.',
         '영어 표현을 이해하고 활용함.',
       ],
-      below_average: [
+      fair: [
         '영어 학습에 노력하며 향상됨.',
         '영어 표현 익히기에 꾸준히 노력함.',
         '영어 수업 참여도가 발전함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '영어에 관심을 갖기 시작함.',
         '도움을 받아 영어를 배우고 있음.',
         '기본 영어 표현을 익히려고 시도함.',
@@ -444,7 +444,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '친구를 배려하고 도우려는 마음이 뛰어남.',
         '규칙을 잘 지키고 책임감이 강함.',
       ],
-      above_average: [
+      good: [
         '바른 행동을 실천하려고 노력함.',
         '친구와 사이좋게 지내며 배려심이 있음.',
         '약속과 규칙을 지키려고 노력함.',
@@ -454,12 +454,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '친구와 어울려 지냄.',
         '규칙을 따름.',
       ],
-      below_average: [
+      fair: [
         '바른 생활을 위해 노력함.',
         '친구와 잘 지내려고 노력함.',
         '규칙 지키기를 연습함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '바른 행동에 관심을 갖기 시작함.',
         '친구 사귀기를 시도함.',
         '규칙을 배우고 있음.',
@@ -471,7 +471,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '타인을 배려하고 존중하는 태도가 몸에 배어 있음.',
         '정직하고 성실하며 책임감이 강함.',
       ],
-      above_average: [
+      good: [
         '도덕적 가치를 이해하고 실천하려고 노력함.',
         '친구를 배려하고 협동하는 자세가 좋음.',
         '규칙을 잘 지키고 약속을 이행함.',
@@ -481,12 +481,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '친구와 협력하며 지냄.',
         '규칙을 준수함.',
       ],
-      below_average: [
+      fair: [
         '도덕적 행동을 위해 노력함.',
         '배려하는 마음을 기르려고 함.',
         '규칙 지키기에 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '도덕적 가치에 관심을 갖기 시작함.',
         '타인과 어울리려고 시도함.',
         '규칙의 필요성을 배우고 있음.',
@@ -498,7 +498,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '공동체 의식이 뛰어나고 봉사 정신이 투철함.',
         '정의롭고 책임감 있는 태도로 생활함.',
       ],
-      above_average: [
+      good: [
         '도덕적 가치를 실천하려는 의지가 강함.',
         '타인을 존중하고 배려하는 마음이 깊음.',
         '책임감을 갖고 맡은 일을 성실히 수행함.',
@@ -508,12 +508,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '친구들과 협력하며 생활함.',
         '규칙과 질서를 준수함.',
       ],
-      below_average: [
+      fair: [
         '도덕적 성장을 위해 노력함.',
         '배려와 협동 자세가 향상됨.',
         '책임감을 기르려고 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '도덕적 가치에 관심을 갖기 시작함.',
         '공동체 생활에 참여하려고 시도함.',
         '규칙의 중요성을 배우고 있음.',
@@ -527,7 +527,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '규칙을 잘 지키며 게임에 적극적으로 참여함.',
         '신체 움직임이 활발하고 체력이 좋음.',
       ],
-      above_average: [
+      good: [
         '체육 활동에 적극적이고 즐겁게 참여함.',
         '친구들과 협력하여 게임을 잘함.',
         '기본 운동 기능이 좋음.',
@@ -537,12 +537,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '기본적인 운동을 수행함.',
         '규칙을 따라 게임에 참여함.',
       ],
-      below_average: [
+      fair: [
         '체육 활동에 참여하려고 노력함.',
         '운동 기능이 향상되고 있음.',
         '친구들과 함께 활동하려고 함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '신체 활동에 관심을 보임.',
         '도움을 받아 운동에 참여함.',
         '체육 활동을 시도함.',
@@ -554,7 +554,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '스포츠맨십을 갖추고 경기에서 두각을 나타냄.',
         '팀 활동에서 리더십을 발휘함.',
       ],
-      above_average: [
+      good: [
         '체육 활동에 적극적이고 운동 능력이 좋음.',
         '규칙을 잘 지키며 정정당당하게 경기함.',
         '협동심을 갖고 팀 활동에 참여함.',
@@ -564,12 +564,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '체육 활동에 참여함.',
         '규칙을 따라 게임에 참여함.',
       ],
-      below_average: [
+      fair: [
         '운동 기능이 향상되고 있음.',
         '체육 활동 참여에 노력함.',
         '협동 활동에 참여하려고 함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '체육 활동에 관심을 보임.',
         '도움을 받아 운동에 참여함.',
         '기본 운동을 익히고 있음.',
@@ -581,7 +581,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '스포츠맨십이 뛰어나고 페어플레이 정신이 투철함.',
         '팀 활동에서 리더십과 협동심을 발휘함.',
       ],
-      above_average: [
+      good: [
         '체육 활동에 적극적이고 운동 기능이 우수함.',
         '건강 관리와 체력 향상에 관심이 많음.',
         '협동 정신을 갖고 팀 활동에 잘 참여함.',
@@ -591,12 +591,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '체육 활동에 참여함.',
         '규칙을 지키며 경기에 참여함.',
       ],
-      below_average: [
+      fair: [
         '운동 기능이 향상되고 있음.',
         '체육 활동 참여에 노력함.',
         '체력 증진을 위해 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '체육 활동에 관심을 보임.',
         '도움을 받아 운동에 참여함.',
         '기본 운동을 연습함.',
@@ -610,7 +610,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '음악 활동에 즐겁게 참여하며 표현력이 좋음.',
         '악기 연주에 관심이 많고 소질을 보임.',
       ],
-      above_average: [
+      good: [
         '음악 수업에 즐겁게 참여함.',
         '노래 부르기와 리듬 활동을 잘함.',
         '음악에 대한 흥미가 높음.',
@@ -620,12 +620,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '노래를 따라 부름.',
         '리듬에 맞춰 활동함.',
       ],
-      below_average: [
+      fair: [
         '음악 활동에 참여하려고 노력함.',
         '노래 부르기를 시도함.',
         '음악에 관심을 갖기 시작함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '음악에 흥미를 보이기 시작함.',
         '도움을 받아 음악 활동에 참여함.',
         '음악 감상에 관심을 보임.',
@@ -637,7 +637,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '악기 연주 실력이 좋고 음악적 표현력이 풍부함.',
         '음악 감상에서 깊이 있는 이해를 보임.',
       ],
-      above_average: [
+      good: [
         '음악 수업에 적극적이고 음악적 표현력이 좋음.',
         '노래와 악기 연주에 흥미를 보임.',
         '음악 활동에 성실하게 참여함.',
@@ -647,12 +647,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '노래를 부르고 악기를 다룸.',
         '음악 감상에 참여함.',
       ],
-      below_average: [
+      fair: [
         '음악 활동 참여에 노력함.',
         '음악적 표현이 향상되고 있음.',
         '악기 다루기를 연습함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '음악에 관심을 갖기 시작함.',
         '도움을 받아 음악 활동에 참여함.',
         '음악 감상을 시도함.',
@@ -664,7 +664,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '음악적 감수성이 풍부하고 표현력이 탁월함.',
         '다양한 음악 장르를 이해하고 감상하는 능력이 뛰어남.',
       ],
-      above_average: [
+      good: [
         '음악 활동에 적극적이고 음악적 소양이 좋음.',
         '악기 연주와 가창에 자신감을 보임.',
         '음악 감상에서 깊이 있는 이해를 보임.',
@@ -674,12 +674,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '노래와 악기 연주를 수행함.',
         '음악 감상에 참여함.',
       ],
-      below_average: [
+      fair: [
         '음악 활동 참여에 노력함.',
         '음악적 표현이 향상됨.',
         '악기 다루기를 연습함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '음악에 관심을 갖기 시작함.',
         '도움을 받아 음악 활동에 참여함.',
         '음악 감상을 시도함.',
@@ -693,7 +693,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '다양한 재료를 활용하여 작품을 잘 만듦.',
         '색채 감각과 조형 능력이 우수함.',
       ],
-      above_average: [
+      good: [
         '미술 활동에 즐겁게 참여하고 표현력이 좋음.',
         '그리기와 만들기에 흥미를 보임.',
         '작품 제작에 정성을 기울임.',
@@ -703,12 +703,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '주제에 맞게 그림을 그림.',
         '다양한 재료를 사용해봄.',
       ],
-      below_average: [
+      fair: [
         '미술 활동에 참여하려고 노력함.',
         '그리기와 만들기를 시도함.',
         '미술에 관심을 갖기 시작함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '미술에 흥미를 보이기 시작함.',
         '도움을 받아 미술 활동에 참여함.',
         '작품 만들기를 시도함.',
@@ -720,7 +720,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '다양한 미술 기법을 익히고 활용하는 능력이 우수함.',
         '작품 감상에서 깊이 있는 이해와 비평 능력을 보임.',
       ],
-      above_average: [
+      good: [
         '미술 활동에 적극적이고 표현력이 좋음.',
         '다양한 재료와 기법을 탐색하며 작품을 제작함.',
         '미술 작품 감상에 흥미를 보임.',
@@ -730,12 +730,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '주제에 맞게 작품을 제작함.',
         '작품 감상에 참여함.',
       ],
-      below_average: [
+      fair: [
         '미술 활동 참여에 노력함.',
         '표현 능력이 향상되고 있음.',
         '작품 제작을 시도함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '미술에 관심을 갖기 시작함.',
         '도움을 받아 미술 활동에 참여함.',
         '작품 만들기를 시도함.',
@@ -747,7 +747,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '다양한 미술 기법과 재료를 능숙하게 다루며 표현력이 탁월함.',
         '미술 작품에 대한 깊이 있는 감상과 비평 능력을 갖춤.',
       ],
-      above_average: [
+      good: [
         '미술 활동에 적극적이고 창의적인 표현력이 좋음.',
         '다양한 기법을 시도하며 작품의 완성도를 높임.',
         '작품 감상에서 의미 있는 해석을 함.',
@@ -757,12 +757,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '주제에 맞게 작품을 제작함.',
         '작품 감상에 참여함.',
       ],
-      below_average: [
+      fair: [
         '미술 활동 참여에 노력함.',
         '표현 능력이 향상됨.',
         '작품 제작에 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '미술에 관심을 갖기 시작함.',
         '도움을 받아 미술 활동에 참여함.',
         '작품 만들기를 시도함.',
@@ -776,7 +776,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '손재주가 좋고 만들기 활동에서 우수한 결과를 보임.',
         '안전 수칙을 잘 지키며 활동함.',
       ],
-      above_average: [
+      good: [
         '실과 활동에 적극적으로 참여함.',
         '실습에 흥미를 갖고 성실하게 수행함.',
         '생활 기술을 잘 익힘.',
@@ -786,12 +786,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '기본적인 실습을 수행함.',
         '생활 기술을 배움.',
       ],
-      below_average: [
+      fair: [
         '실과 활동 참여에 노력함.',
         '실습 능력이 향상됨.',
         '생활 기술 익히기에 노력함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '실과에 관심을 갖기 시작함.',
         '도움을 받아 실습에 참여함.',
         '만들기를 시도함.',
@@ -803,7 +803,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '실습 활동에서 창의적이고 완성도 높은 결과물을 만듦.',
         '기술 활용 능력이 우수하고 안전 의식이 높음.',
       ],
-      above_average: [
+      good: [
         '실과 활동에 적극적이고 실습 능력이 좋음.',
         '다양한 기술을 익히고 활용함.',
         '성실하게 실습에 참여함.',
@@ -813,12 +813,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '기본적인 기술을 익히고 활용함.',
         '실습 과제를 수행함.',
       ],
-      below_average: [
+      fair: [
         '실과 활동 참여에 노력함.',
         '기술 익히기에 노력함.',
         '실습 능력이 향상됨.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '실과에 관심을 갖기 시작함.',
         '도움을 받아 실습에 참여함.',
         '기술 익히기를 시도함.',
@@ -830,7 +830,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '소프트웨어와 기술 활용 능력이 뛰어남.',
         '실생활 문제를 기술로 해결하는 능력이 우수함.',
       ],
-      above_average: [
+      good: [
         '실과 활동에 적극적이고 기술 습득이 빠름.',
         '다양한 기술을 익히고 적용하는 능력이 좋음.',
         '안전하게 도구를 다루며 실습함.',
@@ -840,12 +840,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '기본적인 기술을 수행함.',
         '실습 과제를 완수함.',
       ],
-      below_average: [
+      fair: [
         '실과 활동 참여에 노력함.',
         '기술 익히기에 노력함.',
         '실습 능력이 향상됨.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '실과에 관심을 갖기 시작함.',
         '도움을 받아 실습에 참여함.',
         '기술 익히기를 시도함.',
@@ -859,7 +859,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '예절 바르고 친구를 잘 배려함.',
         '규칙을 스스로 잘 지킴.',
       ],
-      above_average: [
+      good: [
         '바른 행동을 실천하려고 노력함.',
         '친구와 사이좋게 지냄.',
         '약속을 잘 지킴.',
@@ -869,12 +869,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '친구와 어울림.',
         '규칙을 따름.',
       ],
-      below_average: [
+      fair: [
         '바른 생활 습관을 기르려고 노력함.',
         '친구와 잘 지내려고 함.',
         '규칙 지키기를 연습함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '바른 행동에 관심을 갖기 시작함.',
         '친구 사귀기를 시도함.',
         '규칙을 배우고 있음.',
@@ -888,7 +888,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '관찰력이 좋고 특징을 잘 파악함.',
         '다양한 현상의 규칙을 발견하는 능력이 우수함.',
       ],
-      above_average: [
+      good: [
         '탐구 활동에 적극적으로 참여함.',
         '관찰 활동을 성실하게 수행함.',
         '주변 현상에 관심이 많음.',
@@ -898,12 +898,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '관찰을 하고 결과를 이야기함.',
         '주변 환경에 관심을 가짐.',
       ],
-      below_average: [
+      fair: [
         '탐구 활동에 참여하려고 노력함.',
         '관찰하기를 시도함.',
         '주변에 관심을 갖기 시작함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '탐구에 흥미를 보이기 시작함.',
         '도움을 받아 관찰 활동에 참여함.',
         '주변 현상에 관심을 보임.',
@@ -917,7 +917,7 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '음악과 미술, 신체 표현을 모두 잘함.',
         '다양한 놀이와 활동에 즐겁게 참여함.',
       ],
-      above_average: [
+      good: [
         '표현 활동에 적극적으로 참여함.',
         '음악, 미술, 신체 활동에 흥미를 보임.',
         '놀이에 즐겁게 참여함.',
@@ -927,12 +927,12 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
         '노래와 그리기를 함.',
         '놀이에 참여함.',
       ],
-      below_average: [
+      fair: [
         '표현 활동에 참여하려고 노력함.',
         '활동에 관심을 갖기 시작함.',
         '친구들과 놀이하려고 함.',
       ],
-      needs_improvement: [
+      needs_effort: [
         '표현에 흥미를 보이기 시작함.',
         '도움을 받아 활동에 참여함.',
         '놀이에 관심을 보임.',
@@ -945,10 +945,10 @@ const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>>
 function getLevelKey(level: SubjectAchievementLevel): keyof CommonPhrases {
   const mapping: Record<SubjectAchievementLevel, keyof CommonPhrases> = {
     excellent: 'excellent',
-    above_average: 'above_average',
+    good: 'good',
     average: 'average',
-    below_average: 'below_average',
-    needs_improvement: 'needs_improvement',
+    fair: 'fair',
+    needs_effort: 'needs_effort',
   };
   return mapping[level];
 }
@@ -1002,9 +1002,9 @@ export function getAllCommonPhrases(
 
   return {
     '상': gradePhrases.excellent,
-    '중상': gradePhrases.above_average,
+    '중상': gradePhrases.good,
     '중': gradePhrases.average,
-    '중하': gradePhrases.below_average,
-    '하': gradePhrases.needs_improvement,
+    '중하': gradePhrases.fair,
+    '하': gradePhrases.needs_effort,
   };
 }
