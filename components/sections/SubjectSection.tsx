@@ -63,10 +63,10 @@ export function SubjectSection() {
     }
   }, [selectedSubject, classroom, subjectAchievementLevels, subjectSemesters, initSubjectAchievementLevels, setSubjectSemester]);
 
-  // 선택된 성취기준에서 랜덤 선택 (주요과목 6개, 기타 3개)
+  // 선택된 성취기준에서 랜덤 선택 (주요과목 4개, 기타 3개)
   const getRandomFromSelected = (standards: AchievementStandard[], subjectName: string) => {
     const MAJOR_SUBJECTS = ['국어', '수학', '사회', '과학', '영어'];
-    const selectCount = MAJOR_SUBJECTS.includes(subjectName) ? 6 : 3;
+    const selectCount = MAJOR_SUBJECTS.includes(subjectName) ? 4 : 3;
     if (standards.length <= selectCount) return standards;
 
     const shuffled = [...standards];

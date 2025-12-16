@@ -878,7 +878,7 @@ export function getAchievementStandardsBySubject(
   });
 }
 
-// 주요 과목 (국수사과영) - 6개 선택
+// 주요 과목 (국수사과영) - 4개 선택
 const MAJOR_SUBJECTS = ['국어', '수학', '사회', '과학', '영어'];
 // 기타 과목 (도덕, 체육, 음악, 미술, 실과) - 3개 선택
 
@@ -890,8 +890,8 @@ export function getRandomAchievementStandards(
 ): AchievementStandard[] {
   const allStandards = getAchievementStandardsBySubject(grade, subjectName, semester);
 
-  // 주요 과목은 6개, 기타 과목은 3개 선택
-  const selectCount = MAJOR_SUBJECTS.includes(subjectName) ? 6 : 3;
+  // 주요 과목은 4개, 기타 과목은 3개 선택
+  const selectCount = MAJOR_SUBJECTS.includes(subjectName) ? 4 : 3;
 
   // 성취기준이 선택 개수보다 적으면 전체 반환
   if (allStandards.length <= selectCount) {

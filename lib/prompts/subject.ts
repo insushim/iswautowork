@@ -8,10 +8,10 @@ function getStandardCount(subjectName: string, grade: number): number {
     return 4;
   }
 
-  // 주요 교과 (국어, 수학, 사회, 과학, 영어): 6개
+  // 주요 교과 (국어, 수학, 사회, 과학, 영어): 4개
   const mainSubjects = ['국어', '수학', '사회', '과학', '영어'];
   if (mainSubjects.includes(subjectName)) {
-    return 6;
+    return 4;
   }
 
   // 예체능 및 기타 교과 (음악, 미술, 체육, 실과, 도덕): 3개
