@@ -24,6 +24,8 @@ export function SubjectSection() {
     setAllSubjectAchievementLevels,
     subjectSemesters,
     setSubjectSemester,
+    subjectSentenceCounts,
+    setSubjectSentenceCount,
     selectedStandardCodes,
     toggleStandardCode,
     initSelectedStandardCodes,
@@ -63,10 +65,10 @@ export function SubjectSection() {
     }
   }, [selectedSubject, classroom, subjectAchievementLevels, subjectSemesters, initSubjectAchievementLevels, setSubjectSemester]);
 
-  // 선택된 성취기준에서 랜덤 선택 (주요과목 4개, 기타 3개)
-  const getRandomFromSelected = (standards: AchievementStandard[], subjectName: string) => {
-    const MAJOR_SUBJECTS = ['국어', '수학', '사회', '과학', '영어'];
-    const selectCount = MAJOR_SUBJECTS.includes(subjectName) ? 4 : 3;
+  // 선택된 성취기준에서 랜덤 선택 (문장 수 - 1개 = 성취기준 기반 문장 수)
+  const getRandomFromSelected = (standards: AchievementStandard[], subjectName: string, sentenceCount: number = 4) => {
+    // 성취기준 기반 문장 수 = 총 문장 수 - 공통 문장 1개
+    const selectCount = Math.max(1, sentenceCount - 1);
     if (standards.length <= selectCount) return standards;
 
     const shuffled = [...standards];
@@ -83,13 +85,14 @@ export function SubjectSection() {
     const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
+    const sentenceCount = subjectSentenceCounts[selectedSubject.code] || 4; // 기본값 4
 
     // 사용자가 선택한 성취기준에서만 랜덤 선택 (다른 학기 추가 성취기준 포함)
     const key = `${selectedSubject.code}_${semester}`;
     const selectedCodes = selectedStandardCodes[key] || [];
     const allGradeStds = getAchievementStandardsBySubject(classroom.grade, subjectName);
     const filteredStandards = allGradeStds.filter(s => selectedCodes.includes(s.code));
-    const standards = getRandomFromSelected(filteredStandards, subjectName);
+    const standards = getRandomFromSelected(filteredStandards, subjectName, sentenceCount);
 
     if (standards.length === 0) {
       alert('선택된 성취기준이 없습니다. 성취기준을 먼저 선택해주세요.');
@@ -106,6 +109,7 @@ export function SubjectSection() {
       achievementLevels: levels,
       semester,
       achievementStandards: standards,
+      sentenceCount,
     });
 
     if (records) {
@@ -121,13 +125,14 @@ export function SubjectSection() {
     const semester = subjectSemesters[selectedSubject.code] || 1;
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
+    const sentenceCount = subjectSentenceCounts[selectedSubject.code] || 4;
 
     // 사용자가 선택한 성취기준에서만 랜덤 선택 (다른 학기 추가 성취기준 포함)
     const key = `${selectedSubject.code}_${semester}`;
     const selectedCodes = selectedStandardCodes[key] || [];
     const allGradeStds = getAchievementStandardsBySubject(classroom.grade, subjectName);
     const filteredStandards = allGradeStds.filter(s => selectedCodes.includes(s.code));
-    const standards = getRandomFromSelected(filteredStandards, subjectName);
+    const standards = getRandomFromSelected(filteredStandards, subjectName, sentenceCount);
 
     setRegeneratingStudent(studentNumber);
 
@@ -139,6 +144,7 @@ export function SubjectSection() {
       achievementLevels: levels,
       semester,
       achievementStandards: standards,
+      sentenceCount,
     }, studentNumber);
 
     if (content) {
@@ -240,7 +246,7 @@ export function SubjectSection() {
 
         {isExpanded && (
           <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Select
                 label="교과 선택"
                 value={selectedSubject?.code || ''}
@@ -267,6 +273,22 @@ export function SubjectSection() {
               >
                 <option value="1">1학기</option>
                 <option value="2">2학기</option>
+              </Select>
+
+              <Select
+                label="생성 문장 수"
+                value={(selectedSubject ? subjectSentenceCounts[selectedSubject.code] || 4 : 4).toString()}
+                onChange={(e) => {
+                  if (selectedSubject) {
+                    setSubjectSentenceCount(selectedSubject.code, parseInt(e.target.value));
+                  }
+                }}
+              >
+                <option value="2">2문장 (공통1 + 성취1)</option>
+                <option value="3">3문장 (공통1 + 성취2)</option>
+                <option value="4">4문장 (공통1 + 성취3) 기본</option>
+                <option value="5">5문장 (공통1 + 성취4)</option>
+                <option value="6">6문장 (공통1 + 성취5)</option>
               </Select>
             </div>
 

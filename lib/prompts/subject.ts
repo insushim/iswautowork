@@ -1,21 +1,17 @@
 import { GRADE_CHARACTERISTICS, SUBJECT_LEVEL_INFO } from '../curriculum-data';
 import { SubjectAchievementLevel, AchievementStandard, Semester } from '@/types';
+import { getAllCommonPhrases } from '../common-phrases';
 
-// 과목별 성취기준 선택 개수 결정
-function getStandardCount(subjectName: string, grade: number): number {
-  // 1-2학년 과목: 4개
-  if (grade <= 2) {
-    return 4;
-  }
+// 기본 문장 수 결정 (공통 문장 1개 포함)
+export function getDefaultSentenceCount(subjectName: string, grade: number): number {
+  // 모든 학년, 모든 과목 4문장 (공통 문장 1개 + 성취기준 기반 3개)
+  return 4;
+}
 
-  // 주요 교과 (국어, 수학, 사회, 과학, 영어): 4개
-  const mainSubjects = ['국어', '수학', '사회', '과학', '영어'];
-  if (mainSubjects.includes(subjectName)) {
-    return 4;
-  }
-
-  // 예체능 및 기타 교과 (음악, 미술, 체육, 실과, 도덕): 3개
-  return 3;
+// 과목별 성취기준 선택 개수 결정 (성취기준 기반 문장 수)
+function getStandardCount(sentenceCount: number): number {
+  // 총 문장 수 - 공통 문장 1개 = 성취기준 기반 문장 수
+  return Math.max(1, sentenceCount - 1);
 }
 
 // 과목별 활동 예시 생성
@@ -45,10 +41,15 @@ export function buildSubjectPrompt(
   subjectName: string,
   achievementLevels: SubjectAchievementLevel[],
   semester: Semester,
-  achievementStandards: AchievementStandard[]
+  achievementStandards: AchievementStandard[],
+  sentenceCount?: number // 사용자 지정 문장 수 (기본값: 4)
 ): string {
   const gradeChar = GRADE_CHARACTERISTICS[grade];
   const semesterText = semester === 1 ? '1학기' : '2학기';
+
+  // 문장 수 결정 (기본값 4, 최소 2, 최대 6)
+  const totalSentences = Math.min(6, Math.max(2, sentenceCount || getDefaultSentenceCount(subjectName, grade)));
+  const standardBasedCount = getStandardCount(totalSentences); // 성취기준 기반 문장 수
 
   // 성취기준 문자열 생성 (번호 붙여서)
   const standardsText = achievementStandards.map((std, idx) =>
@@ -62,8 +63,13 @@ export function buildSubjectPrompt(
   }).join('\n');
 
   const totalStandards = achievementStandards.length;
-  const standardCount = getStandardCount(subjectName, grade);
   const activityExamples = getActivityExamples(subjectName);
+
+  // 공통 문장 정보 (학년별, 수준별)
+  const commonPhrases = getAllCommonPhrases(subjectName, grade);
+  const commonPhrasesText = Object.entries(commonPhrases)
+    .map(([level, phrases]) => `  ${level}: ${phrases.join(' / ')}`)
+    .join('\n');
 
   return `당신은 초등학교 ${grade}학년 담임교사입니다. NEIS 시스템에 입력할 '${subjectName}' 교과의 ${semesterText} '세부능력 및 특기사항'을 작성해야 합니다.
 
@@ -83,8 +89,16 @@ ${levelList}
 
 ## 핵심 작성 규칙 (반드시 준수!)
 
-### 1. 성취기준 활용 규칙 (가장 중요!)
-- 각 학생마다 위 성취기준 중에서 서로 다른 ${standardCount}개를 선택하여 내용을 참고해 작성하세요.
+### 0. 문장 구성 규칙 (가장 중요! 반드시 지켜야 함!)
+⚠️ 각 학생당 총 ${totalSentences}개 문장을 작성하세요. 구성은 다음과 같습니다:
+- **공통 문장 1개 (필수)**: 아래 제시된 공통 문장 중 학생의 성취수준에 맞는 것 1개를 반드시 포함하세요.
+- **성취기준 기반 문장 ${standardBasedCount}개**: 위 성취기준을 참고하여 작성하세요.
+
+### 공통 문장 목록 (성취수준별 - 반드시 1개 포함!)
+${commonPhrasesText}
+
+### 1. 성취기준 활용 규칙 (중요!)
+- 각 학생마다 위 성취기준 중에서 서로 다른 ${standardBasedCount}개를 선택하여 내용을 참고해 작성하세요.
 - 절대로 모든 학생이 같은 성취기준 조합을 사용하면 안 됩니다!
 - 총 ${totalStandards}개의 성취기준을 ${studentCount}명의 학생에게 골고루 분배하세요.
 - 같은 영역(domain)의 성취기준이 한 학생에게 몰리지 않도록 다양한 영역에서 선택하세요.
@@ -104,7 +118,7 @@ ${levelList}
 
 ### 4. 문장 다양성 규칙 (매우 중요!)
 - 모든 문장은 '~임.', '~함.', '~음.' 등 공문서체로 끝내세요.
-- 각 학생의 기록은 ${standardCount}개 이상의 문장, 200-350자 내외로 작성하세요.
+- 각 학생의 기록은 정확히 ${totalSentences}개 문장 (공통 1개 + 성취기준 기반 ${standardBasedCount}개)으로 작성하세요.
 - 같은 성취 수준이라도 문장 구조, 표현, 활동 예시가 겹치지 않게 하세요.
 
 ### 4-1. 첫 문장 시작어 다양화 (절대 준수!)
@@ -165,7 +179,9 @@ ${activityExamples}
 ${studentCount}번: [세부능력 및 특기사항 - 풍부하고 구체적인 서술]
 
 중요:
-- ${studentCount}명 모두 서로 다른 ${standardCount}개의 성취기준 조합으로 작성하세요.
+- 각 학생당 정확히 ${totalSentences}개 문장을 작성하세요 (공통 문장 1개 + 성취기준 기반 ${standardBasedCount}개).
+- 공통 문장은 학생의 성취수준에 맞는 것을 반드시 1개 포함하세요!
+- ${studentCount}명 모두 서로 다른 ${standardBasedCount}개의 성취기준 조합으로 작성하세요.
 - 성취기준을 그대로 쓰지 말고 구체적인 학습 상황과 학생의 모습을 풍부하게 서술하세요.
 - 성취기준 코드나 특수기호 없이 자연스럽고 풍부한 문장으로 작성해주세요!
 - **절대 모든 학생이 같은 영역(예: 문학)으로 시작하면 안 됩니다!** 첫 문장부터 다양한 영역으로 시작하세요.

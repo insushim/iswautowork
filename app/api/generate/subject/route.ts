@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
       achievementLevels,
       semester,
       achievementStandards,
+      sentenceCount,
       studentNumber,
       regenerateSingle,
     } = body as {
@@ -24,6 +25,7 @@ export async function POST(request: NextRequest) {
       achievementLevels: SubjectAchievementLevel[];
       semester: Semester;
       achievementStandards: AchievementStandard[];
+      sentenceCount?: number;
       studentNumber?: number;
       regenerateSingle?: boolean;
     };
@@ -42,7 +44,8 @@ export async function POST(request: NextRequest) {
       subjectName,
       achievementLevels,
       semester || 1,
-      achievementStandards || []
+      achievementStandards || [],
+      sentenceCount
     );
 
     if (regenerateSingle && studentNumber) {

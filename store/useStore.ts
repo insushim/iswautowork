@@ -40,6 +40,9 @@ interface AppStore {
   // 교과별 학기 선택
   subjectSemesters: Record<string, Semester>;
 
+  // 교과별 문장 수 (기본값 4)
+  subjectSentenceCounts: Record<string, number>;
+
   // 교과별 선택된 성취기준 (사용자가 넣기/빼기 가능)
   // key: `${subjectCode}_${semester}`, value: 선택된 성취기준 코드 배열
   selectedStandardCodes: Record<string, string[]>;
@@ -87,6 +90,9 @@ interface AppStore {
 
   setSubjectSemester: (subjectCode: string, semester: Semester) => void;
 
+  // 교과별 문장 수 설정
+  setSubjectSentenceCount: (subjectCode: string, count: number) => void;
+
   // 성취기준 선택/해제
   toggleStandardCode: (subjectCode: string, semester: Semester, code: string) => void;
   setSelectedStandardCodes: (subjectCode: string, semester: Semester, codes: string[]) => void;
@@ -122,6 +128,7 @@ export const useStore = create<AppStore>()(
       currentCareerActivity: null,
       subjectAchievementLevels: {},
       subjectSemesters: {},
+      subjectSentenceCounts: {},
       selectedStandardCodes: {},
       behaviorLevels: [],
       studentTalents: [],
@@ -149,7 +156,7 @@ export const useStore = create<AppStore>()(
         classroom: null, students: [],
         autonomousRecords: [], clubRecords: [], volunteerRecords: [], careerRecords: [],
         subjectDevelopments: {}, behaviorRecords: [],
-        subjectAchievementLevels: {}, subjectSemesters: {}, selectedStandardCodes: {},
+        subjectAchievementLevels: {}, subjectSemesters: {}, subjectSentenceCounts: {}, selectedStandardCodes: {},
         behaviorLevels: [], studentTalents: []
       }),
 
@@ -211,6 +218,10 @@ export const useStore = create<AppStore>()(
 
       setSubjectSemester: (subjectCode, semester) => set((state) => ({
         subjectSemesters: { ...state.subjectSemesters, [subjectCode]: semester }
+      })),
+
+      setSubjectSentenceCount: (subjectCode, count) => set((state) => ({
+        subjectSentenceCounts: { ...state.subjectSentenceCounts, [subjectCode]: count }
       })),
 
       toggleStandardCode: (subjectCode, semester, code) => set((state) => {
@@ -295,6 +306,7 @@ export const useStore = create<AppStore>()(
         behaviorRecords: state.behaviorRecords,
         subjectAchievementLevels: state.subjectAchievementLevels,
         subjectSemesters: state.subjectSemesters,
+        subjectSentenceCounts: state.subjectSentenceCounts,
         selectedStandardCodes: state.selectedStandardCodes,
         behaviorLevels: state.behaviorLevels,
         studentTalents: state.studentTalents,
