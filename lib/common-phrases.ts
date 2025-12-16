@@ -20,8 +20,8 @@ export function getGradeGroup(grade: number): GradeGroup {
   return '5-6';
 }
 
-// 과목별 공통 문장 데이터
-const COMMON_PHRASES: Record<string, Record<GradeGroup, CommonPhrases>> = {
+// 과목별 공통 문장 데이터 (1-2학년 전용 과목은 1-2만 있음)
+const COMMON_PHRASES: Record<string, Partial<Record<GradeGroup, CommonPhrases>>> = {
   '국어': {
     '1-2': {
       excellent: [
