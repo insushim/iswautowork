@@ -79,7 +79,7 @@ export const CAREER_TYPE_INFO: Record<CareerActivityType, { name: string; descri
   self_understanding: { name: '자기이해활동', description: '자신의 흥미, 적성, 성격, 강점 등을 탐색하고 이해함' },
   career_exploration: { name: '진로탐색활동', description: '다양한 직업 세계와 진로 정보를 탐색하고 이해함' },
   career_design: { name: '진로설계활동', description: '자신의 진로를 계획하고 목표를 설정하여 실천함' },
-  career_experience: { name: '진로체험활동', description: '직업 체험, 진로 멘토링, 현장 견학 등 다양한 진로 체험을 함' },
+  career_experience: { name: '진로체험활동', description: '직업 체험, 진로 멘토링, 직업인 인터뷰 등 다양한 진로 체험을 함' },
   custom: { name: '직접 입력', description: '' }
 };
 
