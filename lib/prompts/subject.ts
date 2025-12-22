@@ -62,14 +62,16 @@ export function buildSubjectPrompt(
   achievementLevels: SubjectAchievementLevel[],
   semester: Semester,
   achievementStandards: AchievementStandard[],
-  sentenceCount?: number // 사용자 지정 문장 수 (기본값: 4)
+  sentenceCount?: number, // 사용자 지정 문장 수 (기본값: 4)
+  includeCommon: boolean = true // 공통문장 포함 여부
 ): string {
   const gradeChar = GRADE_CHARACTERISTICS[grade];
   const semesterText = semester === 1 ? '1학기' : '2학기';
 
   // 문장 수 결정 (기본값 4, 최소 2, 최대 6)
   const totalSentences = Math.min(6, Math.max(2, sentenceCount || getDefaultSentenceCount(subjectName, grade)));
-  const standardBasedCount = getStandardCount(totalSentences); // 성취기준 기반 문장 수
+  // 공통문장 포함 여부에 따라 성취기준 기반 문장 수 결정
+  const standardBasedCount = includeCommon ? getStandardCount(totalSentences) : totalSentences;
 
   // 성취기준 문자열 생성 (번호 붙여서)
   const standardsText = achievementStandards.map((std, idx) =>
@@ -86,11 +88,33 @@ export function buildSubjectPrompt(
   const activityExamples = getActivityExamples(subjectName);
   const starterExamples = getStarterExamples(subjectName);
 
-  // 공통 문장 정보 (학년별, 수준별, 학기별)
-  const commonPhrases = getAllCommonPhrases(subjectName, grade, semester as 1 | 2);
-  const commonPhrasesText = Object.entries(commonPhrases)
-    .map(([level, phrases]) => `  ${level}: ${phrases.join(' / ')}`)
-    .join('\n');
+  // 공통 문장 정보 (학년별, 수준별, 학기별) - includeCommon이 true일 때만 사용
+  let commonPhraseSection = '';
+  if (includeCommon) {
+    const commonPhrases = getAllCommonPhrases(subjectName, grade, semester as 1 | 2);
+    const commonPhrasesText = Object.entries(commonPhrases)
+      .map(([level, phrases]) => `  ${level}: ${phrases.join(' / ')}`)
+      .join('\n');
+
+    commonPhraseSection = `
+### 공통 문장 작성 규칙 (매우 중요!)
+⚠️ **절대로 모든 학생에게 똑같은 공통 문장을 사용하면 안 됩니다!**
+- 아래 예시를 **참고만** 하고, 학생마다 **표현을 다르게 변형**해서 작성하세요.
+- 같은 의미라도 다른 어휘, 다른 문장 구조를 사용하세요.
+- 예시: "사회 문제에 관심을 갖고 분석함" → "다양한 사회 현상을 탐구하며 이해함" / "사회적 이슈에 흥미를 보이며 깊이 생각함" 등
+
+### 공통 문장 예시 (성취수준별 - 반드시 변형해서 사용!)
+${commonPhrasesText}
+`;
+  }
+
+  // 문장 구성 규칙 텍스트 결정
+  const sentenceCompositionText = includeCommon
+    ? `⚠️ 각 학생당 총 ${totalSentences}개 문장을 작성하세요. 구성은 다음과 같습니다:
+- **공통 문장 1개 (필수)**: 아래 제시된 공통 문장을 **참고**하여 학생마다 **다르게 변형**해서 작성하세요.
+- **성취기준 기반 문장 ${standardBasedCount}개**: 위 성취기준을 참고하여 작성하세요.`
+    : `⚠️ 각 학생당 총 ${totalSentences}개 문장을 작성하세요. **모든 문장은 성취기준을 기반으로** 작성하세요.
+- 공통문장 없이 성취기준 기반 문장 ${standardBasedCount}개만 작성하세요.`;
 
   return `당신은 초등학교 ${grade}학년 담임교사입니다. NEIS 시스템에 입력할 '${subjectName}' 교과의 ${semesterText} '세부능력 및 특기사항'을 작성해야 합니다.
 
@@ -111,19 +135,8 @@ ${levelList}
 ## 핵심 작성 규칙 (반드시 준수!)
 
 ### 0. 문장 구성 규칙 (가장 중요! 반드시 지켜야 함!)
-⚠️ 각 학생당 총 ${totalSentences}개 문장을 작성하세요. 구성은 다음과 같습니다:
-- **공통 문장 1개 (필수)**: 아래 제시된 공통 문장을 **참고**하여 학생마다 **다르게 변형**해서 작성하세요.
-- **성취기준 기반 문장 ${standardBasedCount}개**: 위 성취기준을 참고하여 작성하세요.
-
-### 공통 문장 작성 규칙 (매우 중요!)
-⚠️ **절대로 모든 학생에게 똑같은 공통 문장을 사용하면 안 됩니다!**
-- 아래 예시를 **참고만** 하고, 학생마다 **표현을 다르게 변형**하세요.
-- 같은 의미라도 다른 어휘, 다른 문장 구조를 사용하세요.
-- 예시: "사회 문제에 관심을 갖고 분석함" → "다양한 사회 현상을 탐구하며 이해함" / "사회적 이슈에 흥미를 보이며 깊이 생각함" 등
-
-### 공통 문장 예시 (성취수준별 - 반드시 변형해서 사용!)
-${commonPhrasesText}
-
+${sentenceCompositionText}
+${commonPhraseSection}
 ### 1. 성취기준 활용 규칙 (중요!)
 - 각 학생마다 위 성취기준 중에서 서로 다른 ${standardBasedCount}개를 선택하여 내용을 참고해 작성하세요.
 - 절대로 모든 학생이 같은 성취기준 조합을 사용하면 안 됩니다!
@@ -145,7 +158,7 @@ ${commonPhrasesText}
 
 ### 4. 문장 다양성 규칙 (매우 중요!)
 - 모든 문장은 '~임.', '~함.', '~음.' 등 공문서체로 끝내세요.
-- 각 학생의 기록은 정확히 ${totalSentences}개 문장 (공통 1개 + 성취기준 기반 ${standardBasedCount}개)으로 작성하세요.
+- 각 학생의 기록은 정확히 ${totalSentences}개 문장${includeCommon ? ` (공통 1개 + 성취기준 기반 ${standardBasedCount}개)` : ` (성취기준 기반 ${standardBasedCount}개)`}으로 작성하세요.
 - 같은 성취 수준이라도 문장 구조, 표현, 활동 예시가 겹치지 않게 하세요.
 
 ### 4-1. 첫 문장 시작어 다양화 (절대 준수!)
@@ -208,9 +221,8 @@ ${activityExamples}
 ${studentCount}번: [세부능력 및 특기사항 - 풍부하고 구체적인 서술]
 
 중요:
-- 각 학생당 정확히 ${totalSentences}개 문장을 작성하세요 (공통 문장 1개 + 성취기준 기반 ${standardBasedCount}개).
-- 공통 문장은 학생의 성취수준에 맞는 것을 반드시 1개 포함하세요!
-- ${studentCount}명 모두 서로 다른 ${standardBasedCount}개의 성취기준 조합으로 작성하세요.
+- 각 학생당 정확히 ${totalSentences}개 문장을 작성하세요${includeCommon ? ` (공통 문장 1개 + 성취기준 기반 ${standardBasedCount}개)` : ` (성취기준 기반 ${standardBasedCount}개)`}.
+${includeCommon ? '- 공통 문장은 학생의 성취수준에 맞는 것을 반드시 1개 포함하세요!\n' : ''}- ${studentCount}명 모두 서로 다른 ${standardBasedCount}개의 성취기준 조합으로 작성하세요.
 - 성취기준을 그대로 쓰지 말고 구체적인 학습 상황과 학생의 모습을 풍부하게 서술하세요.
 - 성취기준 코드나 특수기호 없이 자연스럽고 풍부한 문장으로 작성해주세요!
 - **절대 모든 학생이 같은 영역(예: 문학)으로 시작하면 안 됩니다!** 첫 문장부터 다양한 영역으로 시작하세요.

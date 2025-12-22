@@ -26,6 +26,8 @@ export function SubjectSection() {
     setSubjectSemester,
     subjectSentenceCounts,
     setSubjectSentenceCount,
+    subjectIncludeCommon,
+    setSubjectIncludeCommon,
     selectedStandardCodes,
     toggleStandardCode,
     initSelectedStandardCodes,
@@ -65,10 +67,10 @@ export function SubjectSection() {
     }
   }, [selectedSubject, classroom, subjectAchievementLevels, subjectSemesters, initSubjectAchievementLevels, setSubjectSemester]);
 
-  // 선택된 성취기준에서 랜덤 선택 (문장 수 - 1개 = 성취기준 기반 문장 수)
-  const getRandomFromSelected = (standards: AchievementStandard[], subjectName: string, sentenceCount: number = 4) => {
-    // 성취기준 기반 문장 수 = 총 문장 수 - 공통 문장 1개
-    const selectCount = Math.max(1, sentenceCount - 1);
+  // 선택된 성취기준에서 랜덤 선택
+  const getRandomFromSelected = (standards: AchievementStandard[], sentenceCount: number = 4, includeCommon: boolean = true) => {
+    // 성취기준 기반 문장 수 = 총 문장 수 - 공통 문장 (공통 포함 시 1개, 미포함 시 0개)
+    const selectCount = includeCommon ? Math.max(1, sentenceCount - 1) : sentenceCount;
     if (standards.length <= selectCount) return standards;
 
     const shuffled = [...standards];
@@ -86,13 +88,14 @@ export function SubjectSection() {
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
     const sentenceCount = subjectSentenceCounts[selectedSubject.code] || 4; // 기본값 4
+    const includeCommon = subjectIncludeCommon[selectedSubject.code] !== false; // 기본값 true
 
     // 사용자가 선택한 성취기준에서만 랜덤 선택 (다른 학기 추가 성취기준 포함)
     const key = `${selectedSubject.code}_${semester}`;
     const selectedCodes = selectedStandardCodes[key] || [];
     const allGradeStds = getAchievementStandardsBySubject(classroom.grade, subjectName);
     const filteredStandards = allGradeStds.filter(s => selectedCodes.includes(s.code));
-    const standards = getRandomFromSelected(filteredStandards, subjectName, sentenceCount);
+    const standards = getRandomFromSelected(filteredStandards, sentenceCount, includeCommon);
 
     if (standards.length === 0) {
       alert('선택된 성취기준이 없습니다. 성취기준을 먼저 선택해주세요.');
@@ -110,6 +113,7 @@ export function SubjectSection() {
       semester,
       achievementStandards: standards,
       sentenceCount,
+      includeCommon,
     });
 
     if (records) {
@@ -126,13 +130,14 @@ export function SubjectSection() {
     const levels = subjectAchievementLevels[selectedSubject.code] || [];
     const subjectName = getSubjectNameFromCode(selectedSubject.code);
     const sentenceCount = subjectSentenceCounts[selectedSubject.code] || 4;
+    const includeCommon = subjectIncludeCommon[selectedSubject.code] !== false;
 
     // 사용자가 선택한 성취기준에서만 랜덤 선택 (다른 학기 추가 성취기준 포함)
     const key = `${selectedSubject.code}_${semester}`;
     const selectedCodes = selectedStandardCodes[key] || [];
     const allGradeStds = getAchievementStandardsBySubject(classroom.grade, subjectName);
     const filteredStandards = allGradeStds.filter(s => selectedCodes.includes(s.code));
-    const standards = getRandomFromSelected(filteredStandards, subjectName, sentenceCount);
+    const standards = getRandomFromSelected(filteredStandards, sentenceCount, includeCommon);
 
     setRegeneratingStudent(studentNumber);
 
@@ -145,6 +150,7 @@ export function SubjectSection() {
       semester,
       achievementStandards: standards,
       sentenceCount,
+      includeCommon,
     }, studentNumber);
 
     if (content) {
@@ -284,12 +290,29 @@ export function SubjectSection() {
                   }
                 }}
               >
-                <option value="2">2문장 (공통1 + 성취1)</option>
-                <option value="3">3문장 (공통1 + 성취2)</option>
-                <option value="4">4문장 (공통1 + 성취3) 기본</option>
-                <option value="5">5문장 (공통1 + 성취4)</option>
-                <option value="6">6문장 (공통1 + 성취5)</option>
+                <option value="2">2문장</option>
+                <option value="3">3문장</option>
+                <option value="4">4문장 (기본)</option>
+                <option value="5">5문장</option>
+                <option value="6">6문장</option>
               </Select>
+              <div className="flex items-center gap-2 mt-2 md:mt-6">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selectedSubject ? subjectIncludeCommon[selectedSubject.code] !== false : true}
+                    onChange={(e) => {
+                      if (selectedSubject) {
+                        setSubjectIncludeCommon(selectedSubject.code, e.target.checked);
+                      }
+                    }}
+                    className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  />
+                  <span className="text-sm text-gray-700 dark:text-gray-300">
+                    교과 공통문장 포함
+                  </span>
+                </label>
+              </div>
             </div>
 
             {selectedSubject && classroom && (

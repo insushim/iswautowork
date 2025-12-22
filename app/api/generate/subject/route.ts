@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
       semester,
       achievementStandards,
       sentenceCount,
+      includeCommon,
       studentNumber,
       regenerateSingle,
     } = body as {
@@ -26,6 +27,7 @@ export async function POST(request: NextRequest) {
       semester: Semester;
       achievementStandards: AchievementStandard[];
       sentenceCount?: number;
+      includeCommon?: boolean;
       studentNumber?: number;
       regenerateSingle?: boolean;
     };
@@ -45,7 +47,8 @@ export async function POST(request: NextRequest) {
       achievementLevels,
       semester || 1,
       achievementStandards || [],
-      sentenceCount
+      sentenceCount,
+      includeCommon !== false // 기본값 true
     );
 
     if (regenerateSingle && studentNumber) {

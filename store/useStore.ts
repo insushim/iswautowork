@@ -47,6 +47,9 @@ interface AppStore {
   // 교과별 문장 수 (기본값 4)
   subjectSentenceCounts: Record<string, number>;
 
+  // 교과별 공통문장 포함 여부 (기본값 true)
+  subjectIncludeCommon: Record<string, boolean>;
+
   // 교과별 선택된 성취기준 (사용자가 넣기/빼기 가능)
   // key: `${subjectCode}_${semester}`, value: 선택된 성취기준 코드 배열
   selectedStandardCodes: Record<string, string[]>;
@@ -97,6 +100,9 @@ interface AppStore {
   // 교과별 문장 수 설정
   setSubjectSentenceCount: (subjectCode: string, count: number) => void;
 
+  // 교과별 공통문장 포함 여부 설정
+  setSubjectIncludeCommon: (subjectCode: string, include: boolean) => void;
+
   // 성취기준 선택/해제
   toggleStandardCode: (subjectCode: string, semester: Semester, code: string) => void;
   setSelectedStandardCodes: (subjectCode: string, semester: Semester, codes: string[]) => void;
@@ -142,6 +148,7 @@ export const useStore = create<AppStore>()(
       subjectAchievementLevels: {},
       subjectSemesters: {},
       subjectSentenceCounts: {},
+      subjectIncludeCommon: {},
       selectedStandardCodes: {},
       behaviorLevels: [],
       studentTalents: [],
@@ -169,7 +176,7 @@ export const useStore = create<AppStore>()(
         classroom: null, students: [],
         autonomousRecords: [], clubRecords: [], volunteerRecords: [], careerRecords: [],
         subjectDevelopments: {}, behaviorRecords: [], nugaRecords: [],
-        subjectAchievementLevels: {}, subjectSemesters: {}, subjectSentenceCounts: {}, selectedStandardCodes: {},
+        subjectAchievementLevels: {}, subjectSemesters: {}, subjectSentenceCounts: {}, subjectIncludeCommon: {}, selectedStandardCodes: {},
         behaviorLevels: [], studentTalents: []
       }),
 
@@ -235,6 +242,10 @@ export const useStore = create<AppStore>()(
 
       setSubjectSentenceCount: (subjectCode, count) => set((state) => ({
         subjectSentenceCounts: { ...state.subjectSentenceCounts, [subjectCode]: count }
+      })),
+
+      setSubjectIncludeCommon: (subjectCode, include) => set((state) => ({
+        subjectIncludeCommon: { ...state.subjectIncludeCommon, [subjectCode]: include }
       })),
 
       toggleStandardCode: (subjectCode, semester, code) => set((state) => {
@@ -348,6 +359,7 @@ export const useStore = create<AppStore>()(
         subjectAchievementLevels: state.subjectAchievementLevels,
         subjectSemesters: state.subjectSemesters,
         subjectSentenceCounts: state.subjectSentenceCounts,
+        subjectIncludeCommon: state.subjectIncludeCommon,
         selectedStandardCodes: state.selectedStandardCodes,
         behaviorLevels: state.behaviorLevels,
         studentTalents: state.studentTalents,
