@@ -16,7 +16,8 @@ import {
 import { Button, Card, CardContent } from '@/components/ui';
 import { useExport } from '@/hooks/useExport';
 import { getSubjectNameFromCode } from '@/lib/achievement-standards';
-import { Download, FileSpreadsheet } from 'lucide-react';
+import { Download, FileSpreadsheet, Sparkles, Users, Heart, Compass } from 'lucide-react';
+import { CreativeActivityTab } from '@/types';
 
 type TabType = 'creative' | 'subject' | 'behavior' | 'nuga';
 
@@ -32,6 +33,7 @@ export default function Home() {
   } = useStore();
 
   const [activeTab, setActiveTab] = useState<TabType>('creative');
+  const [activeCreativeTab, setActiveCreativeTab] = useState<CreativeActivityTab>('autonomous');
   const { exportAll } = useExport({ classroom });
 
   const handleExportAll = () => {
@@ -67,6 +69,13 @@ export default function Home() {
     { id: 'subject', label: '교과별 발달사항' },
     { id: 'nuga', label: '누가기록' },
     { id: 'behavior', label: '행동특성 및 종합의견' },
+  ];
+
+  const creativeTabs: { id: CreativeActivityTab; label: string; icon: React.ReactNode }[] = [
+    { id: 'autonomous', label: '자율활동', icon: <Sparkles className="w-4 h-4" /> },
+    { id: 'club', label: '동아리활동', icon: <Users className="w-4 h-4" /> },
+    { id: 'volunteer', label: '봉사활동', icon: <Heart className="w-4 h-4" /> },
+    { id: 'career', label: '진로활동', icon: <Compass className="w-4 h-4" /> },
   ];
 
   return (
@@ -132,11 +141,38 @@ export default function Home() {
             {/* Tab Content */}
             <div className="space-y-6">
               {activeTab === 'creative' && (
-                <div className="space-y-8">
-                  <AutonomousSection />
-                  <ClubSection />
-                  <VolunteerSection />
-                  <CareerSection />
+                <div className="space-y-4">
+                  {/* Creative Activity Sub-tabs */}
+                  <Card>
+                    <CardContent className="py-2">
+                      <nav className="flex space-x-1">
+                        {creativeTabs.map((tab) => (
+                          <button
+                            key={tab.id}
+                            onClick={() => setActiveCreativeTab(tab.id)}
+                            className={`
+                              flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-colors
+                              ${activeCreativeTab === tab.id
+                                ? 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300'
+                                : 'text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800'
+                              }
+                            `}
+                          >
+                            {tab.icon}
+                            {tab.label}
+                          </button>
+                        ))}
+                      </nav>
+                    </CardContent>
+                  </Card>
+
+                  {/* Creative Activity Content */}
+                  <div className="space-y-6">
+                    {activeCreativeTab === 'autonomous' && <AutonomousSection />}
+                    {activeCreativeTab === 'club' && <ClubSection />}
+                    {activeCreativeTab === 'volunteer' && <VolunteerSection />}
+                    {activeCreativeTab === 'career' && <CareerSection />}
+                  </div>
                 </div>
               )}
 

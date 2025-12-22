@@ -5,7 +5,7 @@ import {
   AutonomousActivity, ClubActivity, VolunteerActivity, CareerActivity,
   SubjectAchievementLevel, BehaviorLevel, Theme, Semester,
   StudentTalents, TalentLevel, TalentType, AchievementStandard,
-  NugaRecord, NugaCategory
+  NugaRecord, NugaCategory, CreativeActivityHistoryItem, CreativeActivityTab
 } from '@/types';
 
 interface AppStore {
@@ -31,6 +31,14 @@ interface AppStore {
 
   // 누가기록
   nugaRecords: NugaRecord[];
+
+  // 창의적 체험활동 누적 기록 (히스토리)
+  creativeHistory: {
+    autonomous: CreativeActivityHistoryItem[];
+    club: CreativeActivityHistoryItem[];
+    volunteer: CreativeActivityHistoryItem[];
+    career: CreativeActivityHistoryItem[];
+  };
 
   // 현재 활동 설정
   currentAutonomousActivity: AutonomousActivity | null;
@@ -126,6 +134,13 @@ interface AppStore {
   toggleNugaRecordUsed: (id: string) => void;
   clearNugaRecords: () => void;
   clearNugaRecordsByStudent: (studentNumber: number) => void;
+
+  // 창의적 체험활동 누적 기록 액션
+  addCreativeHistory: (tab: CreativeActivityTab, item: CreativeActivityHistoryItem) => void;
+  updateCreativeHistoryRecord: (tab: CreativeActivityTab, historyId: string, studentNumber: number, content: string) => void;
+  deleteCreativeHistory: (tab: CreativeActivityTab, historyId: string) => void;
+  clearCreativeHistory: (tab: CreativeActivityTab) => void;
+  clearAllCreativeHistory: () => void;
 }
 
 export const useStore = create<AppStore>()(
@@ -141,6 +156,12 @@ export const useStore = create<AppStore>()(
       subjectDevelopments: {},
       behaviorRecords: [],
       nugaRecords: [],
+      creativeHistory: {
+        autonomous: [],
+        club: [],
+        volunteer: [],
+        career: [],
+      },
       currentAutonomousActivity: null,
       currentClubActivity: null,
       currentVolunteerActivity: null,
@@ -176,6 +197,7 @@ export const useStore = create<AppStore>()(
         classroom: null, students: [],
         autonomousRecords: [], clubRecords: [], volunteerRecords: [], careerRecords: [],
         subjectDevelopments: {}, behaviorRecords: [], nugaRecords: [],
+        creativeHistory: { autonomous: [], club: [], volunteer: [], career: [] },
         subjectAchievementLevels: {}, subjectSemesters: {}, subjectSentenceCounts: {}, subjectIncludeCommon: {}, selectedStandardCodes: {},
         behaviorLevels: [], studentTalents: []
       }),
@@ -342,6 +364,55 @@ export const useStore = create<AppStore>()(
       clearNugaRecordsByStudent: (studentNumber) => set((state) => ({
         nugaRecords: state.nugaRecords.filter(r => r.studentNumber !== studentNumber)
       })),
+
+      // 창의적 체험활동 누적 기록 액션
+      addCreativeHistory: (tab, item) => set((state) => ({
+        creativeHistory: {
+          ...state.creativeHistory,
+          [tab]: [...state.creativeHistory[tab], item]
+        }
+      })),
+
+      updateCreativeHistoryRecord: (tab, historyId, studentNumber, content) => set((state) => ({
+        creativeHistory: {
+          ...state.creativeHistory,
+          [tab]: state.creativeHistory[tab].map(history =>
+            history.id === historyId
+              ? {
+                  ...history,
+                  records: history.records.map(r =>
+                    r.studentNumber === studentNumber
+                      ? { ...r, content, isEdited: true, charCount: content.length }
+                      : r
+                  )
+                }
+              : history
+          )
+        }
+      })),
+
+      deleteCreativeHistory: (tab, historyId) => set((state) => ({
+        creativeHistory: {
+          ...state.creativeHistory,
+          [tab]: state.creativeHistory[tab].filter(h => h.id !== historyId)
+        }
+      })),
+
+      clearCreativeHistory: (tab) => set((state) => ({
+        creativeHistory: {
+          ...state.creativeHistory,
+          [tab]: []
+        }
+      })),
+
+      clearAllCreativeHistory: () => set({
+        creativeHistory: {
+          autonomous: [],
+          club: [],
+          volunteer: [],
+          career: [],
+        }
+      }),
     }),
     {
       name: 'neis-helper-storage-v2',
@@ -356,6 +427,7 @@ export const useStore = create<AppStore>()(
         subjectDevelopments: state.subjectDevelopments,
         behaviorRecords: state.behaviorRecords,
         nugaRecords: state.nugaRecords,
+        creativeHistory: state.creativeHistory,
         subjectAchievementLevels: state.subjectAchievementLevels,
         subjectSemesters: state.subjectSemesters,
         subjectSentenceCounts: state.subjectSentenceCounts,

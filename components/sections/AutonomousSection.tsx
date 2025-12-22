@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { useStore } from '@/store/useStore';
-import { AutonomousActivityType, AutonomousActivity } from '@/types';
+import { AutonomousActivityType, AutonomousActivity, CreativeActivityHistoryItem } from '@/types';
 import { AUTONOMOUS_ACTIVITY_INFO } from '@/lib/curriculum-data';
 import { Card, CardHeader, CardTitle, CardContent, Button, Select, Input, Textarea } from '@/components/ui';
 import { RecordList } from '@/components/RecordList';
 import { useGenerate } from '@/hooks/useGenerate';
 import { useExport } from '@/hooks/useExport';
-import { Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Sparkles, ChevronDown, ChevronUp, History, Trash2, FileSpreadsheet } from 'lucide-react';
 
 export function AutonomousSection() {
   const {
@@ -20,6 +20,11 @@ export function AutonomousSection() {
     setCurrentAutonomousActivity,
     isGenerating,
     setIsGenerating,
+    creativeHistory,
+    addCreativeHistory,
+    updateCreativeHistoryRecord,
+    deleteCreativeHistory,
+    clearCreativeHistory,
   } = useStore();
 
   const [isExpanded, setIsExpanded] = useState(true);
@@ -54,6 +59,20 @@ export function AutonomousSection() {
 
     if (records) {
       setAutonomousRecords(records);
+
+      // 누적 기록에 추가
+      const activityName = activityType === 'custom'
+        ? customTitle
+        : AUTONOMOUS_ACTIVITY_INFO[activityType].name;
+
+      const historyItem: CreativeActivityHistoryItem = {
+        id: `autonomous-${Date.now()}`,
+        activityName,
+        activityType,
+        records,
+        createdAt: new Date(),
+      };
+      addCreativeHistory('autonomous', historyItem);
     }
 
     setIsGenerating(false);
@@ -177,6 +196,96 @@ export function AutonomousSection() {
           isGenerating={isGenerating}
           regeneratingStudent={regeneratingStudent}
         />
+      )}
+
+      {/* 누적 기록 히스토리 */}
+      {creativeHistory.autonomous.length > 0 && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle className="flex items-center gap-2">
+                <History className="w-5 h-5 text-purple-500" />
+                자율활동 누적 기록 ({creativeHistory.autonomous.length}개)
+              </CardTitle>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  if (confirm('모든 자율활동 누적 기록을 삭제하시겠습니까?')) {
+                    clearCreativeHistory('autonomous');
+                  }
+                }}
+              >
+                <Trash2 className="w-4 h-4 mr-1" />
+                전체 삭제
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {creativeHistory.autonomous.map((historyItem, index) => (
+              <div
+                key={historyItem.id}
+                className="border border-gray-200 dark:border-gray-700 rounded-lg p-4"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded text-sm font-medium">
+                      #{index + 1}
+                    </span>
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      {historyItem.activityName}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {new Date(historyItem.createdAt).toLocaleDateString('ko-KR', {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        exportSection('autonomous', '자율활동', historyItem.records, historyItem.activityName);
+                      }}
+                    >
+                      <FileSpreadsheet className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        if (confirm('이 기록을 삭제하시겠습니까?')) {
+                          deleteCreativeHistory('autonomous', historyItem.id);
+                        }
+                      }}
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-h-40 overflow-y-auto">
+                  {historyItem.records.map((record) => (
+                    <div
+                      key={record.studentNumber}
+                      className="bg-gray-50 dark:bg-gray-800 p-2 rounded text-sm"
+                    >
+                      <span className="font-medium text-gray-700 dark:text-gray-300">
+                        {record.studentNumber}번:
+                      </span>{' '}
+                      <span className="text-gray-600 dark:text-gray-400">
+                        {record.content.slice(0, 50)}...
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
       )}
     </div>
   );

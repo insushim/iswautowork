@@ -158,3 +158,23 @@ export type NugaCategory =
   | 'character'        // 인성 및 정서 발달
   | 'talent'           // 진로 및 특기 발달
   | 'other';           // 기타
+
+// 창의적 체험활동 하위 탭 타입
+export type CreativeActivityTab = 'autonomous' | 'club' | 'volunteer' | 'career';
+
+// 창의적 체험활동 누적 기록 (활동별 히스토리)
+export interface CreativeActivityHistoryItem {
+  id: string;
+  activityName: string;
+  activityType: string;
+  records: GeneratedRecord[];
+  createdAt: Date;
+}
+
+// 창의적 체험활동 영역별 히스토리
+export interface CreativeActivityHistory {
+  autonomous: CreativeActivityHistoryItem[];
+  club: CreativeActivityHistoryItem[];
+  volunteer: CreativeActivityHistoryItem[];
+  career: CreativeActivityHistoryItem[];
+}
