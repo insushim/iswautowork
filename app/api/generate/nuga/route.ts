@@ -57,6 +57,15 @@ export async function POST(request: NextRequest) {
     const date = defaultDate || new Date().toISOString().split('T')[0];
     const records = await generateNugaRecords(prompt, date);
 
+    // 파싱 결과가 비어있으면 에러
+    if (!records || records.length === 0) {
+      console.error('Nuga parsing failed: empty result');
+      return NextResponse.json(
+        { error: '누가기록 파싱에 실패했습니다. 다시 시도해주세요.' },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({ records });
   } catch (error) {
     console.error('Nuga generation error:', error);

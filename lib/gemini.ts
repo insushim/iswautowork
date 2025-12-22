@@ -115,15 +115,39 @@ function parseNugaResponse(text: string, defaultDate: string): NugaRecord[] {
     const trimmed = line.trim();
     if (!trimmed) continue;
 
-    // 학생 번호 매칭 (예: "1번:")
-    const studentMatch = trimmed.match(/^(\d+)번\s*:?\s*$/);
+    // 학생 번호 매칭 - 여러 형식 지원
+    // "1번:", "1번", "**1번:**", "### 1번", "1번 학생:" 등
+    const studentMatch = trimmed.match(/^(?:\*{0,2}|\#{1,3}\s*)?(\d+)번\s*(?:학생)?\s*:?\s*\*{0,2}$/);
     if (studentMatch) {
       currentStudentNumber = parseInt(studentMatch[1]);
       continue;
     }
 
-    // 카테고리별 문장 매칭 (예: "[school_life] 문장 내용")
-    const categoryMatch = trimmed.match(/^\[(\w+)\]\s*(.+)$/);
+    // 학생 번호가 같은 줄에 카테고리와 함께 있는 경우
+    // "1번: [school_life] 문장 내용"
+    const combinedMatch = trimmed.match(/^(?:\*{0,2})?(\d+)번\s*:?\s*\[(\w+)\]\s*(.+)$/);
+    if (combinedMatch) {
+      currentStudentNumber = parseInt(combinedMatch[1]);
+      const category = combinedMatch[2] as NugaCategory;
+      const sentence = combinedMatch[3].trim();
+
+      if (sentence.length > 0) {
+        records.push({
+          id: `nuga_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
+          studentNumber: currentStudentNumber,
+          sentence,
+          date: defaultDate,
+          category: isValidCategory(category) ? category : 'other',
+          isUsed: false,
+          createdAt: new Date(),
+        });
+      }
+      continue;
+    }
+
+    // 카테고리별 문장 매칭 - 여러 형식 지원
+    // "[school_life] 문장", "- [school_life] 문장", "* [school_life] 문장"
+    const categoryMatch = trimmed.match(/^[-*]?\s*\[(\w+)\]\s*(.+)$/);
     if (categoryMatch && currentStudentNumber > 0) {
       const category = categoryMatch[1] as NugaCategory;
       const sentence = categoryMatch[2].trim();
