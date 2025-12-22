@@ -65,8 +65,8 @@ export default function Home() {
   const tabs: { id: TabType; label: string }[] = [
     { id: 'creative', label: '창의적 체험활동' },
     { id: 'subject', label: '교과별 발달사항' },
-    { id: 'behavior', label: '행동특성 및 종합의견' },
     { id: 'nuga', label: '누가기록' },
+    { id: 'behavior', label: '행동특성 및 종합의견' },
   ];
 
   return (

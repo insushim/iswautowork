@@ -14,7 +14,6 @@ import {
   Trash2,
   Check,
   Filter,
-  Calendar,
   RefreshCw,
   Download,
   Sparkles,
@@ -45,9 +44,6 @@ export function NugaRecordSection() {
   const [selectedStudent, setSelectedStudent] = useState<number | 'all'>('all');
   const [selectedCategory, setSelectedCategory] = useState<NugaCategory | 'all'>('all');
   const [showUsed, setShowUsed] = useState(true);
-  const [defaultDate, setDefaultDate] = useState(
-    new Date().toISOString().split('T')[0]
-  );
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isCombining, setIsCombining] = useState(false);
@@ -78,7 +74,7 @@ export function NugaRecordSection() {
           grade: classroom.grade,
           behaviorLevels,
           studentTalents,
-          defaultDate,
+          defaultDate: new Date().toISOString().split('T')[0],
         }),
       });
 
@@ -336,17 +332,8 @@ export function NugaRecordSection() {
               />
             </div>
 
-            {/* 날짜 및 생성 버튼 */}
+            {/* 생성 버튼 */}
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-gray-500" />
-                <input
-                  type="date"
-                  value={defaultDate}
-                  onChange={(e) => setDefaultDate(e.target.value)}
-                  className="text-sm border border-gray-300 dark:border-gray-600 rounded px-2 py-1 dark:bg-gray-800"
-                />
-              </div>
               <Button
                 onClick={handleGenerate}
                 disabled={isGenerating}
