@@ -126,47 +126,75 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[4국06-03]', content: '매체를 바르게 이용하는 방법을 알고 이를 생활에서 실천한다.', grade: 4, semester: 2, subject: '국어', domain: '매체' },
 
   // ========================================
-  // 국어 5-6학년군 (2015 개정 교육과정)
+  // 국어 5-6학년군 (2022 개정 교육과정)
+  // 듣기·말하기 7개, 읽기 5개, 쓰기 6개, 문법 6개, 문학 6개, 매체 4개 = 총 34개
   // ========================================
 
   // ========== 국어 5학년 1학기 ==========
-  { code: '[6국01-01]', content: '구어 의사소통의 특성을 바탕으로 하여 듣기·말하기 활동을 한다.', grade: 5, semester: 1, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국01-02]', content: '의견을 제시하고 함께 조정하며 토의한다.', grade: 5, semester: 1, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국02-01]', content: '읽기는 배경지식을 활용하여 의미를 구성하는 과정임을 이해하고 글을 읽는다.', grade: 5, semester: 1, subject: '국어', domain: '읽기' },
-  { code: '[6국02-02]', content: '글의 구조를 고려하여 글 전체의 내용을 요약한다.', grade: 5, semester: 1, subject: '국어', domain: '읽기' },
-  { code: '[6국03-01]', content: '쓰기는 절차에 따라 의미를 구성하고 표현하는 과정임을 이해하고 글을 쓴다.', grade: 5, semester: 1, subject: '국어', domain: '쓰기' },
-  { code: '[6국03-02]', content: '목적이나 주제에 따라 알맞은 내용과 매체를 선정하여 글을 쓴다.', grade: 5, semester: 1, subject: '국어', domain: '쓰기' },
-  { code: '[6국04-01]', content: '언어는 사고와 의사소통의 수단임을 이해하고 국어생활을 한다.', grade: 5, semester: 1, subject: '국어', domain: '문법' },
-  { code: '[6국05-01]', content: '문학은 가치 있는 내용을 언어로 표현하여 아름다움을 느끼게 하는 활동임을 이해하고 문학 활동을 한다.', grade: 5, semester: 1, subject: '국어', domain: '문학' },
-  { code: '[6국05-02]', content: '작품 속 세계와 현실 세계를 비교하며 작품을 감상한다.', grade: 5, semester: 1, subject: '국어', domain: '문학' },
+  // 듣기·말하기
+  { code: '[6국01-01]', content: '대화에서 생략된 내용을 추론하며 듣는다.', grade: 5, semester: 1, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국01-02]', content: '주장을 파악하고 이유나 근거가 타당한지 평가하며 듣는다.', grade: 5, semester: 1, subject: '국어', domain: '듣기·말하기' },
+  // 읽기
+  { code: '[6국02-01]', content: '글의 구조를 고려하며 주제나 주장을 파악하고 글 내용을 요약한다.', grade: 5, semester: 1, subject: '국어', domain: '읽기' },
+  { code: '[6국02-02]', content: '글에서 생략된 내용이나 함축된 표현을 문맥을 고려하여 추론한다.', grade: 5, semester: 1, subject: '국어', domain: '읽기' },
+  // 쓰기
+  { code: '[6국03-01]', content: '알맞은 내용을 선정하여 대상의 특성이 나타나게 설명하는 글을 쓴다.', grade: 5, semester: 1, subject: '국어', domain: '쓰기' },
+  { code: '[6국03-02]', content: '적절한 근거를 사용하고 인용의 출처를 밝히며 주장하는 글을 쓴다.', grade: 5, semester: 1, subject: '국어', domain: '쓰기' },
+  // 문법
+  { code: '[6국04-01]', content: '음성 언어 및 문자 언어의 특성을 이해하고 다양한 매체 자료에서 표현 효과를 평가한다.', grade: 5, semester: 1, subject: '국어', domain: '문법' },
+  { code: '[6국04-02]', content: '표준어와 방언의 기능을 파악하고 언어 공동체와 국어생활과의 관계를 이해한다.', grade: 5, semester: 1, subject: '국어', domain: '문법' },
+  // 문학
+  { code: '[6국05-01]', content: '작가의 의도를 생각하며 작품을 읽는다.', grade: 5, semester: 1, subject: '국어', domain: '문학' },
+  { code: '[6국05-02]', content: '비유적 표현의 효과에 유의하여 작품을 감상한다.', grade: 5, semester: 1, subject: '국어', domain: '문학' },
+  // 매체
+  { code: '[6국06-01]', content: '정보 검색 도구를 활용하여 자신의 목적에 맞는 매체 자료를 찾는다.', grade: 5, semester: 1, subject: '국어', domain: '매체' },
 
   // ========== 국어 5학년 2학기 ==========
-  { code: '[6국01-03]', content: '절차와 규칙을 지키고 근거를 제시하며 토론한다.', grade: 5, semester: 2, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국01-04]', content: '자료를 정리하여 말할 내용을 체계적으로 구성한다.', grade: 5, semester: 2, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국02-03]', content: '글을 읽고 글쓴이가 말하고자 하는 주장이나 주제를 파악한다.', grade: 5, semester: 2, subject: '국어', domain: '읽기' },
-  { code: '[6국02-04]', content: '글을 읽고 내용의 타당성과 표현의 적절성을 판단한다.', grade: 5, semester: 2, subject: '국어', domain: '읽기' },
-  { code: '[6국03-03]', content: '목적이나 대상에 따라 알맞은 형식과 자료를 사용하여 설명하는 글을 쓴다.', grade: 5, semester: 2, subject: '국어', domain: '쓰기' },
-  { code: '[6국04-02]', content: '국어의 낱말 확장 방법을 탐구하고 어휘력을 높이는 데에 적용한다.', grade: 5, semester: 2, subject: '국어', domain: '문법' },
-  { code: '[6국05-03]', content: '비유적 표현의 특성과 효과를 살려 생각과 느낌을 다양하게 표현한다.', grade: 5, semester: 2, subject: '국어', domain: '문학' },
+  // 듣기·말하기
+  { code: '[6국01-03]', content: '주제와 관련하여 궁금한 내용을 질문하며 적극적으로 듣고 말한다.', grade: 5, semester: 2, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국01-04]', content: '면담의 절차를 이해하고 상대와 매체를 고려하여 면담한다.', grade: 5, semester: 2, subject: '국어', domain: '듣기·말하기' },
+  // 읽기
+  { code: '[6국02-03]', content: '글이나 자료를 읽고 내용의 타당성과 표현의 적절성을 평가한다.', grade: 5, semester: 2, subject: '국어', domain: '읽기' },
+  // 쓰기
+  { code: '[6국03-03]', content: '체험한 일에 대한 감상을 나타내는 글을 쓴다.', grade: 5, semester: 2, subject: '국어', domain: '쓰기' },
+  { code: '[6국03-04]', content: '독자와 매체를 고려하여 내용을 생성하고 표현하며 글을 쓴다.', grade: 5, semester: 2, subject: '국어', domain: '쓰기' },
+  // 문법
+  { code: '[6국04-03]', content: '고유어와 관용 표현의 쓰임과 가치를 이해하고 상황에 맞게 표현한다.', grade: 5, semester: 2, subject: '국어', domain: '문법' },
+  // 문학
+  { code: '[6국05-03]', content: '소설이나 극을 읽고 인물, 사건, 배경을 파악한다.', grade: 5, semester: 2, subject: '국어', domain: '문학' },
+  // 매체
+  { code: '[6국06-02]', content: '뉴스 및 각종 정보 매체 자료의 신뢰성을 평가한다.', grade: 5, semester: 2, subject: '국어', domain: '매체' },
 
   // ========== 국어 6학년 1학기 ==========
-  { code: '[6국01-05]', content: '매체 자료를 활용하여 내용을 효과적으로 발표한다.', grade: 6, semester: 1, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국01-06]', content: '드라마의 기본 형식을 알고 드라마를 비평하며 감상한다.', grade: 6, semester: 1, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국02-05]', content: '매체에 따른 다양한 읽기 방법을 이해하고 적절하게 적용하며 읽는다.', grade: 6, semester: 1, subject: '국어', domain: '읽기' },
-  { code: '[6국03-04]', content: '적절한 근거와 알맞은 표현을 사용하여 주장하는 글을 쓴다.', grade: 6, semester: 1, subject: '국어', domain: '쓰기' },
-  { code: '[6국04-03]', content: '낱말이 상황에 따라 다양하게 해석됨을 탐구한다.', grade: 6, semester: 1, subject: '국어', domain: '문법' },
-  { code: '[6국04-04]', content: '관용 표현을 이해하고 적절하게 활용한다.', grade: 6, semester: 1, subject: '국어', domain: '문법' },
-  { code: '[6국05-04]', content: '일상생활의 경험을 이야기나 극의 형식으로 표현한다.', grade: 6, semester: 1, subject: '국어', domain: '문학' },
+  // 듣기·말하기
+  { code: '[6국01-05]', content: '자료를 선별하여 핵심 정보를 중심으로 내용을 구성하고 매체를 활용하여 발표한다.', grade: 6, semester: 1, subject: '국어', domain: '듣기·말하기' },
+  { code: '[6국01-06]', content: '토의에 협력적으로 참여하며 서로의 의견을 비교하고 조정한다.', grade: 6, semester: 1, subject: '국어', domain: '듣기·말하기' },
+  // 읽기
+  { code: '[6국02-04]', content: '문제 상황과 관련된 다양한 관점의 글을 읽고 이를 문제 해결에 활용한다.', grade: 6, semester: 1, subject: '국어', domain: '읽기' },
+  // 쓰기
+  { code: '[6국03-05]', content: '쓰기 과정을 점검·조정하며 글을 쓰고, 글 전체를 대상으로 통일성 있게 고쳐 쓴다.', grade: 6, semester: 1, subject: '국어', domain: '쓰기' },
+  // 문법
+  { code: '[6국04-04]', content: '문장 성분을 이해하고 호응 관계가 올바른 문장을 구성한다.', grade: 6, semester: 1, subject: '국어', domain: '문법' },
+  { code: '[6국04-05]', content: '글과 담화에 쓰인 시간 표현을 이해하고 상황에 맞게 표현한다.', grade: 6, semester: 1, subject: '국어', domain: '문법' },
+  // 문학
+  { code: '[6국05-04]', content: '인상적인 부분을 중심으로 작품에 대한 의견을 나눈다.', grade: 6, semester: 1, subject: '국어', domain: '문학' },
+  { code: '[6국05-05]', content: '자신의 경험을 시, 소설, 극, 수필 등 적절한 갈래로 표현한다.', grade: 6, semester: 1, subject: '국어', domain: '문학' },
+  // 매체
+  { code: '[6국06-03]', content: '적합한 양식과 수용자의 반응을 고려하여 복합양식 매체 자료를 제작하고 공유한다.', grade: 6, semester: 1, subject: '국어', domain: '매체' },
 
   // ========== 국어 6학년 2학기 ==========
-  { code: '[6국01-07]', content: '상대가 처한 상황을 이해하고 공감하며 듣는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '듣기·말하기' },
-  { code: '[6국02-06]', content: '자신의 읽기 습관을 점검하며 스스로 글을 찾아 읽는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '읽기' },
-  { code: '[6국03-05]', content: '체험한 일에 대한 감상이 드러나게 글을 쓴다.', grade: 6, semester: 2, subject: '국어', domain: '쓰기' },
-  { code: '[6국03-06]', content: '독자를 존중하고 배려하며 글을 쓰는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '쓰기' },
-  { code: '[6국04-05]', content: '국어의 문장 성분을 이해하고 호응 관계가 올바른 문장을 구성한다.', grade: 6, semester: 2, subject: '국어', domain: '문법' },
-  { code: '[6국04-06]', content: '일상생활에서 국어를 바르게 사용하는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '문법' },
-  { code: '[6국05-05]', content: '작품에 대한 이해와 감상을 바탕으로 하여 다른 사람과 적극적으로 소통한다.', grade: 6, semester: 2, subject: '국어', domain: '문학' },
-  { code: '[6국05-06]', content: '작품에서 얻은 깨달음을 바탕으로 하여 바람직한 삶의 가치를 내면화하는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '문학' },
+  // 듣기·말하기
+  { code: '[6국01-07]', content: '절차와 규칙을 지키고 타당한 이유와 근거를 제시하며 토론한다.', grade: 6, semester: 2, subject: '국어', domain: '듣기·말하기' },
+  // 읽기
+  { code: '[6국02-05]', content: '긍정적인 읽기 동기를 형성하고 적극적으로 읽기에 참여하는 태도를 기른다.', grade: 6, semester: 2, subject: '국어', domain: '읽기' },
+  // 쓰기
+  { code: '[6국03-06]', content: '쓰기에 적극적으로 참여하며 자신의 글을 독자와 공유하는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '쓰기' },
+  // 문법
+  { code: '[6국04-06]', content: '글과 담화에 쓰인 단어 및 문장, 띄어쓰기를 민감하게 살펴 바르게 고치는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '문법' },
+  // 문학
+  { code: '[6국05-06]', content: '작품을 읽고 자신의 삶과 연관 지어 성찰하는 태도를 지닌다.', grade: 6, semester: 2, subject: '국어', domain: '문학' },
+  // 매체
+  { code: '[6국06-04]', content: '자신의 매체 이용 양상에 대해 성찰한다.', grade: 6, semester: 2, subject: '국어', domain: '매체' },
 
   // ========================================
   // 수학 1-2학년군 (2022 개정 교육과정)
@@ -288,74 +316,79 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[4수04-03]', content: '꺾은선그래프를 알고, 주어진 자료를 꺾은선그래프로 나타낼 수 있다.', grade: 4, semester: 2, subject: '수학', domain: '자료와 가능성' },
 
   // ========================================
-  // 수학 5-6학년군 (2015 개정 교육과정)
+  // 수학 5-6학년군 (2022 개정 교육과정)
+  // 수와 연산 15개, 변화와 관계 5개, 도형과 측정 19개, 자료와 가능성 6개 = 총 45개
   // ========================================
 
   // ========== 수학 5학년 1학기 ==========
-  { code: '[6수01-01]', content: '덧셈, 뺄셈, 곱셈, 나눗셈의 혼합 계산에서 계산하는 순서를 알고, 혼합 계산을 할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-02]', content: '약수, 공약수, 최대공약수의 의미를 알고 구할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-03]', content: '배수, 공배수, 최소공배수의 의미를 알고 구할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
-  { code: '[6수02-01]', content: '직육면체와 정육면체를 알고, 구성 요소와 성질을 이해한다.', grade: 5, semester: 1, subject: '수학', domain: '도형' },
-  { code: '[6수03-01]', content: '직사각형의 넓이를 구하는 방법을 이해하고, 이를 통하여 넓이의 단위 1㎠, 1㎡, 1㎢의 관계를 이해한다.', grade: 5, semester: 1, subject: '수학', domain: '측정' },
+  // 1단원: 자연수의 혼합 계산
+  { code: '[6수01-09]', content: '덧셈, 뺄셈, 곱셈, 나눗셈의 혼합 계산에서 계산하는 순서를 알고, 혼합 계산을 할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
+  // 2단원: 약수와 배수
+  { code: '[6수01-01]', content: '약수와 배수의 관계를 이해한다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
+  { code: '[6수01-02]', content: '최대공약수와 최소공배수를 구할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
+  // 3단원: 규칙과 대응
+  { code: '[6수02-05]', content: '두 양 사이의 대응 관계를 식으로 나타내고 활용할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '변화와 관계' },
+  // 4단원: 약분과 통분
+  { code: '[6수01-03]', content: '분모가 다른 분수의 크기를 비교할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
+  // 5단원: 분수의 덧셈과 뺄셈
+  { code: '[6수01-04]', content: '분모가 다른 분수의 덧셈과 뺄셈을 할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '수와 연산' },
+  // 6단원: 다각형의 둘레와 넓이
+  { code: '[6수03-10]', content: '평면도형의 넓이를 구하는 방법을 이해하고 넓이를 구할 수 있다.', grade: 5, semester: 1, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-11]', content: '넓이의 단위 1㎠, 1㎡, 1㎢의 관계를 이해한다.', grade: 5, semester: 1, subject: '수학', domain: '도형과 측정' },
 
   // ========== 수학 5학년 2학기 ==========
   // 1단원: 수의 범위와 어림하기
-  { code: '[6수01-07]', content: '이상, 이하, 초과, 미만의 의미를 알고, 수의 범위를 활용하여 실생활 문제를 해결할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-08]', content: '수를 다양한 방법으로 어림하고, 어림한 결과를 실생활에 활용할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
+  { code: '[6수01-10]', content: '이상, 이하, 초과, 미만의 의미를 알고, 수의 범위를 활용하며 어림할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
   // 2단원: 분수의 곱셈
-  { code: '[6수01-04]', content: '크기가 같은 분수를 만들 수 있고, 분수를 약분, 통분할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-05]', content: '분모가 다른 분수의 크기를 비교할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-06]', content: '분모가 다른 분수의 덧셈과 뺄셈의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
+  { code: '[6수01-05]', content: '분수의 곱셈을 할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
   // 3단원: 합동과 대칭
-  { code: '[6수02-02]', content: '직육면체와 정육면체의 전개도를 그릴 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '도형' },
-  { code: '[6수02-03]', content: '합동의 의미와 합동인 도형의 성질을 이해한다.', grade: 5, semester: 2, subject: '수학', domain: '도형' },
-  { code: '[6수02-04]', content: '선대칭도형과 점대칭도형을 이해하고 그릴 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '도형' },
+  { code: '[6수03-08]', content: '합동의 의미와 합동인 도형의 성질을 이해한다.', grade: 5, semester: 2, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-09]', content: '선대칭도형과 점대칭도형을 이해하고 그릴 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '도형과 측정' },
   // 4단원: 소수의 곱셈
-  { code: '[6수01-14]', content: '(소수)×(자연수), (자연수)×(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-15]', content: '(소수)×(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
+  { code: '[6수01-07]', content: '소수의 곱셈을 할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '수와 연산' },
   // 5단원: 직육면체
+  { code: '[6수03-01]', content: '직육면체와 정육면체의 구성 요소를 알고 성질을 이해한다.', grade: 5, semester: 2, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-02]', content: '직육면체와 정육면체의 전개도를 그릴 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '도형과 측정' },
   // 6단원: 평균과 가능성
-  { code: '[6수03-02]', content: '평행사변형, 삼각형, 사다리꼴, 마름모의 넓이를 구하는 방법을 다양하게 추론하고, 이와 관련된 문제를 해결할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '측정' },
-  { code: '[6수05-01]', content: '평균의 의미를 알고, 주어진 자료의 평균을 구할 수 있으며, 이를 활용할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '자료와 가능성' },
-  { code: '[6수05-03]', content: '일이 일어날 가능성을 수로 표현할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '자료와 가능성' },
+  { code: '[6수04-03]', content: '평균의 의미를 알고, 주어진 자료의 평균을 구할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '자료와 가능성' },
+  { code: '[6수04-05]', content: '일이 일어날 가능성을 수로 표현할 수 있다.', grade: 5, semester: 2, subject: '수학', domain: '자료와 가능성' },
 
   // ========== 수학 6학년 1학기 ==========
   // 1단원: 분수의 나눗셈
-  { code: '[6수01-09]', content: '(자연수)÷(자연수)의 몫을 분수로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-10]', content: '(분수)÷(자연수), (분수)÷(분수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
+  { code: '[6수01-06]', content: '분수의 나눗셈을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
   // 2단원: 각기둥과 각뿔
-  { code: '[6수02-05]', content: '각기둥과 각뿔을 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 1, subject: '수학', domain: '도형' },
-  { code: '[6수02-06]', content: '각기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '도형' },
+  { code: '[6수03-03]', content: '각기둥과 각뿔을 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 1, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-04]', content: '각기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '도형과 측정' },
   // 3단원: 소수의 나눗셈
-  { code: '[6수01-11]', content: '(소수)÷(자연수), (소수)÷(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
+  { code: '[6수01-08]', content: '소수의 나눗셈을 할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '수와 연산' },
   // 4단원: 비와 비율
-  { code: '[6수04-01]', content: '두 양의 크기를 비교하는 상황을 통해 비의 개념을 이해하고, 그 관계를 비로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '규칙성' },
-  { code: '[6수04-02]', content: '비율을 이해하고, 비율을 분수, 소수, 백분율로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '규칙성' },
+  { code: '[6수02-01]', content: '두 양의 크기를 비교하는 상황을 통해 비를 이해하고 활용할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '변화와 관계' },
+  { code: '[6수02-02]', content: '비율을 이해하고, 비율을 분수, 소수, 백분율로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '변화와 관계' },
   // 5단원: 여러 가지 그래프
-  { code: '[6수05-02]', content: '자료를 수집, 분류, 정리하여 목적에 맞는 그래프로 나타내고, 그래프를 해석할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '자료와 가능성' },
-  { code: '[6수05-04]', content: '비율그래프(띠그래프, 원그래프)를 알고, 이를 해석할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '자료와 가능성' },
+  { code: '[6수04-01]', content: '자료를 수집하고 분류, 정리하여 목적에 맞는 그래프로 나타낼 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '자료와 가능성' },
+  { code: '[6수04-04]', content: '비율그래프(띠그래프, 원그래프)를 알고, 이를 해석할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '자료와 가능성' },
   // 6단원: 직육면체의 부피와 겉넓이
-  { code: '[6수03-05]', content: '직육면체와 정육면체의 부피를 구하는 방법을 이해하고, 이를 통하여 부피의 단위 1㎤, 1㎥의 관계를 이해한다.', grade: 6, semester: 1, subject: '수학', domain: '측정' },
-  { code: '[6수03-04]', content: '직육면체와 정육면체의 겉넓이를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '측정' },
+  { code: '[6수03-12]', content: '직육면체와 정육면체의 겉넓이를 구할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-13]', content: '직육면체와 정육면체의 부피를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 1, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-14]', content: '부피의 단위 1㎤, 1㎥의 관계를 이해한다.', grade: 6, semester: 1, subject: '수학', domain: '도형과 측정' },
 
   // ========== 수학 6학년 2학기 ==========
-  // 1단원: 분수의 나눗셈
-  { code: '[6수01-09]', content: '(자연수)÷(자연수)의 몫을 분수로 나타낼 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[6수01-10]', content: '(분수)÷(자연수), (분수)÷(분수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  // 2단원: 공간과 입체
-  { code: '[6수02-08]', content: '쌓기나무로 쌓은 모양과 쌓기나무의 개수를 추측하고 확인할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
-  { code: '[6수02-10]', content: '공간에서 위치와 방향을 이용하여 물체의 위치를 나타낼 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
-  // 3단원: 소수의 나눗셈
-  { code: '[6수01-11]', content: '(소수)÷(자연수), (소수)÷(소수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
-  // 4단원: 원주율과 원의 넓이
-  { code: '[6수03-06]', content: '원주와 원주율의 의미를 이해하고, 원주를 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
-  { code: '[6수03-03]', content: '원주율의 의미를 이해하고, 원의 넓이를 구하는 방법을 이해하고 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '측정' },
-  // 5단원: 비례식과 비례배분
-  { code: '[6수04-03]', content: '비례식을 알고, 그 성질을 이해하며, 이를 활용하여 간단한 비례식을 풀 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
-  { code: '[6수04-04]', content: '비례배분을 알고, 이를 실생활에 적용하여 문제를 해결할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '규칙성' },
-  // 6단원: 원기둥, 원뿔, 구
-  { code: '[6수02-07]', content: '원기둥, 원뿔, 구를 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
-  { code: '[6수02-09]', content: '원기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형' },
+  // 1단원: 분수의 나눗셈 (심화)
+  { code: '[6수01-06]', content: '분수의 나눗셈을 할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '수와 연산' },
+  // 2단원: 쌓기나무
+  { code: '[6수03-07]', content: '쌓기나무를 사용하여 입체도형을 만들고, 쌓기나무의 개수를 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형과 측정' },
+  // 3단원: 비례식과 비례배분
+  { code: '[6수02-03]', content: '비례식을 알고, 그 성질을 이해하며, 이를 활용하여 비례식을 풀 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '변화와 관계' },
+  { code: '[6수02-04]', content: '비례배분을 알고, 이를 실생활에 적용하여 문제를 해결할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '변화와 관계' },
+  // 4단원: 원의 넓이
+  { code: '[6수03-15]', content: '원주율의 의미를 이해하고, 원주를 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-16]', content: '원의 넓이를 구하는 방법을 이해하고 넓이를 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형과 측정' },
+  // 5단원: 원기둥, 원뿔, 구
+  { code: '[6수03-05]', content: '원기둥, 원뿔, 구를 알고, 구성 요소와 성질을 이해한다.', grade: 6, semester: 2, subject: '수학', domain: '도형과 측정' },
+  { code: '[6수03-06]', content: '원기둥의 전개도를 그릴 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '도형과 측정' },
+  // 6단원: 경우의 수와 확률 (선택)
+  { code: '[6수04-06]', content: '사건이 일어날 경우의 수를 구할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '자료와 가능성' },
+  { code: '[6수04-02]', content: '표와 그래프로 자료를 정리하고 해석할 수 있다.', grade: 6, semester: 2, subject: '수학', domain: '자료와 가능성' },
 
   // ========== 사회 3학년 1학기 ==========
   { code: '[4사01-01]', content: '우리 고장의 위치를 다양한 방법으로 표현한다.', grade: 3, semester: 1, subject: '사회', domain: '지리 인식' },
@@ -379,69 +412,64 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[4사04-03]', content: '주민 자치와 지방 자치의 의미를 이해한다.', grade: 4, semester: 2, subject: '사회', domain: '일반사회' },
   { code: '[4사04-04]', content: '경제활동과 현명한 선택의 중요성을 이해한다.', grade: 4, semester: 2, subject: '사회', domain: '일반사회' },
 
-  // ========== 사회 5학년 1학기 (2015 개정) ==========
+  // ========================================
+  // 사회 5-6학년군 (2022 개정 교육과정)
+  // 지리 영역, 역사 영역, 일반사회 영역으로 구성
+  // ========================================
+
+  // ========== 사회 5학년 1학기 (2022 개정) ==========
   // 1단원: 국토와 우리 생활
-  { code: '[6사01-01]', content: '우리나라의 위치와 영역이 지니는 특성을 설명하고, 이를 바탕으로 하여 국토 사랑의 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
-  { code: '[6사01-02]', content: '우리 국토를 구분하는 기준들을 살펴보고, 시·도 단위 행정구역 및 주요 도시들의 위치 특성을 파악한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
-  { code: '[6사01-03]', content: '우리나라의 기후 환경 및 지형 환경에서 나타나는 특성을 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
-  { code: '[6사01-04]', content: '우리나라 자연재해의 종류 및 대책을 탐색하고, 그와 관련된 생활 안전 수칙을 실천하는 태도를 지닌다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
-  { code: '[6사01-05]', content: '우리나라의 인구 분포 및 구조에 대해 파악하고, 인구 문제 해결에 참여하려는 태도를 가진다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
-  { code: '[6사01-06]', content: '우리나라와 세계 여러 나라의 산업 구조와 산업의 발달 과정을 살펴보고, 지역별 산업의 특색을 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-01]', content: '우리나라의 위치와 영역이 지니는 특성을 이해하고, 국토 사랑의 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-02]', content: '우리 국토의 행정 구역을 살펴보고, 각 지역의 위치와 특성을 파악한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-03]', content: '우리나라의 자연환경(기후, 지형)의 특성을 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-04]', content: '우리나라의 인문환경(인구, 도시, 산업)의 특성을 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
+  { code: '[6사01-05]', content: '국토의 자연재해에 대응하여 안전한 생활을 실천하는 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '지리' },
   // 2단원: 인권 존중과 정의로운 사회
-  { code: '[6사02-01]', content: '인권의 의미와 인권 신장의 역사를 통해 인권이 확대되어 온 과정을 살펴보고, 인권 보장의 중요성을 파악한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-02]', content: '생활 속에서 인권 보장이 필요한 사례를 탐구하여 인권 의식을 기르고, 인권 보호를 실천하는 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-03]', content: '헌법에서 규정하는 기본권과 의무가 일상생활에 적용된 사례를 조사하고, 권리와 의무의 조화를 추구하는 자세를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-04]', content: '일상생활에서 경험하는 여러 가지 법의 의미를 파악하고, 법을 지키는 생활을 실천하는 태도를 기른다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-05]', content: '우리 생활 속에서 법이 적용되는 다양한 사례를 살펴보고, 법의 역할을 설명한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사02-06]', content: '국회, 행정부, 법원의 기능을 이해하고, 그것이 국민 생활에 미치는 영향을 다양한 사례를 통해 탐구한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-01]', content: '인권의 의미와 중요성을 이해하고, 인권이 확대되어 온 과정을 살펴본다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-02]', content: '생활 속에서 인권 보장이 필요한 사례를 탐구하고, 인권 보호를 실천한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-03]', content: '헌법에서 규정하는 기본권과 의무를 이해하고, 권리와 의무의 조화를 추구한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사02-04]', content: '법의 의미와 역할을 파악하고, 법을 지키는 생활을 실천한다.', grade: 5, semester: 1, subject: '사회', domain: '일반사회' },
 
-  // ========== 사회 5학년 2학기 (2015 개정) ==========
+  // ========== 사회 5학년 2학기 (2022 개정) ==========
   // 1단원: 옛사람들의 삶과 문화
-  { code: '[6사03-01]', content: '고조선의 등장과 발전 과정을 통하여 우리 역사가 형성되었음을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사03-02]', content: '여러 나라의 건국 이야기와 문화유산을 통해 고대 국가의 특징을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사03-03]', content: '삼국 통일과 발해의 건국 과정을 이해하고, 남북국 시대의 문화유산을 탐색한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사03-04]', content: '고려를 세우고 발전시킨 인물(왕건, 서희, 강감찬 등)의 업적을 통하여 고려의 정치적 특징을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사03-05]', content: '고려 시대 문화유산을 통하여 고려 문화의 우수성을 탐색한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사03-06]', content: '조선 시대 주요 인물(이성계, 세종대왕, 이순신 등)의 업적을 통하여 조선의 정치와 문화를 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  // 2단원: 사회의 새로운 변화와 오늘날의 우리
-  { code: '[6사04-01]', content: '영조와 정조 시기의 사회 변화와 문화의 발달을 살펴본다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사04-02]', content: '조선 후기 외세의 침략에 대항한 나라를 지키기 위한 노력을 살펴본다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사04-03]', content: '일제의 침략에 맞서 나라를 지키고자 노력한 인물의 활동에 대해 조사한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사04-04]', content: '광복과 대한민국 정부 수립 과정을 파악하고, 대한민국 임시 정부가 수립된 의의를 설명한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사04-05]', content: '6·25 전쟁의 원인과 과정을 이해하고, 전쟁의 결과와 영향을 살펴본다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
-  { code: '[6사04-06]', content: '4·19 혁명, 5·18 민주화 운동, 6월 민주 항쟁 등을 통해 민주주의가 발전해 온 과정을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-01]', content: '선사 시대와 고조선의 등장을 통하여 우리 역사가 형성되었음을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-02]', content: '삼국과 가야의 성립과 발전을 탐구하고, 문화유산을 통해 고대 국가의 특징을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-03]', content: '삼국 통일과 발해의 건국 과정을 이해하고, 남북국 시대의 문화를 탐색한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사03-04]', content: '고려의 성립과 발전 과정을 탐구하고, 고려 문화의 특징을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  // 2단원: 사회의 새로운 변화
+  { code: '[6사04-01]', content: '조선의 건국과 발전 과정을 탐구하고, 조선 전기의 정치와 문화를 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-02]', content: '조선 후기 사회 변화와 새로운 문화의 발달을 살펴본다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-03]', content: '근대 국가 수립을 위한 노력과 일제 침략에 맞선 독립운동을 탐구한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-04]', content: '광복과 대한민국 정부 수립 과정을 파악하고, 그 의의를 이해한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-05]', content: '6·25 전쟁의 원인과 과정, 결과를 이해하고, 평화 통일의 중요성을 인식한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
+  { code: '[6사04-06]', content: '민주화 운동의 과정을 살펴보고, 민주주의가 발전해 온 과정을 파악한다.', grade: 5, semester: 2, subject: '사회', domain: '역사' },
 
-  // ========== 사회 6학년 1학기 (2015 개정) ==========
+  // ========== 사회 6학년 1학기 (2022 개정) ==========
   // 1단원: 우리나라의 정치 발전
-  { code: '[6사05-01]', content: '4·19 혁명, 5·18 민주화 운동, 6월 민주 항쟁 등을 통해 자유민주주의가 발전해 온 과정을 파악한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사05-02]', content: '광복 이후 시민의 정치 참여 활동이 확대되는 과정을 중심으로 오늘날 우리 사회의 발전상을 살펴본다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사05-03]', content: '일상생활에서 경험하는 민주주의 실천 사례를 탐구하여 민주주의의 의미와 중요성을 파악하고, 생활 속에서 민주주의를 실천하는 태도를 기른다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사05-04]', content: '민주적 의사 결정 원리(다수결, 대화와 타협, 소수 의견 존중 등)의 의미와 필요성을 이해하고, 이를 실제 생활 속에서 실천하는 자세를 지닌다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사05-05]', content: '민주정치의 기본 원리(국민 주권, 권력 분립 등)를 이해하고, 그것이 적용된 다양한 사례를 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
-  { code: '[6사05-06]', content: '국회, 행정부, 법원의 기능을 이해하고, 그것이 국민 생활에 미치는 영향을 다양한 사례를 통해 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-01]', content: '민주주의의 의미와 중요성을 이해하고, 생활 속에서 민주주의를 실천한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-02]', content: '민주적 의사 결정 원리를 이해하고, 이를 생활 속에서 실천한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-03]', content: '민주정치의 기본 원리(국민 주권, 권력 분립)를 이해하고 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-04]', content: '국회, 행정부, 법원의 역할을 이해하고, 국민 생활에 미치는 영향을 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
+  { code: '[6사05-05]', content: '시민의 정치 참여 방법을 알고, 민주 시민으로서의 자세를 기른다.', grade: 6, semester: 1, subject: '사회', domain: '일반사회' },
   // 2단원: 우리나라의 경제 발전
-  { code: '[6사06-01]', content: '다양한 경제활동 사례를 통해 가계와 기업의 경제적 역할을 파악하고, 가계와 기업의 합리적 선택 방법을 탐색한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
-  { code: '[6사06-02]', content: '여러 경제활동의 사례를 통하여 자유경쟁과 경제 정의의 조화를 추구하는 우리나라 경제체제의 특징을 설명한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
-  { code: '[6사06-03]', content: '농업 중심 경제에서 공업·서비스업 중심 경제로 변화하는 모습을 중심으로 우리나라 경제성장 과정을 파악한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
-  { code: '[6사06-04]', content: '광복 이후 경제성장 과정에서 우리 사회가 겪은 사회 변동의 특징과 다양한 문제를 살펴보고, 더 나은 사회를 만들기 위하여 해결해야 할 과제를 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
-  { code: '[6사06-05]', content: '세계 여러 나라와의 경제 교류 활동으로 나타난 우리 경제생활의 변화 모습을 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
-  { code: '[6사06-06]', content: '다양한 경제 교류 사례를 통해 우리나라 경제가 다른 나라와 상호 의존 및 경쟁 관계에 있음을 파악한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-01]', content: '경제활동에서 가계와 기업의 역할을 파악하고, 합리적 선택을 탐색한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-02]', content: '우리나라 경제체제의 특징을 이해하고, 경제 정의의 중요성을 인식한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-03]', content: '우리나라 경제 성장 과정과 그 과정에서 나타난 변화를 탐구한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
+  { code: '[6사06-04]', content: '세계화 시대 우리 경제의 과제를 탐구하고, 바람직한 경제생활을 모색한다.', grade: 6, semester: 1, subject: '사회', domain: '경제' },
 
-  // ========== 사회 6학년 2학기 (2015 개정) ==========
+  // ========== 사회 6학년 2학기 (2022 개정) ==========
   // 1단원: 세계의 여러 나라들
-  { code: '[6사07-01]', content: '세계지도, 지구본을 비롯한 다양한 형태의 공간 자료에 대한 기초적인 내용과 활용 방법을 알고, 이를 실제 생활에 활용한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사07-02]', content: '여러 시각 및 공간 자료를 활용하여 세계 주요 대륙과 대양의 위치 및 범위, 대륙별 주요 나라의 위치와 영토의 특징을 탐색한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사07-03]', content: '세계 주요 기후의 분포와 특성을 파악하고, 이를 바탕으로 하여 기후 환경과 인간 생활 간의 관계를 탐색한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사07-04]', content: '의식주 생활에 특색이 있는 나라나 지역의 사례를 조사하고, 이를 바탕으로 하여 인간 생활에 영향을 미치는 여러 자연적, 인문적 요인을 탐구한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사07-05]', content: '우리나라와 관계 깊은 나라들의 기초적인 지리 정보를 조사하고, 정치·경제·문화면에서 맺고 있는 상호 의존 관계를 탐구한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사07-06]', content: '이웃 나라들(중국, 일본, 러시아)의 자연적, 인문적 특성과 교류 현황을 조사하고, 이를 바탕으로 하여 상호 이해와 협력의 태도를 기른다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-01]', content: '세계지도와 지구본을 활용하여 세계 여러 나라의 위치와 영역을 파악한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-02]', content: '세계 주요 대륙과 대양의 위치를 파악하고, 주요 나라의 특징을 탐색한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-03]', content: '세계의 다양한 기후와 생활 모습을 탐구하고, 환경과 인간 생활의 관계를 이해한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-04]', content: '세계 여러 나라의 다양한 문화를 탐구하고, 문화 다양성을 존중하는 태도를 기른다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사07-05]', content: '우리나라와 이웃 나라들의 관계를 탐구하고, 상호 협력의 중요성을 인식한다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
   // 2단원: 통일 한국의 미래와 지구촌의 평화
-  { code: '[6사08-01]', content: '독도를 지키려는 조상들의 노력을 역사적 자료를 통하여 살펴보고, 독도의 위치 등 지리적 특성에 대한 이해를 바탕으로 하여 영토주권 의식을 기른다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
-  { code: '[6사08-02]', content: '남북통일을 위한 노력을 살펴보고, 지구촌 평화에 기여하는 통일 한국의 미래상을 그려 본다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사08-03]', content: '지구촌의 평화와 발전을 위협하는 다양한 갈등 사례를 조사하고 그 해결 방안을 탐색한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사08-04]', content: '지구촌의 평화와 발전을 위해 노력하는 다양한 행위 주체(개인, 국가, 국제기구, 비정부 기구 등)의 활동 사례를 조사한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사08-05]', content: '지구촌의 주요 환경문제를 조사하여 해결 방안을 탐색하고, 환경문제 해결에 협력하는 세계시민의 자세를 기른다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
-  { code: '[6사08-06]', content: '지속가능한 미래를 건설하기 위한 과제(친환경적 생산과 소비 방식 확산, 빈곤과 기아 퇴치, 문화적 편견과 차별 해소 등)를 조사하고, 세계시민으로서 이에 적극 참여하는 방안을 모색한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-01]', content: '독도의 지리적 특성과 역사적 의미를 이해하고, 영토 주권 의식을 기른다.', grade: 6, semester: 2, subject: '사회', domain: '지리' },
+  { code: '[6사08-02]', content: '남북 분단의 배경과 통일을 위한 노력을 살펴보고, 통일의 필요성을 인식한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-03]', content: '지구촌의 다양한 문제를 탐구하고, 그 해결을 위한 방안을 모색한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-04]', content: '지구촌 평화와 발전을 위해 노력하는 다양한 주체의 활동을 탐구한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
+  { code: '[6사08-05]', content: '지속가능한 미래를 위한 세계시민의 역할을 이해하고 실천 방안을 모색한다.', grade: 6, semester: 2, subject: '사회', domain: '일반사회' },
 
   // ========== 과학 3학년 1학기 ==========
   { code: '[4과01-01]', content: '과학자처럼 관찰하고 탐구하는 방법을 익힌다.', grade: 3, semester: 1, subject: '과학', domain: '과학탐구' },
@@ -524,38 +552,41 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[4영03-03]', content: '그림이나 실물과 관련된 문장을 읽고 이해한다.', grade: 4, semester: 2, subject: '영어', domain: '읽기' },
   { code: '[4영04-03]', content: '쉽고 간단한 낱말이나 어구를 보고 쓴다.', grade: 4, semester: 2, subject: '영어', domain: '쓰기' },
 
-  // ========== 영어 5학년 1학기 - 2015 개정 교육과정 ==========
-  { code: '[6영01-01]', content: '어구나 문장을 듣고 세부 정보를 파악할 수 있다.', grade: 5, semester: 1, subject: '영어', domain: '듣기' },
-  { code: '[6영01-02]', content: '일상생활 관련 간단한 대화를 듣고 세부 정보를 파악할 수 있다.', grade: 5, semester: 1, subject: '영어', domain: '듣기' },
-  { code: '[6영02-01]', content: '그림, 사진, 또는 도표에 대해 한두 문장으로 표현할 수 있다.', grade: 5, semester: 1, subject: '영어', domain: '말하기' },
-  { code: '[6영02-02]', content: '자신이나 가족에 대해 한두 문장으로 소개할 수 있다.', grade: 5, semester: 1, subject: '영어', domain: '말하기' },
-  { code: '[6영03-01]', content: '쉽고 간단한 문장을 따라 읽을 수 있다.', grade: 5, semester: 1, subject: '영어', domain: '읽기' },
-  { code: '[6영04-01]', content: '알파벳 대소문자를 구별하여 쓸 수 있다.', grade: 5, semester: 1, subject: '영어', domain: '쓰기' },
+  // ========================================
+  // 영어 5-6학년군 (2022 개정 교육과정)
+  // 듣기 7개, 말하기 7개, 읽기 4개, 쓰기 5개 = 총 23개
+  // ========================================
 
-  // ========== 영어 5학년 2학기 - 2015 개정 교육과정 ==========
-  { code: '[6영01-03]', content: '주변의 사람이나 사물에 관한 간단한 말이나 대화를 듣고 세부 정보를 파악할 수 있다.', grade: 5, semester: 2, subject: '영어', domain: '듣기' },
-  { code: '[6영01-04]', content: '그림, 사진, 또는 도표에 관한 쉽고 간단한 말이나 대화를 듣고 세부 정보를 파악할 수 있다.', grade: 5, semester: 2, subject: '영어', domain: '듣기' },
-  { code: '[6영02-03]', content: '일상생활 속의 친숙한 주제에 관해 짧고 간단하게 말할 수 있다.', grade: 5, semester: 2, subject: '영어', domain: '말하기' },
-  { code: '[6영02-04]', content: '일상생활에 관한 간단한 대화를 할 수 있다.', grade: 5, semester: 2, subject: '영어', domain: '말하기' },
-  { code: '[6영03-02]', content: '쉽고 간단한 문장을 읽고 의미를 이해할 수 있다.', grade: 5, semester: 2, subject: '영어', domain: '읽기' },
-  { code: '[6영04-02]', content: '구두로 익힌 문장을 쓸 수 있다.', grade: 5, semester: 2, subject: '영어', domain: '쓰기' },
+  // ========== 영어 5학년 1학기 (2022 개정) ==========
+  { code: '[6영01-01]', content: '어구나 문장을 듣고 세부 정보를 파악한다.', grade: 5, semester: 1, subject: '영어', domain: '듣기' },
+  { code: '[6영01-02]', content: '일상생활 관련 간단한 대화를 듣고 세부 정보를 파악한다.', grade: 5, semester: 1, subject: '영어', domain: '듣기' },
+  { code: '[6영02-01]', content: '자신이나 주변에 대해 간단하게 소개한다.', grade: 5, semester: 1, subject: '영어', domain: '말하기' },
+  { code: '[6영02-02]', content: '친숙한 주제에 대해 간단하게 묻고 답한다.', grade: 5, semester: 1, subject: '영어', domain: '말하기' },
+  { code: '[6영03-01]', content: '쉽고 간단한 문장을 소리 내어 읽는다.', grade: 5, semester: 1, subject: '영어', domain: '읽기' },
+  { code: '[6영04-01]', content: '알파벳 대소문자를 바르게 쓴다.', grade: 5, semester: 1, subject: '영어', domain: '쓰기' },
 
-  // ========== 영어 6학년 1학기 - 2015 개정 교육과정 ==========
-  { code: '[6영01-05]', content: '간단하고 쉬운 노래, 챈트, 동시를 듣고 따라 말할 수 있다.', grade: 6, semester: 1, subject: '영어', domain: '듣기' },
-  { code: '[6영01-06]', content: '짧고 쉬운 이야기나 설명을 듣고 주제, 대의를 파악할 수 있다.', grade: 6, semester: 1, subject: '영어', domain: '듣기' },
-  { code: '[6영02-05]', content: '간단한 표현을 사용하여 지시, 설명하는 말을 할 수 있다.', grade: 6, semester: 1, subject: '영어', domain: '말하기' },
-  { code: '[6영02-06]', content: '간단한 표현을 사용하여 허락하거나 요청하는 말을 할 수 있다.', grade: 6, semester: 1, subject: '영어', domain: '말하기' },
-  { code: '[6영03-03]', content: '일상생활 속의 친숙한 주제에 관한 글을 읽고 세부 정보를 파악할 수 있다.', grade: 6, semester: 1, subject: '영어', domain: '읽기' },
-  { code: '[6영04-03]', content: '실물, 그림, 도표를 보고 쉽고 간단한 문장으로 표현할 수 있다.', grade: 6, semester: 1, subject: '영어', domain: '쓰기' },
+  // ========== 영어 5학년 2학기 (2022 개정) ==========
+  { code: '[6영01-03]', content: '그림, 사진, 도표에 관한 간단한 말이나 대화를 듣고 세부 정보를 파악한다.', grade: 5, semester: 2, subject: '영어', domain: '듣기' },
+  { code: '[6영01-04]', content: '일상생활 주제에 관한 쉬운 말을 듣고 세부 정보를 파악한다.', grade: 5, semester: 2, subject: '영어', domain: '듣기' },
+  { code: '[6영02-03]', content: '일상생활 속 친숙한 주제에 대해 간단하게 말한다.', grade: 5, semester: 2, subject: '영어', domain: '말하기' },
+  { code: '[6영02-04]', content: '일상생활에 관한 간단한 대화에 참여한다.', grade: 5, semester: 2, subject: '영어', domain: '말하기' },
+  { code: '[6영03-02]', content: '쉽고 간단한 문장을 읽고 의미를 파악한다.', grade: 5, semester: 2, subject: '영어', domain: '읽기' },
+  { code: '[6영04-02]', content: '구두로 익힌 문장을 쓴다.', grade: 5, semester: 2, subject: '영어', domain: '쓰기' },
 
-  // ========== 영어 6학년 2학기 - 2015 개정 교육과정 ==========
-  { code: '[6영01-07]', content: '일상생활 관련 친숙한 주제에 관한 간단한 말이나 대화를 듣고 주제, 대의를 파악할 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '듣기' },
-  { code: '[6영02-07]', content: '간단한 표현을 사용하여 일이나 사건의 순서, 전후 관계를 말할 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '말하기' },
-  { code: '[6영02-08]', content: '간단한 역할놀이를 할 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '말하기' },
-  { code: '[6영03-04]', content: '짧고 쉬운 글을 읽고 줄거리를 파악할 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '읽기' },
-  { code: '[6영03-05]', content: '일상생활에 관한 짧고 쉬운 글을 읽고 중심 내용을 파악할 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '읽기' },
-  { code: '[6영04-04]', content: '자신에 대한 한두 문장을 쓸 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '쓰기' },
-  { code: '[6영04-05]', content: '예시문을 참고하여 간단한 초대, 감사, 축하, 안부 등의 글을 쓸 수 있다.', grade: 6, semester: 2, subject: '영어', domain: '쓰기' },
+  // ========== 영어 6학년 1학기 (2022 개정) ==========
+  { code: '[6영01-05]', content: '간단한 노래, 챈트를 듣고 따라 말한다.', grade: 6, semester: 1, subject: '영어', domain: '듣기' },
+  { code: '[6영01-06]', content: '짧은 이야기를 듣고 주제나 대의를 파악한다.', grade: 6, semester: 1, subject: '영어', domain: '듣기' },
+  { code: '[6영02-05]', content: '간단한 표현으로 지시하거나 설명한다.', grade: 6, semester: 1, subject: '영어', domain: '말하기' },
+  { code: '[6영02-06]', content: '간단한 표현으로 허락하거나 요청한다.', grade: 6, semester: 1, subject: '영어', domain: '말하기' },
+  { code: '[6영03-03]', content: '친숙한 주제의 글을 읽고 세부 정보를 파악한다.', grade: 6, semester: 1, subject: '영어', domain: '읽기' },
+  { code: '[6영04-03]', content: '그림이나 도표를 보고 간단한 문장으로 표현한다.', grade: 6, semester: 1, subject: '영어', domain: '쓰기' },
+
+  // ========== 영어 6학년 2학기 (2022 개정) ==========
+  { code: '[6영01-07]', content: '친숙한 주제에 관한 간단한 대화를 듣고 주제나 대의를 파악한다.', grade: 6, semester: 2, subject: '영어', domain: '듣기' },
+  { code: '[6영02-07]', content: '간단한 표현으로 사건의 순서를 말한다.', grade: 6, semester: 2, subject: '영어', domain: '말하기' },
+  { code: '[6영03-04]', content: '짧고 쉬운 글을 읽고 중심 내용을 파악한다.', grade: 6, semester: 2, subject: '영어', domain: '읽기' },
+  { code: '[6영04-04]', content: '자신에 대해 간단한 문장을 쓴다.', grade: 6, semester: 2, subject: '영어', domain: '쓰기' },
+  { code: '[6영04-05]', content: '간단한 초대, 감사, 축하의 글을 쓴다.', grade: 6, semester: 2, subject: '영어', domain: '쓰기' },
 
   // ========== 도덕 3학년 1학기 ==========
   { code: '[4도01-01]', content: '정직의 의미와 중요성을 알고 생활 속에서 정직하게 행동한다.', grade: 3, semester: 1, subject: '도덕', domain: '자신과의 관계' },
@@ -743,41 +774,54 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
   { code: '[6미03-02]', content: '미술 작품이 만들어진 때와 곳의 사회적, 문화적 배경을 알아보고 작품을 해석할 수 있다.', grade: 6, semester: 2, subject: '미술', domain: '감상' },
   { code: '[6미03-03]', content: '미술 작품의 비평 방법에 따라 작품에 대해 자신의 생각과 느낌을 말할 수 있다.', grade: 6, semester: 2, subject: '미술', domain: '감상' },
 
-  // ========== 실과 5학년 1학기 - 2015 개정 교육과정 ==========
-  { code: '[6실01-01]', content: '나와 가족의 관계를 알고 서로 돕고 의지하는 가족의 소중함을 이해할 수 있다.', grade: 5, semester: 1, subject: '실과', domain: '인간 발달과 가족' },
-  { code: '[6실01-02]', content: '가정생활에서 요구되는 기본 예절을 익히고, 올바른 언어와 행동으로 생활할 수 있다.', grade: 5, semester: 1, subject: '실과', domain: '인간 발달과 가족' },
-  { code: '[6실02-01]', content: '자신과 가족의 영양 필요량을 이해하고 균형 잡힌 식사를 계획하여 실천할 수 있다.', grade: 5, semester: 1, subject: '실과', domain: '가정생활과 안전' },
-  { code: '[6실02-02]', content: '조리의 기초를 이해하고 간단한 조리 도구를 이용하여 음식을 만들 수 있다.', grade: 5, semester: 1, subject: '실과', domain: '가정생활과 안전' },
+  // ========================================
+  // 실과 5-6학년군 (2022 개정 교육과정)
+  // 인간발달과 가정생활, 지속가능한 생활과 안전, 기술 시스템과 발명, 디지털 역량으로 구성
+  // ========================================
 
-  // ========== 실과 5학년 2학기 - 2015 개정 교육과정 ==========
-  { code: '[6실02-03]', content: '간단한 수선 방법을 알고 옷 정리와 보관을 할 수 있다.', grade: 5, semester: 2, subject: '실과', domain: '가정생활과 안전' },
-  { code: '[6실02-04]', content: '생활 자원의 종류와 특성을 알고, 효율적인 사용과 관리 방법을 탐색하여 실천할 수 있다.', grade: 5, semester: 2, subject: '실과', domain: '가정생활과 안전' },
-  { code: '[6실03-01]', content: '생활 속에서 컴퓨팅 사고를 기반으로 문제를 해결하는 방법을 탐색하고 적용할 수 있다.', grade: 5, semester: 2, subject: '실과', domain: '기술 시스템' },
-  { code: '[6실03-02]', content: '절차적 사고에 의한 문제 분석과 해결 과정을 통해 알고리즘을 설계할 수 있다.', grade: 5, semester: 2, subject: '실과', domain: '기술 시스템' },
-
-  // ========== 실과 6학년 1학기 - 2015 개정 교육과정 ==========
+  // ========== 실과 5학년 1학기 (2022 개정) ==========
   // 1단원: 나와 가족
-  { code: '[6실01-01]', content: '나와 가족의 관계를 알고 서로 돕고 의지하는 가족의 소중함을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '나와 가족' },
-  { code: '[6실01-02]', content: '가정생활에서 요구되는 기본 예절을 익히고, 올바른 언어와 행동으로 생활할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '나와 가족' },
-  // 2단원: 지속 가능한 미래 농업
-  { code: '[6실05-01]', content: '지속 가능한 미래 사회의 의미를 알고 친환경 농업의 중요성을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
-  { code: '[6실05-02]', content: '농업 활동이 우리 생활에 미치는 영향을 알고 다양한 농업 활동을 체험할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '지속 가능한 미래 농업' },
-  // 3단원: 소프트웨어와 생활
-  { code: '[6실04-01]', content: '프로그래밍 도구를 사용하여 기초적인 프로그래밍 과정을 체험할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '소프트웨어와 생활' },
-  { code: '[6실04-02]', content: '소프트웨어가 사용되는 다양한 사례를 알고 소프트웨어의 중요성을 이해할 수 있다.', grade: 6, semester: 1, subject: '실과', domain: '소프트웨어와 생활' },
+  { code: '[6실01-01]', content: '가족의 소중함을 이해하고 화목한 가정생활을 위해 노력한다.', grade: 5, semester: 1, subject: '실과', domain: '인간발달과 가정생활' },
+  { code: '[6실01-02]', content: '성장에 따른 발달 특성을 이해하고 건강한 생활 습관을 형성한다.', grade: 5, semester: 1, subject: '실과', domain: '인간발달과 가정생활' },
+  // 2단원: 가정생활과 안전
+  { code: '[6실02-01]', content: '균형 잡힌 식단을 계획하고 간단한 음식을 만들 수 있다.', grade: 5, semester: 1, subject: '실과', domain: '지속가능한 생활과 안전' },
+  { code: '[6실02-02]', content: '의생활과 관련된 기초 기술을 익혀 실생활에 적용한다.', grade: 5, semester: 1, subject: '실과', domain: '지속가능한 생활과 안전' },
+  // 3단원: 컴퓨팅과 정보
+  { code: '[6실04-01]', content: '컴퓨터 시스템의 기본 구성 요소를 이해한다.', grade: 5, semester: 1, subject: '실과', domain: '디지털 역량' },
+  { code: '[6실04-02]', content: '디지털 정보의 특성과 저장 방법을 이해한다.', grade: 5, semester: 1, subject: '실과', domain: '디지털 역량' },
 
-  // ========== 실과 6학년 2학기 - 2015 개정 교육과정 ==========
-  // 4단원: 발명과 로봇
-  { code: '[6실04-03]', content: '다양한 재료의 특성과 가공 방법을 알고 제품 만들기에 적용할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '발명과 로봇' },
-  { code: '[6실04-04]', content: '발명의 의미와 중요성을 이해하고 간단한 발명 작품을 만들 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '발명과 로봇' },
-  { code: '[6실05-03]', content: '로봇의 기초적인 개념과 작동 원리를 이해하고, 간단한 로봇을 구상하고 만들 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '발명과 로봇' },
-  // 5단원: 가정생활과 식품 안전
-  { code: '[6실02-01]', content: '자신과 가족의 영양 필요량을 이해하고 균형 잡힌 식사를 계획하여 실천할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정생활과 식품 안전' },
-  { code: '[6실02-02]', content: '조리의 기초를 이해하고 간단한 조리 도구를 이용하여 음식을 만들 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정생활과 식품 안전' },
-  // 6단원: 가정일과 자립
-  { code: '[6실02-03]', content: '간단한 수선 방법을 알고 옷 정리와 보관을 할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
-  { code: '[6실02-04]', content: '생활 자원의 종류와 특성을 알고, 효율적인 사용과 관리 방법을 탐색하여 실천할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
-  { code: '[6실05-04]', content: '일과 직업의 의미와 중요성을 이해하고 자신의 흥미, 적성에 맞는 진로를 탐색할 수 있다.', grade: 6, semester: 2, subject: '실과', domain: '가정일과 자립' },
+  // ========== 실과 5학년 2학기 (2022 개정) ==========
+  // 4단원: 생활 자원과 소비
+  { code: '[6실02-03]', content: '생활 자원을 효율적으로 관리하고 현명한 소비 습관을 형성한다.', grade: 5, semester: 2, subject: '실과', domain: '지속가능한 생활과 안전' },
+  { code: '[6실02-04]', content: '생활 안전사고를 예방하고 안전한 생활을 실천한다.', grade: 5, semester: 2, subject: '실과', domain: '지속가능한 생활과 안전' },
+  // 5단원: 컴퓨팅 사고와 프로그래밍
+  { code: '[6실04-03]', content: '문제 해결을 위한 컴퓨팅 사고력을 기른다.', grade: 5, semester: 2, subject: '실과', domain: '디지털 역량' },
+  { code: '[6실04-04]', content: '알고리즘의 의미를 이해하고 간단한 알고리즘을 설계한다.', grade: 5, semester: 2, subject: '실과', domain: '디지털 역량' },
+  // 6단원: 기술과 발명
+  { code: '[6실03-01]', content: '생활 속 기술의 활용 사례를 탐색하고 기술의 중요성을 이해한다.', grade: 5, semester: 2, subject: '실과', domain: '기술 시스템과 발명' },
+  { code: '[6실03-02]', content: '간단한 제품을 설계하고 만드는 과정을 체험한다.', grade: 5, semester: 2, subject: '실과', domain: '기술 시스템과 발명' },
+
+  // ========== 실과 6학년 1학기 (2022 개정) ==========
+  // 1단원: 지속 가능한 농업과 식물
+  { code: '[6실05-01]', content: '지속 가능한 농업의 의미와 중요성을 이해한다.', grade: 6, semester: 1, subject: '실과', domain: '지속가능한 농업과 사회' },
+  { code: '[6실05-02]', content: '식물의 성장 과정을 이해하고 가꾸기 활동을 체험한다.', grade: 6, semester: 1, subject: '실과', domain: '지속가능한 농업과 사회' },
+  // 2단원: 소프트웨어와 인공지능
+  { code: '[6실04-05]', content: '프로그래밍 언어를 활용하여 간단한 프로그램을 만든다.', grade: 6, semester: 1, subject: '실과', domain: '디지털 역량' },
+  { code: '[6실04-06]', content: '인공지능의 개념과 원리를 이해하고 생활에서의 활용 사례를 탐색한다.', grade: 6, semester: 1, subject: '실과', domain: '디지털 역량' },
+  // 3단원: 발명과 메이킹
+  { code: '[6실03-03]', content: '발명의 의미와 중요성을 이해하고 창의적 발상 기법을 활용한다.', grade: 6, semester: 1, subject: '실과', domain: '기술 시스템과 발명' },
+  { code: '[6실03-04]', content: '아이디어를 구현하여 간단한 발명품이나 메이킹 작품을 만든다.', grade: 6, semester: 1, subject: '실과', domain: '기술 시스템과 발명' },
+
+  // ========== 실과 6학년 2학기 (2022 개정) ==========
+  // 4단원: 로봇과 자동화
+  { code: '[6실03-05]', content: '로봇의 기본 구성과 작동 원리를 이해한다.', grade: 6, semester: 2, subject: '실과', domain: '기술 시스템과 발명' },
+  { code: '[6실03-06]', content: '간단한 로봇을 제작하고 프로그래밍하여 동작시킨다.', grade: 6, semester: 2, subject: '실과', domain: '기술 시스템과 발명' },
+  // 5단원: 일과 진로
+  { code: '[6실05-03]', content: '일과 직업의 의미와 중요성을 이해한다.', grade: 6, semester: 2, subject: '실과', domain: '지속가능한 농업과 사회' },
+  { code: '[6실05-04]', content: '자신의 흥미와 적성을 탐색하고 진로를 설계한다.', grade: 6, semester: 2, subject: '실과', domain: '지속가능한 농업과 사회' },
+  // 6단원: 디지털 시민의식
+  { code: '[6실04-07]', content: '디지털 환경에서의 예절과 규범을 이해하고 실천한다.', grade: 6, semester: 2, subject: '실과', domain: '디지털 역량' },
+  { code: '[6실01-03]', content: '미래 사회 변화에 적응하기 위해 필요한 역량을 탐색한다.', grade: 6, semester: 2, subject: '실과', domain: '인간발달과 가정생활' },
 
   // ========== 바른 생활 1학년 1학기 ==========
   { code: '[2바01-01]', content: '학교생활에 필요한 규칙과 약속을 정하여 지킨다.', grade: 1, semester: 1, subject: '바른 생활', domain: '학교생활' },
