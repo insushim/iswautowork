@@ -4,7 +4,8 @@ import {
   Classroom, Student, GeneratedRecord,
   AutonomousActivity, ClubActivity, VolunteerActivity, CareerActivity,
   SubjectAchievementLevel, BehaviorLevel, Theme, Semester,
-  StudentTalents, TalentLevel, TalentType, AchievementStandard
+  StudentTalents, TalentLevel, TalentType, AchievementStandard,
+  NugaRecord, NugaCategory
 } from '@/types';
 
 interface AppStore {
@@ -27,6 +28,9 @@ interface AppStore {
 
   // 행동특성 기록
   behaviorRecords: GeneratedRecord[];
+
+  // 누가기록
+  nugaRecords: NugaRecord[];
 
   // 현재 활동 설정
   currentAutonomousActivity: AutonomousActivity | null;
@@ -108,6 +112,14 @@ interface AppStore {
 
   setMacroSettings: (settings: Partial<AppStore['macroSettings']>) => void;
   setIsGenerating: (isGenerating: boolean, section?: string | null) => void;
+
+  // 누가기록 액션
+  addNugaRecords: (records: NugaRecord[]) => void;
+  updateNugaRecord: (id: string, updates: Partial<NugaRecord>) => void;
+  deleteNugaRecord: (id: string) => void;
+  toggleNugaRecordUsed: (id: string) => void;
+  clearNugaRecords: () => void;
+  clearNugaRecordsByStudent: (studentNumber: number) => void;
 }
 
 export const useStore = create<AppStore>()(
@@ -122,6 +134,7 @@ export const useStore = create<AppStore>()(
       careerRecords: [],
       subjectDevelopments: {},
       behaviorRecords: [],
+      nugaRecords: [],
       currentAutonomousActivity: null,
       currentClubActivity: null,
       currentVolunteerActivity: null,
@@ -155,7 +168,7 @@ export const useStore = create<AppStore>()(
       clearClassroom: () => set({
         classroom: null, students: [],
         autonomousRecords: [], clubRecords: [], volunteerRecords: [], careerRecords: [],
-        subjectDevelopments: {}, behaviorRecords: [],
+        subjectDevelopments: {}, behaviorRecords: [], nugaRecords: [],
         subjectAchievementLevels: {}, subjectSemesters: {}, subjectSentenceCounts: {}, selectedStandardCodes: {},
         behaviorLevels: [], studentTalents: []
       }),
@@ -291,6 +304,33 @@ export const useStore = create<AppStore>()(
         isGenerating,
         generatingSection: section
       }),
+
+      // 누가기록 액션
+      addNugaRecords: (records) => set((state) => ({
+        nugaRecords: [...state.nugaRecords, ...records]
+      })),
+
+      updateNugaRecord: (id, updates) => set((state) => ({
+        nugaRecords: state.nugaRecords.map(r =>
+          r.id === id ? { ...r, ...updates } : r
+        )
+      })),
+
+      deleteNugaRecord: (id) => set((state) => ({
+        nugaRecords: state.nugaRecords.filter(r => r.id !== id)
+      })),
+
+      toggleNugaRecordUsed: (id) => set((state) => ({
+        nugaRecords: state.nugaRecords.map(r =>
+          r.id === id ? { ...r, isUsed: !r.isUsed } : r
+        )
+      })),
+
+      clearNugaRecords: () => set({ nugaRecords: [] }),
+
+      clearNugaRecordsByStudent: (studentNumber) => set((state) => ({
+        nugaRecords: state.nugaRecords.filter(r => r.studentNumber !== studentNumber)
+      })),
     }),
     {
       name: 'neis-helper-storage-v2',
@@ -304,6 +344,7 @@ export const useStore = create<AppStore>()(
         careerRecords: state.careerRecords,
         subjectDevelopments: state.subjectDevelopments,
         behaviorRecords: state.behaviorRecords,
+        nugaRecords: state.nugaRecords,
         subjectAchievementLevels: state.subjectAchievementLevels,
         subjectSemesters: state.subjectSemesters,
         subjectSentenceCounts: state.subjectSentenceCounts,

@@ -11,13 +11,14 @@ import {
   CareerSection,
   SubjectSection,
   BehaviorSection,
+  NugaRecordSection,
 } from '@/components/sections';
 import { Button, Card, CardContent } from '@/components/ui';
 import { useExport } from '@/hooks/useExport';
 import { getSubjectNameFromCode } from '@/lib/achievement-standards';
 import { Download, FileSpreadsheet } from 'lucide-react';
 
-type TabType = 'creative' | 'subject' | 'behavior';
+type TabType = 'creative' | 'subject' | 'behavior' | 'nuga';
 
 export default function Home() {
   const {
@@ -65,6 +66,7 @@ export default function Home() {
     { id: 'creative', label: '창의적 체험활동' },
     { id: 'subject', label: '교과별 발달사항' },
     { id: 'behavior', label: '행동특성 및 종합의견' },
+    { id: 'nuga', label: '누가기록' },
   ];
 
   return (
@@ -141,6 +143,8 @@ export default function Home() {
               {activeTab === 'subject' && <SubjectSection />}
 
               {activeTab === 'behavior' && <BehaviorSection />}
+
+              {activeTab === 'nuga' && <NugaRecordSection />}
             </div>
           </>
         )}

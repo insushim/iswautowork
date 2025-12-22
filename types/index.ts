@@ -138,3 +138,23 @@ export type Theme = 'light' | 'dark';
 
 // 학기
 export type Semester = 1 | 2;
+
+// 누가기록 (Anecdotal Record)
+export interface NugaRecord {
+  id: string;
+  studentNumber: number;
+  sentence: string;
+  date: string; // YYYY-MM-DD 형식
+  category: NugaCategory;
+  isUsed: boolean; // 이미 사용한 기록인지
+  createdAt: Date;
+}
+
+// 누가기록 카테고리 (행동특성 영역 기반)
+export type NugaCategory =
+  | 'school_life'      // 학교생활 및 기본생활습관
+  | 'learning'         // 학습 태도 및 지적 호기심
+  | 'social'           // 교우관계 및 사회성
+  | 'character'        // 인성 및 정서 발달
+  | 'talent'           // 진로 및 특기 발달
+  | 'other';           // 기타
