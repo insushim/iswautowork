@@ -268,8 +268,8 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
 
   // ========== 수학 3학년 2학기 ==========
   // 수와 연산
-  { code: '[4수01-06]', content: '(두 자리 수)×(한 자리 수), (한 자리 수)×(두 자리 수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 3, semester: 2, subject: '수학', domain: '수와 연산' },
-  { code: '[4수01-07]', content: '(몇십)÷(몇), (두 자리 수)÷(한 자리 수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 3, semester: 2, subject: '수학', domain: '수와 연산' },
+  { code: '[4수01-06]', content: '두 자리 수와 한 자리 수의 곱셈, 한 자리 수와 두 자리 수의 곱셈의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 3, semester: 2, subject: '수학', domain: '수와 연산' },
+  { code: '[4수01-07]', content: '몇십 나누기 몇, 두 자리 수 나누기 한 자리 수의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 3, semester: 2, subject: '수학', domain: '수와 연산' },
   { code: '[4수01-08]', content: '양의 등분할을 통하여 분수를 이해하고 읽고 쓸 수 있다.', grade: 3, semester: 2, subject: '수학', domain: '수와 연산' },
   { code: '[4수01-09]', content: '단위분수의 크기를 비교할 수 있다.', grade: 3, semester: 2, subject: '수학', domain: '수와 연산' },
   // 도형과 측정
@@ -281,8 +281,8 @@ export const ACHIEVEMENT_STANDARDS: AchievementStandard[] = [
 
   // ========== 수학 4학년 1학기 ==========
   // 수와 연산
-  { code: '[4수01-10]', content: '(세 자리 수)×(두 자리 수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 4, semester: 1, subject: '수학', domain: '수와 연산' },
-  { code: '[4수01-11]', content: '(세 자리 수)÷(두 자리 수)의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 4, semester: 1, subject: '수학', domain: '수와 연산' },
+  { code: '[4수01-10]', content: '세 자리 수와 두 자리 수의 곱셈의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 4, semester: 1, subject: '수학', domain: '수와 연산' },
+  { code: '[4수01-11]', content: '세 자리 수 나누기 두 자리 수의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 4, semester: 1, subject: '수학', domain: '수와 연산' },
   { code: '[4수01-12]', content: '분모가 같은 분수의 크기를 비교할 수 있다.', grade: 4, semester: 1, subject: '수학', domain: '수와 연산' },
   { code: '[4수01-13]', content: '분모가 같은 분수의 덧셈과 뺄셈의 계산 원리를 이해하고 그 계산을 할 수 있다.', grade: 4, semester: 1, subject: '수학', domain: '수와 연산' },
   // 도형과 측정
